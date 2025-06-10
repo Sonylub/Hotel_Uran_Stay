@@ -38,7 +38,7 @@
             // 
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelUsername.Location = new System.Drawing.Point(41, 149);
+            this.labelUsername.Location = new System.Drawing.Point(42, 146);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(57, 23);
             this.labelUsername.TabIndex = 0;
@@ -48,7 +48,7 @@
             // 
             this.textBoxUsername.Location = new System.Drawing.Point(116, 146);
             this.textBoxUsername.Name = "textBoxUsername";
-            this.textBoxUsername.Size = new System.Drawing.Size(172, 29);
+            this.textBoxUsername.Size = new System.Drawing.Size(172, 20);
             this.textBoxUsername.TabIndex = 1;
             this.textBoxUsername.Enter += new System.EventHandler(this.textBoxUsername_Enter);
             this.textBoxUsername.Leave += new System.EventHandler(this.textBoxUsername_Leave);
@@ -57,7 +57,7 @@
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPassword.Location = new System.Drawing.Point(41, 191);
+            this.labelPassword.Location = new System.Drawing.Point(41, 188);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(69, 23);
             this.labelPassword.TabIndex = 2;
@@ -68,7 +68,7 @@
             this.textBoxPassword.Location = new System.Drawing.Point(116, 188);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
-            this.textBoxPassword.Size = new System.Drawing.Size(172, 29);
+            this.textBoxPassword.Size = new System.Drawing.Size(172, 20);
             this.textBoxPassword.TabIndex = 3;
             this.textBoxPassword.Enter += new System.EventHandler(this.textBoxPassword_Enter);
             this.textBoxPassword.Leave += new System.EventHandler(this.textBoxPassword_Leave);
@@ -78,7 +78,7 @@
             this.checkBox1.AutoSize = true;
             this.checkBox1.Location = new System.Drawing.Point(45, 228);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(217, 27);
+            this.checkBox1.Size = new System.Drawing.Size(163, 17);
             this.checkBox1.TabIndex = 4;
             this.checkBox1.Text = "спрятать/показать пароль";
             this.checkBox1.UseVisualStyleBackColor = true;
@@ -88,9 +88,9 @@
             // 
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelFirstName.Location = new System.Drawing.Point(41, 270);
+            this.labelFirstName.Location = new System.Drawing.Point(54, 264);
             this.labelFirstName.Name = "labelFirstName";
-            this.labelFirstName.Size = new System.Drawing.Size(57, 23);
+            this.labelFirstName.Size = new System.Drawing.Size(44, 23);
             this.labelFirstName.TabIndex = 5;
             this.labelFirstName.Text = "Имя:";
             // 
@@ -98,7 +98,7 @@
             // 
             this.textBoxFirstName.Location = new System.Drawing.Point(116, 267);
             this.textBoxFirstName.Name = "textBoxFirstName";
-            this.textBoxFirstName.Size = new System.Drawing.Size(172, 29);
+            this.textBoxFirstName.Size = new System.Drawing.Size(172, 20);
             this.textBoxFirstName.TabIndex = 6;
             this.textBoxFirstName.Enter += new System.EventHandler(this.textBoxFirstName_Enter);
             this.textBoxFirstName.Leave += new System.EventHandler(this.textBoxFirstName_Leave);
@@ -107,9 +107,9 @@
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelEmail.Location = new System.Drawing.Point(41, 312);
+            this.labelEmail.Location = new System.Drawing.Point(41, 306);
             this.labelEmail.Name = "labelEmail";
-            this.labelEmail.Size = new System.Drawing.Size(57, 23);
+            this.labelEmail.Size = new System.Drawing.Size(58, 23);
             this.labelEmail.TabIndex = 7;
             this.labelEmail.Text = "Почта:";
             // 
@@ -117,7 +117,7 @@
             // 
             this.textBoxEmail.Location = new System.Drawing.Point(116, 309);
             this.textBoxEmail.Name = "textBoxEmail";
-            this.textBoxEmail.Size = new System.Drawing.Size(172, 29);
+            this.textBoxEmail.Size = new System.Drawing.Size(172, 20);
             this.textBoxEmail.TabIndex = 8;
             this.textBoxEmail.Enter += new System.EventHandler(this.textBoxEmail_Enter);
             this.textBoxEmail.Leave += new System.EventHandler(this.textBoxEmail_Leave);
@@ -126,9 +126,9 @@
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Arial Narrow", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelPhone.Location = new System.Drawing.Point(41, 354);
+            this.labelPhone.Location = new System.Drawing.Point(29, 351);
             this.labelPhone.Name = "labelPhone";
-            this.labelPhone.Size = new System.Drawing.Size(69, 23);
+            this.labelPhone.Size = new System.Drawing.Size(81, 23);
             this.labelPhone.TabIndex = 9;
             this.labelPhone.Text = "Телефон:";
             // 
@@ -136,7 +136,7 @@
             // 
             this.textBoxPhone.Location = new System.Drawing.Point(116, 351);
             this.textBoxPhone.Name = "textBoxPhone";
-            this.textBoxPhone.Size = new System.Drawing.Size(172, 29);
+            this.textBoxPhone.Size = new System.Drawing.Size(172, 20);
             this.textBoxPhone.TabIndex = 10;
             this.textBoxPhone.Enter += new System.EventHandler(this.textBoxPhone_Enter);
             this.textBoxPhone.Leave += new System.EventHandler(this.textBoxPhone_Leave);
@@ -147,7 +147,7 @@
             this.buttonRegister.ForeColor = System.Drawing.SystemColors.ControlText;
             this.buttonRegister.Location = new System.Drawing.Point(116, 392);
             this.buttonRegister.Name = "buttonRegister";
-            this.buttonRegister.Size = new System.Drawing.Size(77, 35);
+            this.buttonRegister.Size = new System.Drawing.Size(89, 35);
             this.buttonRegister.TabIndex = 11;
             this.buttonRegister.Text = "Регистрация";
             this.buttonRegister.UseVisualStyleBackColor = false;
@@ -179,7 +179,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.ClientSize = new System.Drawing.Size(350, 480);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonCancel);
@@ -200,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         #endregion

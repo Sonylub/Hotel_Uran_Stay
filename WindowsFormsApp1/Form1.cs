@@ -72,5 +72,44 @@ namespace WindowsFormsApp1
             RegistrationForm regForm = new RegistrationForm();
             regForm.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string username = textBox3.Text.Trim();
+            string password = textBox1.Text.Trim();
+
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT user_id FROM USERS WHERE username = @username AND password = @password AND admin = 0";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@username", username);
+                        cmd.Parameters.AddWithValue("@password", password);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                int userId = reader.GetInt32(0);
+                                MainForm mainForm = new MainForm(userId);
+                                mainForm.Show();
+                                this.Hide();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Неверный логин, пароль или пользователь не является гостем.", "Ошибка входа", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка подключения к базе данных: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }
