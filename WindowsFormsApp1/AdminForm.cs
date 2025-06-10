@@ -43,5 +43,15 @@ namespace WindowsFormsApp1
             this.uSERSTableAdapter.Fill(this.hotel_Urban_StayDataSet.USERS);
 
         }
+
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void gUESTSERVICESDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

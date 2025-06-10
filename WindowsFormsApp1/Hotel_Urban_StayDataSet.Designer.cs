@@ -1254,10 +1254,6 @@ namespace WindowsFormsApp1 {
             
             private global::System.Data.DataColumn columnimage_url;
             
-            private global::System.Data.DataColumn columnfile_name;
-            
-            private global::System.Data.DataColumn columnupload_date;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public IMAGESDataTable() {
@@ -1317,22 +1313,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn file_nameColumn {
-                get {
-                    return this.columnfile_name;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public global::System.Data.DataColumn upload_dateColumn {
-                get {
-                    return this.columnupload_date;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1368,14 +1348,12 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public IMAGESRow AddIMAGESRow(int image_id, ROOMSRow parentROOMSRowByFK__IMAGES__room_id__4E88ABD4, string image_url, string file_name, System.DateTime upload_date) {
+            public IMAGESRow AddIMAGESRow(int image_id, ROOMSRow parentROOMSRowByFK__IMAGES__room_id__4E88ABD4, string image_url) {
                 IMAGESRow rowIMAGESRow = ((IMAGESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         image_id,
                         null,
-                        image_url,
-                        file_name,
-                        upload_date};
+                        image_url};
                 if ((parentROOMSRowByFK__IMAGES__room_id__4E88ABD4 != null)) {
                     columnValuesArray[1] = parentROOMSRowByFK__IMAGES__room_id__4E88ABD4[0];
                 }
@@ -1411,8 +1389,6 @@ namespace WindowsFormsApp1 {
                 this.columnimage_id = base.Columns["image_id"];
                 this.columnroom_id = base.Columns["room_id"];
                 this.columnimage_url = base.Columns["image_url"];
-                this.columnfile_name = base.Columns["file_name"];
-                this.columnupload_date = base.Columns["upload_date"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1424,16 +1400,11 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columnroom_id);
                 this.columnimage_url = new global::System.Data.DataColumn("image_url", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnimage_url);
-                this.columnfile_name = new global::System.Data.DataColumn("file_name", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfile_name);
-                this.columnupload_date = new global::System.Data.DataColumn("upload_date", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnupload_date);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnimage_id}, true));
                 this.columnimage_id.AllowDBNull = false;
                 this.columnimage_id.Unique = true;
                 this.columnimage_url.MaxLength = 500;
-                this.columnfile_name.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3366,38 +3337,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public string file_name {
-                get {
-                    try {
-                        return ((string)(this[this.tableIMAGES.file_nameColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'file_name\' в таблице \'IMAGES\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableIMAGES.file_nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public System.DateTime upload_date {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableIMAGES.upload_dateColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'upload_date\' в таблице \'IMAGES\' равно DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tableIMAGES.upload_dateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ROOMSRow ROOMSRow {
                 get {
                     return ((ROOMSRow)(this.GetParentRow(this.Table.ParentRelations["FK__IMAGES__room_id__4E88ABD4"])));
@@ -3429,30 +3368,6 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void Setimage_urlNull() {
                 this[this.tableIMAGES.image_urlColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isfile_nameNull() {
-                return this.IsNull(this.tableIMAGES.file_nameColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setfile_nameNull() {
-                this[this.tableIMAGES.file_nameColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Isupload_dateNull() {
-                return this.IsNull(this.tableIMAGES.upload_dateColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setupload_dateNull() {
-                this[this.tableIMAGES.upload_dateColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -5504,51 +5419,40 @@ SELECT guest_id, service_id, order_date, quantity, status FROM GUESTSERVICES WHE
             tableMapping.ColumnMappings.Add("image_id", "image_id");
             tableMapping.ColumnMappings.Add("room_id", "room_id");
             tableMapping.ColumnMappings.Add("image_url", "image_url");
-            tableMapping.ColumnMappings.Add("file_name", "file_name");
-            tableMapping.ColumnMappings.Add("upload_date", "upload_date");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[IMAGES] WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)) AND ((@IsNull_file_name = 1 AND [file_name] IS NULL) OR ([file_name] = @Original_file_name)) AND ((@IsNull_upload_date = 1 AND [upload_date] IS NULL) OR ([upload_date] = @Original_upload_date)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [IMAGES] WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_" +
+                "id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_" +
+                "image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_image_url", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_image_url", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_file_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "file_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_file_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "file_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_upload_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upload_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_upload_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upload_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[IMAGES] ([image_id], [room_id], [image_url], [file_name], [upload_date]) VALUES (@image_id, @room_id, @image_url, @file_name, @upload_date);
-SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (image_id = @image_id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [IMAGES] ([image_id], [room_id], [image_url]) VALUES (@image_id, @roo" +
+                "m_id, @image_url);\r\nSELECT image_id, room_id, image_url FROM IMAGES WHERE (image" +
+                "_id = @image_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_url", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@file_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "file_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@upload_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upload_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[IMAGES] SET [image_id] = @image_id, [room_id] = @room_id, [image_url] = @image_url, [file_name] = @file_name, [upload_date] = @upload_date WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)) AND ((@IsNull_file_name = 1 AND [file_name] IS NULL) OR ([file_name] = @Original_file_name)) AND ((@IsNull_upload_date = 1 AND [upload_date] IS NULL) OR ([upload_date] = @Original_upload_date)));
-SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (image_id = @image_id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [IMAGES] SET [image_id] = @image_id, [room_id] = @room_id, [image_url] = @image_url WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)));
+SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_url", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@file_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "file_name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@upload_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upload_date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_image_url", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_image_url", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_file_name", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "file_name", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_file_name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "file_name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_upload_date", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upload_date", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_upload_date", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "upload_date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5564,7 +5468,7 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT image_id, room_id, image_url, file_name, upload_date FROM dbo.IMAGES";
+            this._commandCollection[0].CommandText = "SELECT image_id, room_id, image_url FROM IMAGES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5625,7 +5529,7 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_image_id, global::System.Nullable<int> Original_room_id, string Original_image_url, string Original_file_name, global::System.Nullable<global::System.DateTime> Original_upload_date) {
+        public virtual int Delete(int Original_image_id, global::System.Nullable<int> Original_room_id, string Original_image_url) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_image_id));
             if ((Original_room_id.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -5642,22 +5546,6 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
             else {
                 this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[4].Value = ((string)(Original_image_url));
-            }
-            if ((Original_file_name == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_file_name));
-            }
-            if ((Original_upload_date.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_upload_date.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5679,7 +5567,7 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int image_id, global::System.Nullable<int> room_id, string image_url, string file_name, global::System.Nullable<global::System.DateTime> upload_date) {
+        public virtual int Insert(int image_id, global::System.Nullable<int> room_id, string image_url) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(image_id));
             if ((room_id.HasValue == true)) {
                 this.Adapter.InsertCommand.Parameters[1].Value = ((int)(room_id.Value));
@@ -5692,18 +5580,6 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
             }
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(image_url));
-            }
-            if ((file_name == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(file_name));
-            }
-            if ((upload_date.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(upload_date.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5725,7 +5601,7 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int image_id, global::System.Nullable<int> room_id, string image_url, string file_name, global::System.Nullable<global::System.DateTime> upload_date, int Original_image_id, global::System.Nullable<int> Original_room_id, string Original_image_url, string Original_file_name, global::System.Nullable<global::System.DateTime> Original_upload_date) {
+        public virtual int Update(int image_id, global::System.Nullable<int> room_id, string image_url, int Original_image_id, global::System.Nullable<int> Original_room_id, string Original_image_url) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(image_id));
             if ((room_id.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(room_id.Value));
@@ -5739,50 +5615,22 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(image_url));
             }
-            if ((file_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(file_name));
-            }
-            if ((upload_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(upload_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_image_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_image_id));
             if ((Original_room_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_room_id.Value));
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_room_id.Value));
             }
             else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((Original_image_url == null)) {
                 this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
             }
-            if ((Original_image_url == null)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_image_url));
-            }
-            if ((Original_file_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_file_name));
-            }
-            if ((Original_upload_date.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_upload_date.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_image_url));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -5804,8 +5652,8 @@ SELECT image_id, room_id, image_url, file_name, upload_date FROM IMAGES WHERE (i
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> room_id, string image_url, string file_name, global::System.Nullable<global::System.DateTime> upload_date, int Original_image_id, global::System.Nullable<int> Original_room_id, string Original_image_url, string Original_file_name, global::System.Nullable<global::System.DateTime> Original_upload_date) {
-            return this.Update(Original_image_id, room_id, image_url, file_name, upload_date, Original_image_id, Original_room_id, Original_image_url, Original_file_name, Original_upload_date);
+        public virtual int Update(global::System.Nullable<int> room_id, string image_url, int Original_image_id, global::System.Nullable<int> Original_room_id, string Original_image_url) {
+            return this.Update(Original_image_id, room_id, image_url, Original_image_id, Original_room_id, Original_image_url);
         }
     }
     

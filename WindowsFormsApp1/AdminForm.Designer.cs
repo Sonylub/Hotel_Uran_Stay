@@ -30,10 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminForm));
-            this.hotel_Urban_StayDataSet = new WindowsFormsApp1.Hotel_Urban_StayDataSet();
-            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.uSERSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.USERSTableAdapter();
-            this.tableAdapterManager = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.TableAdapterManager();
             this.uSERSBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -48,16 +44,26 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.uSERSBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.uSERSDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.rOOMSDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.gUESTSDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.rEVIEWSDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.sERVICESDataGridView = new System.Windows.Forms.DataGridView();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.gUESTSERVICESDataGridView = new System.Windows.Forms.DataGridView();
+            this.iMAGESDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.rOOMSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rOOMSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.ROOMSTableAdapter();
-            this.rOOMSDataGridView = new System.Windows.Forms.DataGridView();
+            this.uSERSBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.hotel_Urban_StayDataSet = new WindowsFormsApp1.Hotel_Urban_StayDataSet();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,19 +71,11 @@
             this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.iMAGESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iMAGESTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.IMAGESTableAdapter();
-            this.iMAGESDataGridView = new System.Windows.Forms.DataGridView();
+            this.rOOMSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.gUESTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gUESTSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.GUESTSTableAdapter();
-            this.gUESTSDataGridView = new System.Windows.Forms.DataGridView();
+            this.iMAGESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,85 +86,59 @@
             this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.rEVIEWSBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rEVIEWSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.REVIEWSTableAdapter();
-            this.rEVIEWSDataGridView = new System.Windows.Forms.DataGridView();
+            this.gUESTSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.sERVICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sERVICESTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.SERVICESTableAdapter();
-            this.sERVICESDataGridView = new System.Windows.Forms.DataGridView();
+            this.rEVIEWSBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
-            this.gUESTSERVICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gUESTSERVICESTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.GUESTSERVICESTableAdapter();
-            this.gUESTSERVICESDataGridView = new System.Windows.Forms.DataGridView();
+            this.sERVICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.hotel_Urban_StayDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            this.gUESTSERVICESBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.uSERSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.USERSTableAdapter();
+            this.tableAdapterManager = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.TableAdapterManager();
+            this.rOOMSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.ROOMSTableAdapter();
+            this.iMAGESTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.IMAGESTableAdapter();
+            this.gUESTSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.GUESTSTableAdapter();
+            this.rEVIEWSTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.REVIEWSTableAdapter();
+            this.sERVICESTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.SERVICESTableAdapter();
+            this.gUESTSERVICESTableAdapter = new WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.GUESTSERVICESTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingNavigator)).BeginInit();
             this.uSERSBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSDataGridView)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rOOMSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rOOMSDataGridView)).BeginInit();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iMAGESBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iMAGESDataGridView)).BeginInit();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gUESTSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gUESTSDataGridView)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.rEVIEWSBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rEVIEWSDataGridView)).BeginInit();
             this.tabPage6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.sERVICESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sERVICESDataGridView)).BeginInit();
             this.tabPage7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gUESTSERVICESBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gUESTSERVICESDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iMAGESDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotel_Urban_StayDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rOOMSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iMAGESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gUESTSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEVIEWSBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sERVICESBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gUESTSERVICESBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // hotel_Urban_StayDataSet
-            // 
-            this.hotel_Urban_StayDataSet.DataSetName = "Hotel_Urban_StayDataSet";
-            this.hotel_Urban_StayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // uSERSBindingSource
-            // 
-            this.uSERSBindingSource.DataMember = "USERS";
-            this.uSERSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // uSERSTableAdapter
-            // 
-            this.uSERSTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.GUESTSERVICESTableAdapter = null;
-            this.tableAdapterManager.GUESTSTableAdapter = null;
-            this.tableAdapterManager.IMAGESTableAdapter = null;
-            this.tableAdapterManager.REVIEWSTableAdapter = null;
-            this.tableAdapterManager.ROOMSTableAdapter = null;
-            this.tableAdapterManager.SERVICESTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.USERSTableAdapter = this.uSERSTableAdapter;
             // 
             // uSERSBindingNavigator
             // 
@@ -269,6 +241,7 @@
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorMoveNextItem.Text = "Переместить вперед";
+            this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
             // bindingNavigatorMoveLastItem
             // 
@@ -303,10 +276,208 @@
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewCheckBoxColumn1});
             this.uSERSDataGridView.DataSource = this.uSERSBindingSource;
-            this.uSERSDataGridView.Location = new System.Drawing.Point(129, 64);
+            this.uSERSDataGridView.Location = new System.Drawing.Point(119, 68);
             this.uSERSDataGridView.Name = "uSERSDataGridView";
-            this.uSERSDataGridView.Size = new System.Drawing.Size(454, 151);
+            this.uSERSDataGridView.Size = new System.Drawing.Size(444, 183);
             this.uSERSDataGridView.TabIndex = 1;
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Location = new System.Drawing.Point(67, 53);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(686, 361);
+            this.tabControl1.TabIndex = 2;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.uSERSDataGridView);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(678, 335);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Пользователи";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.rOOMSDataGridView);
+            this.tabPage2.Location = new System.Drawing.Point(4, 22);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(678, 335);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Номера";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // rOOMSDataGridView
+            // 
+            this.rOOMSDataGridView.AutoGenerateColumns = false;
+            this.rOOMSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rOOMSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10});
+            this.rOOMSDataGridView.DataSource = this.rOOMSBindingSource;
+            this.rOOMSDataGridView.Location = new System.Drawing.Point(48, 53);
+            this.rOOMSDataGridView.Name = "rOOMSDataGridView";
+            this.rOOMSDataGridView.Size = new System.Drawing.Size(559, 220);
+            this.rOOMSDataGridView.TabIndex = 0;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.iMAGESDataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(678, 335);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Картинки";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.AutoScroll = true;
+            this.tabPage4.Controls.Add(this.gUESTSDataGridView);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(678, 335);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Гости";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // gUESTSDataGridView
+            // 
+            this.gUESTSDataGridView.AutoGenerateColumns = false;
+            this.gUESTSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gUESTSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn17,
+            this.dataGridViewTextBoxColumn18,
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25});
+            this.gUESTSDataGridView.DataSource = this.gUESTSBindingSource;
+            this.gUESTSDataGridView.Location = new System.Drawing.Point(45, 51);
+            this.gUESTSDataGridView.Name = "gUESTSDataGridView";
+            this.gUESTSDataGridView.Size = new System.Drawing.Size(583, 220);
+            this.gUESTSDataGridView.TabIndex = 0;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.AutoScroll = true;
+            this.tabPage5.Controls.Add(this.rEVIEWSDataGridView);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(678, 335);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Отзывы";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // rEVIEWSDataGridView
+            // 
+            this.rEVIEWSDataGridView.AutoGenerateColumns = false;
+            this.rEVIEWSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rEVIEWSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30});
+            this.rEVIEWSDataGridView.DataSource = this.rEVIEWSBindingSource;
+            this.rEVIEWSDataGridView.Location = new System.Drawing.Point(50, 55);
+            this.rEVIEWSDataGridView.Name = "rEVIEWSDataGridView";
+            this.rEVIEWSDataGridView.Size = new System.Drawing.Size(543, 220);
+            this.rEVIEWSDataGridView.TabIndex = 0;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.AutoScroll = true;
+            this.tabPage6.Controls.Add(this.sERVICESDataGridView);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(678, 335);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Услуги";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // sERVICESDataGridView
+            // 
+            this.sERVICESDataGridView.AutoGenerateColumns = false;
+            this.sERVICESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.sERVICESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33,
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35});
+            this.sERVICESDataGridView.DataSource = this.sERVICESBindingSource;
+            this.sERVICESDataGridView.Location = new System.Drawing.Point(59, 55);
+            this.sERVICESDataGridView.Name = "sERVICESDataGridView";
+            this.sERVICESDataGridView.Size = new System.Drawing.Size(543, 220);
+            this.sERVICESDataGridView.TabIndex = 0;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.gUESTSERVICESDataGridView);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(678, 335);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Гостевые услуги";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // gUESTSERVICESDataGridView
+            // 
+            this.gUESTSERVICESDataGridView.AutoGenerateColumns = false;
+            this.gUESTSERVICESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gUESTSERVICESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38,
+            this.dataGridViewTextBoxColumn39,
+            this.dataGridViewTextBoxColumn40});
+            this.gUESTSERVICESDataGridView.DataSource = this.gUESTSERVICESBindingSource;
+            this.gUESTSERVICESDataGridView.Location = new System.Drawing.Point(76, 53);
+            this.gUESTSERVICESDataGridView.Name = "gUESTSERVICESDataGridView";
+            this.gUESTSERVICESDataGridView.Size = new System.Drawing.Size(543, 220);
+            this.gUESTSERVICESDataGridView.TabIndex = 0;
+            this.gUESTSERVICESDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gUESTSERVICESDataGridView_CellContentClick);
+            // 
+            // iMAGESDataGridView
+            // 
+            this.iMAGESDataGridView.AutoGenerateColumns = false;
+            this.iMAGESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.iMAGESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13});
+            this.iMAGESDataGridView.DataSource = this.iMAGESBindingSource;
+            this.iMAGESDataGridView.Location = new System.Drawing.Point(160, 56);
+            this.iMAGESDataGridView.Name = "iMAGESDataGridView";
+            this.iMAGESDataGridView.Size = new System.Drawing.Size(343, 220);
+            this.iMAGESDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -332,69 +503,15 @@
             this.dataGridViewCheckBoxColumn1.HeaderText = "admin";
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             // 
-            // tabControl1
+            // uSERSBindingSource
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage5);
-            this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Location = new System.Drawing.Point(67, 53);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(686, 361);
-            this.tabControl1.TabIndex = 2;
+            this.uSERSBindingSource.DataMember = "USERS";
+            this.uSERSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
             // 
-            // tabPage1
+            // hotel_Urban_StayDataSet
             // 
-            this.tabPage1.Controls.Add(this.uSERSDataGridView);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(678, 335);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "tabPage1";
-            this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.rOOMSDataGridView);
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(678, 335);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "tabPage2";
-            this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // rOOMSBindingSource
-            // 
-            this.rOOMSBindingSource.DataMember = "ROOMS";
-            this.rOOMSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // rOOMSTableAdapter
-            // 
-            this.rOOMSTableAdapter.ClearBeforeFill = true;
-            // 
-            // rOOMSDataGridView
-            // 
-            this.rOOMSDataGridView.AutoGenerateColumns = false;
-            this.rOOMSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rOOMSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10});
-            this.rOOMSDataGridView.DataSource = this.rOOMSBindingSource;
-            this.rOOMSDataGridView.Location = new System.Drawing.Point(33, 55);
-            this.rOOMSDataGridView.Name = "rOOMSDataGridView";
-            this.rOOMSDataGridView.Size = new System.Drawing.Size(559, 220);
-            this.rOOMSDataGridView.TabIndex = 0;
+            this.hotel_Urban_StayDataSet.DataSetName = "Hotel_Urban_StayDataSet";
+            this.hotel_Urban_StayDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -438,42 +555,10 @@
             this.dataGridViewTextBoxColumn10.HeaderText = "booked_quantity";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
             // 
-            // tabPage3
+            // rOOMSBindingSource
             // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.iMAGESDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(678, 335);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "tabPage3";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // iMAGESBindingSource
-            // 
-            this.iMAGESBindingSource.DataMember = "IMAGES";
-            this.iMAGESBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // iMAGESTableAdapter
-            // 
-            this.iMAGESTableAdapter.ClearBeforeFill = true;
-            // 
-            // iMAGESDataGridView
-            // 
-            this.iMAGESDataGridView.AutoGenerateColumns = false;
-            this.iMAGESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.iMAGESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
-            this.iMAGESDataGridView.DataSource = this.iMAGESBindingSource;
-            this.iMAGESDataGridView.Location = new System.Drawing.Point(57, 54);
-            this.iMAGESDataGridView.Name = "iMAGESDataGridView";
-            this.iMAGESDataGridView.Size = new System.Drawing.Size(565, 220);
-            this.iMAGESDataGridView.TabIndex = 0;
+            this.rOOMSBindingSource.DataMember = "ROOMS";
+            this.rOOMSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
             // 
             // dataGridViewTextBoxColumn11
             // 
@@ -493,59 +578,10 @@
             this.dataGridViewTextBoxColumn13.HeaderText = "image_url";
             this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
             // 
-            // dataGridViewTextBoxColumn14
+            // iMAGESBindingSource
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "file_name";
-            this.dataGridViewTextBoxColumn14.HeaderText = "file_name";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "upload_date";
-            this.dataGridViewTextBoxColumn15.HeaderText = "upload_date";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.AutoScroll = true;
-            this.tabPage4.Controls.Add(this.gUESTSDataGridView);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(678, 335);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "tabPage4";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // gUESTSBindingSource
-            // 
-            this.gUESTSBindingSource.DataMember = "GUESTS";
-            this.gUESTSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // gUESTSTableAdapter
-            // 
-            this.gUESTSTableAdapter.ClearBeforeFill = true;
-            // 
-            // gUESTSDataGridView
-            // 
-            this.gUESTSDataGridView.AutoGenerateColumns = false;
-            this.gUESTSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gUESTSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn17,
-            this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19,
-            this.dataGridViewTextBoxColumn20,
-            this.dataGridViewTextBoxColumn21,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25});
-            this.gUESTSDataGridView.DataSource = this.gUESTSBindingSource;
-            this.gUESTSDataGridView.Location = new System.Drawing.Point(45, 51);
-            this.gUESTSDataGridView.Name = "gUESTSDataGridView";
-            this.gUESTSDataGridView.Size = new System.Drawing.Size(583, 220);
-            this.gUESTSDataGridView.TabIndex = 0;
+            this.iMAGESBindingSource.DataMember = "IMAGES";
+            this.iMAGESBindingSource.DataSource = this.hotel_Urban_StayDataSet;
             // 
             // dataGridViewTextBoxColumn16
             // 
@@ -607,42 +643,10 @@
             this.dataGridViewTextBoxColumn25.HeaderText = "booking_date";
             this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
             // 
-            // tabPage5
+            // gUESTSBindingSource
             // 
-            this.tabPage5.AutoScroll = true;
-            this.tabPage5.Controls.Add(this.rEVIEWSDataGridView);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(678, 335);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "tabPage5";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // rEVIEWSBindingSource
-            // 
-            this.rEVIEWSBindingSource.DataMember = "REVIEWS";
-            this.rEVIEWSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // rEVIEWSTableAdapter
-            // 
-            this.rEVIEWSTableAdapter.ClearBeforeFill = true;
-            // 
-            // rEVIEWSDataGridView
-            // 
-            this.rEVIEWSDataGridView.AutoGenerateColumns = false;
-            this.rEVIEWSDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rEVIEWSDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30});
-            this.rEVIEWSDataGridView.DataSource = this.rEVIEWSBindingSource;
-            this.rEVIEWSDataGridView.Location = new System.Drawing.Point(50, 55);
-            this.rEVIEWSDataGridView.Name = "rEVIEWSDataGridView";
-            this.rEVIEWSDataGridView.Size = new System.Drawing.Size(581, 220);
-            this.rEVIEWSDataGridView.TabIndex = 0;
+            this.gUESTSBindingSource.DataMember = "GUESTS";
+            this.gUESTSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
             // 
             // dataGridViewTextBoxColumn26
             // 
@@ -674,42 +678,10 @@
             this.dataGridViewTextBoxColumn30.HeaderText = "created_at";
             this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
             // 
-            // tabPage6
+            // rEVIEWSBindingSource
             // 
-            this.tabPage6.AutoScroll = true;
-            this.tabPage6.Controls.Add(this.sERVICESDataGridView);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(678, 335);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "tabPage6";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // sERVICESBindingSource
-            // 
-            this.sERVICESBindingSource.DataMember = "SERVICES";
-            this.sERVICESBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // sERVICESTableAdapter
-            // 
-            this.sERVICESTableAdapter.ClearBeforeFill = true;
-            // 
-            // sERVICESDataGridView
-            // 
-            this.sERVICESDataGridView.AutoGenerateColumns = false;
-            this.sERVICESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.sERVICESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35});
-            this.sERVICESDataGridView.DataSource = this.sERVICESBindingSource;
-            this.sERVICESDataGridView.Location = new System.Drawing.Point(59, 55);
-            this.sERVICESDataGridView.Name = "sERVICESDataGridView";
-            this.sERVICESDataGridView.Size = new System.Drawing.Size(545, 220);
-            this.sERVICESDataGridView.TabIndex = 0;
+            this.rEVIEWSBindingSource.DataMember = "REVIEWS";
+            this.rEVIEWSBindingSource.DataSource = this.hotel_Urban_StayDataSet;
             // 
             // dataGridViewTextBoxColumn31
             // 
@@ -741,41 +713,10 @@
             this.dataGridViewTextBoxColumn35.HeaderText = "detailed_description";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
             // 
-            // tabPage7
+            // sERVICESBindingSource
             // 
-            this.tabPage7.Controls.Add(this.gUESTSERVICESDataGridView);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(678, 335);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "tabPage7";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // gUESTSERVICESBindingSource
-            // 
-            this.gUESTSERVICESBindingSource.DataMember = "GUESTSERVICES";
-            this.gUESTSERVICESBindingSource.DataSource = this.hotel_Urban_StayDataSet;
-            // 
-            // gUESTSERVICESTableAdapter
-            // 
-            this.gUESTSERVICESTableAdapter.ClearBeforeFill = true;
-            // 
-            // gUESTSERVICESDataGridView
-            // 
-            this.gUESTSERVICESDataGridView.AutoGenerateColumns = false;
-            this.gUESTSERVICESDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gUESTSERVICESDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn36,
-            this.dataGridViewTextBoxColumn37,
-            this.dataGridViewTextBoxColumn38,
-            this.dataGridViewTextBoxColumn39,
-            this.dataGridViewTextBoxColumn40});
-            this.gUESTSERVICESDataGridView.DataSource = this.gUESTSERVICESBindingSource;
-            this.gUESTSERVICESDataGridView.Location = new System.Drawing.Point(76, 53);
-            this.gUESTSERVICESDataGridView.Name = "gUESTSERVICESDataGridView";
-            this.gUESTSERVICESDataGridView.Size = new System.Drawing.Size(545, 220);
-            this.gUESTSERVICESDataGridView.TabIndex = 0;
+            this.sERVICESBindingSource.DataMember = "SERVICES";
+            this.sERVICESBindingSource.DataSource = this.hotel_Urban_StayDataSet;
             // 
             // dataGridViewTextBoxColumn36
             // 
@@ -807,6 +748,51 @@
             this.dataGridViewTextBoxColumn40.HeaderText = "status";
             this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
             // 
+            // gUESTSERVICESBindingSource
+            // 
+            this.gUESTSERVICESBindingSource.DataMember = "GUESTSERVICES";
+            this.gUESTSERVICESBindingSource.DataSource = this.hotel_Urban_StayDataSet;
+            // 
+            // uSERSTableAdapter
+            // 
+            this.uSERSTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.GUESTSERVICESTableAdapter = null;
+            this.tableAdapterManager.GUESTSTableAdapter = null;
+            this.tableAdapterManager.IMAGESTableAdapter = null;
+            this.tableAdapterManager.REVIEWSTableAdapter = null;
+            this.tableAdapterManager.ROOMSTableAdapter = null;
+            this.tableAdapterManager.SERVICESTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = WindowsFormsApp1.Hotel_Urban_StayDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.USERSTableAdapter = this.uSERSTableAdapter;
+            // 
+            // rOOMSTableAdapter
+            // 
+            this.rOOMSTableAdapter.ClearBeforeFill = true;
+            // 
+            // iMAGESTableAdapter
+            // 
+            this.iMAGESTableAdapter.ClearBeforeFill = true;
+            // 
+            // gUESTSTableAdapter
+            // 
+            this.gUESTSTableAdapter.ClearBeforeFill = true;
+            // 
+            // rEVIEWSTableAdapter
+            // 
+            this.rEVIEWSTableAdapter.ClearBeforeFill = true;
+            // 
+            // sERVICESTableAdapter
+            // 
+            this.sERVICESTableAdapter.ClearBeforeFill = true;
+            // 
+            // gUESTSERVICESTableAdapter
+            // 
+            this.gUESTSERVICESTableAdapter.ClearBeforeFill = true;
+            // 
             // AdminForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -817,8 +803,6 @@
             this.Name = "AdminForm";
             this.Text = "AdminForm";
             this.Load += new System.EventHandler(this.AdminForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.hotel_Urban_StayDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingNavigator)).EndInit();
             this.uSERSBindingNavigator.ResumeLayout(false);
             this.uSERSBindingNavigator.PerformLayout();
@@ -826,23 +810,25 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rOOMSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rOOMSDataGridView)).EndInit();
             this.tabPage3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.iMAGESBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iMAGESDataGridView)).EndInit();
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gUESTSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gUESTSDataGridView)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.rEVIEWSBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rEVIEWSDataGridView)).EndInit();
             this.tabPage6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.sERVICESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sERVICESDataGridView)).EndInit();
             this.tabPage7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gUESTSERVICESBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gUESTSERVICESDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iMAGESDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.uSERSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hotel_Urban_StayDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rOOMSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.iMAGESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gUESTSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rEVIEWSBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sERVICESBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gUESTSERVICESBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -888,12 +874,6 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.BindingSource iMAGESBindingSource;
         private Hotel_Urban_StayDataSetTableAdapters.IMAGESTableAdapter iMAGESTableAdapter;
-        private System.Windows.Forms.DataGridView iMAGESDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.BindingSource gUESTSBindingSource;
         private Hotel_Urban_StayDataSetTableAdapters.GUESTSTableAdapter gUESTSTableAdapter;
@@ -935,5 +915,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn40;
+        private System.Windows.Forms.DataGridView iMAGESDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     }
 }

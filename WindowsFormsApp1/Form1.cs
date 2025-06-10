@@ -6,14 +6,12 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        // Замените на вашу строку подключения
         private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
 
         public Form1()
         {
             InitializeComponent();
         }
-
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
@@ -32,8 +30,8 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string username = "admin"; // Для простоты фиксируем username, можно добавить поле для ввода
-            string password = textBox2.Text;
+            string username = textBox4.Text.Trim();
+            string password = textBox2.Text.Trim();
 
             try
             {
@@ -51,14 +49,13 @@ namespace WindowsFormsApp1
                             if (reader.Read())
                             {
                                 int userId = reader.GetInt32(0);
-                                // Успешная авторизация администратора
                                 AdminForm adminForm = new AdminForm();
                                 adminForm.Show();
                                 this.Hide();
                             }
                             else
                             {
-                                MessageBox.Show("Неверный пароль или пользователь не является администратором.", "Ошибка входа", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Неверный логин, пароль или пользователь не является администратором.", "Ошибка входа", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                     }
@@ -68,6 +65,12 @@ namespace WindowsFormsApp1
             {
                 MessageBox.Show($"Ошибка подключения к базе данных: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RegistrationForm regForm = new RegistrationForm();
+            regForm.ShowDialog();
         }
     }
 }
