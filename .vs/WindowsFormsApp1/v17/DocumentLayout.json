@@ -1,73 +1,89 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\",
+  "WorkspaceRootPath": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\availableroomsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\availableroomsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\hotel_uran_stay\\windowsformsapp1\\orderservicesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\orderservicesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\availableroomsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\availableroomsform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\hotel_uran_stay\\windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\hotel_uran_stay\\windowsformsapp1\\orderservicesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\orderservicesform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\hotel_uran_stay\\windowsformsapp1\\orderservicesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\orderservicesform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\hotel_uran_stay\\windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\availableroomsform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\mainform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\registrationform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|c:\\users\\3291922-1\\desktop\\windowsformsapp1\\windowsformsapp1\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\mainform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\registrationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\registrationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\registrationform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\adminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\adminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\adminform.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\adminform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\adminform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\adminform.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\adminform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\windowsformsapp1\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
+      "AbsoluteMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\windowsformsapp1\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}",
       "RelativeMoniker": "D:0:0:{1BBB6C7F-9907-4E21-A2C0-B01DEB184DAE}|WindowsFormsApp1\\WindowsFormsApp1.csproj|solutionrelative:windowsformsapp1\\form1.resx||{FF4D6ACA-9352-4A5F-821E-F4D6EBDCAB11}"
     }
   ],
@@ -78,66 +94,120 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 8,
           "Children": [
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Program.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\Program.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Program.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T06:56:19.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "OrderServicesForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\OrderServicesForm.Designer.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\OrderServicesForm.Designer.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\OrderServicesForm.Designer.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\OrderServicesForm.Designer.cs",
+              "ViewState": "AQIAAGgAAAAAAAAAAAAmwHsAAAA6AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T06:52:04.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "OrderServicesForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\OrderServicesForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\OrderServicesForm.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\OrderServicesForm.cs",
+              "RelativeToolTip": "WindowsFormsApp1\\OrderServicesForm.cs",
+              "ViewState": "AQIAAHQAAAAAAAAAAAAmwIwAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T06:52:01.941Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderServicesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\OrderServicesForm.cs",
+              "RelativeDocumentMoniker": "WindowsFormsApp1\\OrderServicesForm.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\OrderServicesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "WindowsFormsApp1\\OrderServicesForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-11T06:51:55.45Z",
+              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "AvailableRoomsForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AvailableRoomsForm.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AvailableRoomsForm.Designer.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.Designer.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AvailableRoomsForm.Designer.cs",
               "RelativeToolTip": "WindowsFormsApp1\\AvailableRoomsForm.Designer.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAkwBMAAAAxAAAA",
+              "ViewState": "AQIAAK4AAAAAAAAAAAAmwMQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T09:06:13.955Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "AvailableRoomsForm.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AvailableRoomsForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AvailableRoomsForm.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AvailableRoomsForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\AvailableRoomsForm.cs",
-              "ViewState": "AQIAAF0AAAAAAAAAAAAuwDcAAAAhAAAA",
+              "ViewState": "AQIAAOkAAAAAAAAAAAAmwA4BAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T09:05:51.485Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
               "Title": "AvailableRoomsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AvailableRoomsForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AvailableRoomsForm.cs",
               "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\AvailableRoomsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "..\\WindowsFormsApp1\\WindowsFormsApp1\\AvailableRoomsForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-10T09:05:45.005Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-06-10T09:05:45.005Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "MainForm.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\MainForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\MainForm.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\MainForm.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\MainForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\MainForm.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAFgAAAABAAAA",
+              "ViewState": "AQIAAJsAAAAAAAAAAAAmwKcAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T08:29:13.66Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 9,
               "Title": "MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\MainForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\MainForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\MainForm.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "WindowsFormsApp1\\MainForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T08:29:01.291Z",
@@ -145,36 +215,34 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
               "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "..\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T10:56:13.472Z",
-              "EditorCaption": " [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]"
+              "WhenOpened": "2025-05-05T10:56:13.472Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.cs",
               "ViewState": "AQIAAFUAAAAAAAAAAAAUwHAAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T11:07:14.482Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T11:07:14.482Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 10,
               "Title": "RegistrationForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\RegistrationForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\RegistrationForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\RegistrationForm.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\RegistrationForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\RegistrationForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "RelativeToolTip": "WindowsFormsApp1\\RegistrationForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T07:10:56.274Z",
@@ -182,37 +250,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 2,
               "Title": "RegistrationForm.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\RegistrationForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\RegistrationForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\RegistrationForm.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\RegistrationForm.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\RegistrationForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\RegistrationForm.cs",
-              "ViewState": "AQIAAI8AAAAAAAAAAAAkwNIAAAAfAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAPcAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T07:11:11.014Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Form1.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.Designer.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.Designer.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.Designer.cs",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.Designer.cs",
               "ViewState": "AQIAACMBAAAAAAAAAADwvz4BAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T11:07:23.983Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T11:07:23.983Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 14,
               "Title": "MainForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\MainForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\MainForm.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\MainForm.Designer.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\MainForm.Designer.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\MainForm.Designer.cs",
               "RelativeToolTip": "WindowsFormsApp1\\MainForm.Designer.cs",
               "ViewState": "AQIAAHAAAAAAAAAAAAAUwJwAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -221,11 +288,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 17,
               "Title": "AdminForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AdminForm.Designer.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.Designer.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.Designer.cs",
               "RelativeToolTip": "WindowsFormsApp1\\AdminForm.Designer.cs",
               "ViewState": "AQIAAFEDAAAAAAAAAADwv2kDAAA2AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -233,22 +300,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 16,
               "Title": "AdminForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AdminForm.cs",
               "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
-              "RelativeToolTip": "WindowsFormsApp1\\AdminForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
+              "RelativeToolTip": "..\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.cs [\u041A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0442\u043E\u0440]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-10T06:26:00.542Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 15,
               "Title": "RegistrationForm.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\RegistrationForm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\RegistrationForm.Designer.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\RegistrationForm.Designer.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\RegistrationForm.Designer.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\RegistrationForm.Designer.cs",
               "RelativeToolTip": "WindowsFormsApp1\\RegistrationForm.Designer.cs",
               "ViewState": "AQIAABMAAAAAAAAAAAAgwN4AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -257,22 +324,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 18,
               "Title": "AdminForm.resx",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.resx",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.resx",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AdminForm.resx",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.resx",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.resx",
               "RelativeToolTip": "WindowsFormsApp1\\AdminForm.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
               "WhenOpened": "2025-06-10T07:51:29.01Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 19,
               "Title": "AdminForm.cs",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.cs",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.cs",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\AdminForm.cs",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\AdminForm.cs",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\AdminForm.cs",
               "RelativeToolTip": "WindowsFormsApp1\\AdminForm.cs",
               "ViewState": "AQIAABIAAAAAAAAAAAAkwCYAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -280,15 +347,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 20,
               "Title": "Form1.resx",
-              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.resx",
+              "DocumentMoniker": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.resx",
               "RelativeDocumentMoniker": "WindowsFormsApp1\\Form1.resx",
-              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\WindowsFormsApp1\\WindowsFormsApp1\\Form1.resx",
+              "ToolTip": "C:\\Users\\3291922-1\\Desktop\\Hotel_Uran_Stay\\WindowsFormsApp1\\Form1.resx",
               "RelativeToolTip": "WindowsFormsApp1\\Form1.resx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001005|",
-              "WhenOpened": "2025-05-05T11:07:34.606Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-05-05T11:07:34.606Z"
             }
           ]
         }

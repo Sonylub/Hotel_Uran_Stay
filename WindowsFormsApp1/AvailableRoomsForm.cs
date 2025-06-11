@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
@@ -10,11 +11,15 @@ namespace WindowsFormsApp1
         private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
         private DataTable roomsTable;
+        private List<string> roomImages;
+        private int currentImageIndex;
 
         public AvailableRoomsForm(int userId)
         {
             InitializeComponent();
             this.userId = userId;
+            roomImages = new List<string>();
+            currentImageIndex = 0;
             LoadRooms();
         }
 
@@ -59,29 +64,79 @@ namespace WindowsFormsApp1
 
         private void LoadImages(int roomId)
         {
-            pictureBoxRoom.Image = null; // Очистка изображения
+            roomImages.Clear();
+            currentImageIndex = 0;
+            pictureBoxRoom.Image = null;
+
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
                     conn.Open();
-                    string query = "SELECT TOP 1 image_url FROM IMAGES WHERE room_id = @roomId";
+                    string query = "SELECT image_url FROM IMAGES WHERE room_id = @roomId";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.Parameters.AddWithValue("@roomId", roomId);
-                        object result = cmd.ExecuteScalar();
-                        if (result != null)
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            // Заглушка: предполагается, что image_url доступен локально или через URL
-                            // Для реальной загрузки используйте WebClient или PictureBox.Load
-                            pictureBoxRoom.ImageLocation = result.ToString();
+                            while (reader.Read())
+                            {
+                                roomImages.Add(reader.GetString(0));
+                            }
                         }
                     }
+                }
+
+                if (roomImages.Count > 0)
+                {
+                    UpdateImage(); // Исправлено: вызов UpdateImage вместо UpdateImageDisplay
+                    buttonNextImage.Enabled = roomImages.Count > 1;
+                    buttonPrevImage.Enabled = roomImages.Count > 1;
+                }
+                else
+                {
+                    buttonNextImage.Enabled = false;
+                    buttonPrevImage.Enabled = false;
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ошибка загрузки изображения: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка загрузки изображений: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void UpdateImage()
+        {
+            if (roomImages.Count > 0 && currentImageIndex >= 0 && currentImageIndex < roomImages.Count)
+            {
+                pictureBoxRoom.ImageLocation = roomImages[currentImageIndex];
+                // Для загрузки изображений через URL можно использовать WebClient:
+                // using (var client = new System.Net.WebClient())
+                // {
+                //     byte[] imageData = client.DownloadData(roomImages[currentImageIndex]);
+                //     using (var stream = new System.IO.MemoryStream(imageData))
+                //     {
+                //         pictureBoxRoom.Image = System.Drawing.Image.FromStream(stream);
+                //     }
+                // }
+            }
+        }
+
+        private void buttonPrevImage_Click(object sender, EventArgs e)
+        {
+            if (currentImageIndex > 0)
+            {
+                currentImageIndex--;
+                UpdateImage(); // Исправлено: вызов UpdateImage вместо UpdateImageDisplay
+            }
+        }
+
+        private void buttonNextImage_Click(object sender, EventArgs e)
+        {
+            if (currentImageIndex < roomImages.Count - 1)
+            {
+                currentImageIndex++;
+                UpdateImage(); // Исправлено: вызов UpdateImage вместо UpdateImageDisplay
             }
         }
 
@@ -93,9 +148,29 @@ namespace WindowsFormsApp1
                 return;
             }
 
+            DateTime checkInDate = dateTimePickerCheckIn.Value;
+            DateTime checkOutDate = dateTimePickerCheckOut.Value;
+            string comment = textBoxComment.Text.Trim();
+
+            if (checkInDate < DateTime.Today)
+            {
+                MessageBox.Show("Дата заезда не может быть раньше сегодняшнего дня.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (checkOutDate <= checkInDate)
+            {
+                MessageBox.Show("Дата выезда должна быть позже даты заезда.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (comment.Length > 500)
+            {
+                MessageBox.Show("Комментарий не должен превышать 500 символов.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             int roomId = Convert.ToInt32(dataGridViewRooms.SelectedRows[0].Cells["room_id"].Value);
-            int quantity = Convert.ToInt32(dataGridViewRooms.SelectedRows[0].Cells["quantity"].Value);
-            int bookedQuantity = Convert.ToInt32(dataGridViewRooms.SelectedRows[0].Cells["booked_quantity"].Value);
 
             try
             {
@@ -116,9 +191,27 @@ namespace WindowsFormsApp1
                                 if (result == null)
                                 {
                                     MessageBox.Show("Гость не найден. Пожалуйста, зарегистрируйтесь.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    transaction.Rollback();
                                     return;
                                 }
                                 guestId = Convert.ToInt32(result);
+                            }
+
+                            // Проверка доступности номера на выбранные даты
+                            string checkAvailabilityQuery = "SELECT COUNT(*) FROM GUESTS WHERE room_id = @roomId " +
+                                                           "AND (@checkInDate < check_out_date AND @checkOutDate > check_in_date)";
+                            using (SqlCommand cmd = new SqlCommand(checkAvailabilityQuery, conn, transaction))
+                            {
+                                cmd.Parameters.AddWithValue("@roomId", roomId);
+                                cmd.Parameters.AddWithValue("@checkInDate", checkInDate);
+                                cmd.Parameters.AddWithValue("@checkOutDate", checkOutDate);
+                                int count = (int)cmd.ExecuteScalar();
+                                if (count > 0)
+                                {
+                                    MessageBox.Show("Номер занят на выбранные даты.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    transaction.Rollback();
+                                    return;
+                                }
                             }
 
                             // Обновление ROOMS
@@ -137,18 +230,24 @@ namespace WindowsFormsApp1
                                 }
                             }
 
-                            // Обновление GUESTS (добавление room_id)
-                            string updateGuestsQuery = "UPDATE GUESTS SET room_id = @roomId WHERE guest_id = @guestId";
+                            // Обновление GUESTS
+                            string updateGuestsQuery = "UPDATE GUESTS SET room_id = @roomId, check_in_date = @checkInDate, " +
+                                                      "check_out_date = @checkOutDate, comment = @comment, booking_date = @bookingDate " +
+                                                      "WHERE guest_id = @guestId";
                             using (SqlCommand cmd = new SqlCommand(updateGuestsQuery, conn, transaction))
                             {
                                 cmd.Parameters.AddWithValue("@roomId", roomId);
+                                cmd.Parameters.AddWithValue("@checkInDate", checkInDate);
+                                cmd.Parameters.AddWithValue("@checkOutDate", checkOutDate);
+                                cmd.Parameters.AddWithValue("@comment", string.IsNullOrWhiteSpace(comment) ? (object)DBNull.Value : comment);
+                                cmd.Parameters.AddWithValue("@bookingDate", DateTime.Now);
                                 cmd.Parameters.AddWithValue("@guestId", guestId);
                                 cmd.ExecuteNonQuery();
                             }
 
                             transaction.Commit();
                             MessageBox.Show("Номер успешно забронирован!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadRooms(); // Обновить таблицу
+                            LoadRooms();
                         }
                         catch (Exception ex)
                         {
