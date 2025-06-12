@@ -1,6 +1,10 @@
 ﻿using System;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
+
+
+
 
 namespace WindowsFormsApp1
 {
@@ -73,6 +77,12 @@ namespace WindowsFormsApp1
             regForm.ShowDialog();
         }
 
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
         private void button2_Click(object sender, EventArgs e)
         {
             string username = textBox3.Text.Trim();
@@ -111,5 +121,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show($"Ошибка подключения к базе данных: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }

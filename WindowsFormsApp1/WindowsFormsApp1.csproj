@@ -64,6 +64,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLK.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLK.Designer.cs">
+      <DependentUpon>FormLK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Hotel_Urban_StayDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,6 +104,9 @@
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AvailableRoomsForm.resx">
+      <DependentUpon>AvailableRoomsForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -116,6 +125,9 @@
     </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReviewsForm.resx">
+      <DependentUpon>ReviewsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Hotel_Urban_StayDataSet.xsc">
       <DependentUpon>Hotel_Urban_StayDataSet.xsd</DependentUpon>

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -16,6 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.userId = userId;
             LoadReviews();
+            UpdateSubmitButtonState();
         }
 
         private void LoadReviews()
@@ -33,19 +35,89 @@ namespace WindowsFormsApp1
                     {
                         reviewsTable = new DataTable();
                         adapter.Fill(reviewsTable);
-                        dataGridViewReviews.DataSource = reviewsTable;
-                        dataGridViewReviews.Columns["review_id"].HeaderText = "ID";
-                        dataGridViewReviews.Columns["guest_id"].HeaderText = "ID Гостя";
-                        dataGridViewReviews.Columns["rating"].HeaderText = "Рейтинг";
-                        dataGridViewReviews.Columns["comment"].HeaderText = "Комментарий";
-                        dataGridViewReviews.Columns["created_at"].HeaderText = "Дата";
-                        dataGridViewReviews.Columns["name"].HeaderText = "Имя";
+                        PopulateReviewCards();
                     }
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show($"Ошибка загрузки отзывов: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void PopulateReviewCards()
+        {
+            flowLayoutPanelReviews.Controls.Clear();
+            if (reviewsTable.Rows.Count == 0)
+            {
+                Label lblNoReviews = new Label
+                {
+                    Text = "Отзывы пока отсутствуют",
+                    Font = new Font("Segoe UI", 12, FontStyle.Italic),
+                    ForeColor = Color.FromArgb(107, 114, 128),
+                    AutoSize = true,
+                    Location = new Point(10, 10)
+                };
+                flowLayoutPanelReviews.Controls.Add(lblNoReviews);
+                return;
+            }
+
+            foreach (DataRow row in reviewsTable.Rows)
+            {
+                string name = row["name"].ToString();
+                int rating = Convert.ToInt32(row["rating"]);
+                string comment = row["comment"].ToString();
+                DateTime createdAt = Convert.ToDateTime(row["created_at"]);
+
+                Panel card = new Panel
+                {
+                    Size = new Size(560, 180),
+                    Margin = new Padding(10),
+                    BorderStyle = BorderStyle.FixedSingle,
+                    BackColor = Color.White
+                };
+
+                Label lblName = new Label
+                {
+                    Text = name,
+                    Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                    Location = new Point(10, 10),
+                    Size = new Size(540, 30),
+                    ForeColor = Color.FromArgb(31, 41, 55)
+                };
+
+                Label lblRating = new Label
+                {
+                    Text = $"Рейтинг: {new string('★', rating)}{new string('☆', 5 - rating)}",
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                    Location = new Point(10, 40),
+                    Size = new Size(540, 20),
+                    ForeColor = Color.FromArgb(245, 158, 11)
+                };
+
+                Label lblComment = new Label
+                {
+                    Text = comment.Length > 200 ? comment.Substring(0, 200) + "..." : comment,
+                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
+                    Location = new Point(10, 60),
+                    Size = new Size(540, 80),
+                    ForeColor = Color.FromArgb(107, 114, 128)
+                };
+
+                Label lblDate = new Label
+                {
+                    Text = $"Дата: {createdAt:d}",
+                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
+                    Location = new Point(10, 140),
+                    Size = new Size(540, 20),
+                    ForeColor = Color.FromArgb(107, 114, 128)
+                };
+
+                card.Controls.AddRange(new Control[] { lblName, lblRating, lblComment, lblDate });
+                card.MouseEnter += (s, e) => card.BackColor = Color.FromArgb(243, 244, 246);
+                card.MouseLeave += (s, e) => card.BackColor = Color.White;
+
+                flowLayoutPanelReviews.Controls.Add(card);
             }
         }
 
@@ -97,7 +169,7 @@ namespace WindowsFormsApp1
                                 guestId = Convert.ToInt32(result);
                             }
 
-                            // Вставка нового отзыва (без review_id, так как он IDENTITY)
+                            // Вставка нового отзыва
                             string insertReviewQuery = @"
                                 INSERT INTO REVIEWS (guest_id, rating, comment, created_at)
                                 VALUES (@guestId, @rating, @comment, @createdAt)";
@@ -112,7 +184,7 @@ namespace WindowsFormsApp1
 
                             transaction.Commit();
                             MessageBox.Show("Отзыв успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadReviews(); // Обновить таблицу отзывов
+                            LoadReviews();
                             textBoxComment.Clear();
                             numericUpDownRating.Value = 1;
                         }
@@ -133,6 +205,21 @@ namespace WindowsFormsApp1
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void textBoxComment_TextChanged(object sender, EventArgs e)
+        {
+            UpdateSubmitButtonState();
+        }
+
+        private void numericUpDownRating_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateSubmitButtonState();
+        }
+
+        private void UpdateSubmitButtonState()
+        {
+            buttonSubmitReview.Enabled = !string.IsNullOrWhiteSpace(textBoxComment.Text) && textBoxComment.Text.Length <= 500;
         }
     }
 }

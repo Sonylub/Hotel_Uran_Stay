@@ -13,6 +13,8 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             SetPlaceholders();
+            this.FormBorderStyle = FormBorderStyle.None;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void SetPlaceholders()
@@ -34,7 +36,7 @@ namespace WindowsFormsApp1
             if (textBoxUsername.Text == "Введите логин")
             {
                 textBoxUsername.Text = "";
-                textBoxUsername.ForeColor = System.Drawing.Color.Black;
+                textBoxUsername.ForeColor = System.Drawing.Color.White;
             }
         }
 
@@ -43,7 +45,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrWhiteSpace(textBoxUsername.Text))
             {
                 textBoxUsername.Text = "Введите логин";
-                textBoxUsername.ForeColor = System.Drawing.Color.Gray;
+                textBoxUsername.ForeColor = System.Drawing.Color.Silver;
             }
         }
 
@@ -52,7 +54,7 @@ namespace WindowsFormsApp1
             if (textBoxPassword.Text == "Введите пароль")
             {
                 textBoxPassword.Text = "";
-                textBoxPassword.ForeColor = System.Drawing.Color.Black;
+                textBoxPassword.ForeColor = System.Drawing.Color.White;
                 textBoxPassword.PasswordChar = '*';
             }
         }
@@ -62,7 +64,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrWhiteSpace(textBoxPassword.Text))
             {
                 textBoxPassword.Text = "Введите пароль";
-                textBoxPassword.ForeColor = System.Drawing.Color.Gray;
+                textBoxPassword.ForeColor = System.Drawing.Color.Silver;
                 textBoxPassword.PasswordChar = '\0';
             }
         }
@@ -72,7 +74,7 @@ namespace WindowsFormsApp1
             if (textBoxFirstName.Text == "Введите имя")
             {
                 textBoxFirstName.Text = "";
-                textBoxFirstName.ForeColor = System.Drawing.Color.Black;
+                textBoxFirstName.ForeColor = System.Drawing.Color.White;
             }
         }
 
@@ -81,7 +83,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrWhiteSpace(textBoxFirstName.Text))
             {
                 textBoxFirstName.Text = "Введите имя";
-                textBoxFirstName.ForeColor = System.Drawing.Color.Gray;
+                textBoxFirstName.ForeColor = System.Drawing.Color.Silver;
             }
         }
 
@@ -90,7 +92,7 @@ namespace WindowsFormsApp1
             if (textBoxEmail.Text == "example@domain.com")
             {
                 textBoxEmail.Text = "";
-                textBoxEmail.ForeColor = System.Drawing.Color.Black;
+                textBoxEmail.ForeColor = System.Drawing.Color.White;
             }
         }
 
@@ -99,7 +101,7 @@ namespace WindowsFormsApp1
             if (string.IsNullOrWhiteSpace(textBoxEmail.Text))
             {
                 textBoxEmail.Text = "example@domain.com";
-                textBoxEmail.ForeColor = System.Drawing.Color.Gray;
+                textBoxEmail.ForeColor = System.Drawing.Color.Silver;
             }
         }
 
@@ -108,28 +110,23 @@ namespace WindowsFormsApp1
             if (textBoxPhone.Text == "+7(123)456-78-90")
             {
                 textBoxPhone.Text = "";
-                textBoxPhone.ForeColor = System.Drawing.Color.Black;
+                textBoxPhone.ForeColor = System.Drawing.Color.White;
             }
         }
 
         private void textBoxPhone_Leave(object sender, EventArgs e)
         {
-            if (textBoxPhone.Text == "+7(123)456-78-90" || string.IsNullOrWhiteSpace(textBoxPhone.Text))
+            if (string.IsNullOrWhiteSpace(textBoxPhone.Text) || textBoxPhone.Text == "+7(123)456-78-90")
             {
                 textBoxPhone.Text = "+7(123)456-78-90";
-                textBoxPhone.ForeColor = System.Drawing.Color.Gray;
+                textBoxPhone.ForeColor = System.Drawing.Color.Silver;
             }
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            textBoxPassword.PasswordChar = checkBox1.Checked ? '\0' : '*';
         }
 
         private bool IsValidEmail(string email)
         {
             if (string.IsNullOrWhiteSpace(email) || email == "example@domain.com")
-                return true; // Email is optional
+                return true;
             string pattern = @"^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$";
             return Regex.IsMatch(email, pattern);
         }
@@ -137,7 +134,7 @@ namespace WindowsFormsApp1
         private bool IsValidPhone(string phone)
         {
             if (string.IsNullOrWhiteSpace(phone) || phone == "+7(123)456-78-90")
-                return true; // Phone is optional
+                return true;
             string pattern = @"^\+?\d{1,3}?[-.\s]?\(?\d{3}\)?[-.\s]?\d{3}[-.\s]?\d{2}[-.\s]?\d{2}$";
             return Regex.IsMatch(phone, pattern);
         }
@@ -186,7 +183,6 @@ namespace WindowsFormsApp1
                 {
                     conn.Open();
 
-                    // Получение следующего user_id
                     int userId;
                     string getUserIdQuery = "SELECT ISNULL(MAX(user_id), 0) + 1 FROM USERS";
                     using (SqlCommand cmdUserId = new SqlCommand(getUserIdQuery, conn))
@@ -194,7 +190,6 @@ namespace WindowsFormsApp1
                         userId = (int)cmdUserId.ExecuteScalar();
                     }
 
-                    // Получение следующего guest_id
                     int guestId;
                     string getGuestIdQuery = "SELECT ISNULL(MAX(guest_id), 0) + 1 FROM GUESTS";
                     using (SqlCommand cmdGuestId = new SqlCommand(getGuestIdQuery, conn))
@@ -202,7 +197,6 @@ namespace WindowsFormsApp1
                         guestId = (int)cmdGuestId.ExecuteScalar();
                     }
 
-                    // Проверка уникальности username
                     string checkQuery = "SELECT COUNT(*) FROM USERS WHERE username = @username";
                     using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
                     {
@@ -215,7 +209,6 @@ namespace WindowsFormsApp1
                         }
                     }
 
-                    // Вставка в USERS и GUESTS
                     string query = "INSERT INTO USERS (user_id, username, admin, password) VALUES (@userId, @username, 0, @password); " +
                                    "INSERT INTO GUESTS (guest_id, user_id, name, email, phone) VALUES (@guestId, @userId, @name, @email, @phone);";
                     using (SqlCommand cmd = new SqlCommand(query, conn))
@@ -241,6 +234,11 @@ namespace WindowsFormsApp1
         }
 
         private void buttonCancel_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }

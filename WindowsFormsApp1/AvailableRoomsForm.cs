@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
@@ -13,6 +15,7 @@ namespace WindowsFormsApp1
         private DataTable roomsTable;
         private List<string> roomImages;
         private int currentImageIndex;
+        private int selectedRoomId = -1;
 
         public AvailableRoomsForm(int userId)
         {
@@ -21,6 +24,7 @@ namespace WindowsFormsApp1
             roomImages = new List<string>();
             currentImageIndex = 0;
             LoadRooms();
+            UpdateBookingButtonState();
         }
 
         private void LoadRooms()
@@ -36,14 +40,7 @@ namespace WindowsFormsApp1
                     {
                         roomsTable = new DataTable();
                         adapter.Fill(roomsTable);
-                        dataGridViewRooms.DataSource = roomsTable;
-                        dataGridViewRooms.Columns["room_id"].HeaderText = "ID";
-                        dataGridViewRooms.Columns["category"].HeaderText = "Категория";
-                        dataGridViewRooms.Columns["description"].HeaderText = "Описание";
-                        dataGridViewRooms.Columns["price"].HeaderText = "Цена";
-                        dataGridViewRooms.Columns["status"].HeaderText = "Статус";
-                        dataGridViewRooms.Columns["quantity"].HeaderText = "Всего";
-                        dataGridViewRooms.Columns["booked_quantity"].HeaderText = "Забронировано";
+                        PopulateRoomCards();
                     }
                 }
             }
@@ -53,12 +50,128 @@ namespace WindowsFormsApp1
             }
         }
 
-        private void dataGridViewRooms_SelectionChanged(object sender, EventArgs e)
+        private void PopulateRoomCards()
         {
-            if (dataGridViewRooms.SelectedRows.Count > 0)
+            flowLayoutPanelRooms.Controls.Clear();
+            foreach (DataRow row in roomsTable.Rows)
             {
-                int roomId = Convert.ToInt32(dataGridViewRooms.SelectedRows[0].Cells["room_id"].Value);
-                LoadImages(roomId);
+                int roomId = Convert.ToInt32(row["room_id"]);
+                string category = row["category"].ToString();
+                string description = row["description"].ToString();
+                decimal price = Convert.ToDecimal(row["price"]);
+                int available = Convert.ToInt32(row["quantity"]) - Convert.ToInt32(row["booked_quantity"]);
+
+                Panel card = new Panel
+                {
+                    Size = new Size(280, 320),
+                    Margin = new Padding(10),
+                    BorderStyle = BorderStyle.FixedSingle,
+                    BackColor = Color.White
+                };
+
+                PictureBox image = new PictureBox
+                {
+                    Size = new Size(280, 160),
+                    Location = new Point(0, 0),
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    ImageLocation = GetRoomImage(roomId) // Загружаем первое изображение
+                };
+
+                Label lblCategory = new Label
+                {
+                    Text = category,
+                    Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                    Location = new Point(10, 170),
+                    Size = new Size(260, 30),
+                    ForeColor = Color.FromArgb(31, 41, 55)
+                };
+
+                Label lblPrice = new Label
+                {
+                    Text = $"{price:C2} / ночь",
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                    Location = new Point(10, 200),
+                    Size = new Size(260, 20),
+                    ForeColor = Color.FromArgb(107, 114, 128)
+                };
+
+                Label lblDescription = new Label
+                {
+                    Text = description.Length > 50 ? description.Substring(0, 50) + "..." : description,
+                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
+                    Location = new Point(10, 220),
+                    Size = new Size(260, 40),
+                    ForeColor = Color.FromArgb(107, 114, 128)
+                };
+
+                Label lblAvailable = new Label
+                {
+                    Text = $"Осталось: {available}",
+                    Font = new Font("Segoe UI", 9, FontStyle.Italic),
+                    Location = new Point(10, 260),
+                    Size = new Size(260, 20),
+                    ForeColor = available <= 2 ? Color.Red : Color.Green
+                };
+
+                Button btnSelect = new Button
+                {
+                    Text = "Выбрать",
+                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                    Location = new Point(180, 280),
+                    Size = new Size(90, 30),
+                    BackColor = Color.FromArgb(30, 64, 175),
+                    ForeColor = Color.White,
+                    FlatStyle = FlatStyle.Flat,
+                    Tag = roomId
+                };
+                btnSelect.FlatAppearance.BorderSize = 0;
+                btnSelect.Click += BtnSelectRoom_Click;
+
+                card.Controls.AddRange(new Control[] { image, lblCategory, lblPrice, lblDescription, lblAvailable, btnSelect });
+                card.MouseEnter += (s, e) => card.BackColor = Color.FromArgb(243, 244, 246);
+                card.MouseLeave += (s, e) => card.BackColor = Color.White;
+
+                flowLayoutPanelRooms.Controls.Add(card);
+            }
+        }
+
+        private string GetRoomImage(int roomId)
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT TOP 1 image_url FROM IMAGES WHERE room_id = @roomId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@roomId", roomId);
+                        object result = cmd.ExecuteScalar();
+                        return result?.ToString() ?? null;
+                    }
+                }
+            }
+            catch
+            {
+                return null;
+            }
+        }
+
+        private void BtnSelectRoom_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            selectedRoomId = Convert.ToInt32(btn.Tag);
+            LoadImages(selectedRoomId);
+            HighlightSelectedCard();
+            UpdateBookingButtonState();
+        }
+
+        private void HighlightSelectedCard()
+        {
+            foreach (Panel card in flowLayoutPanelRooms.Controls)
+            {
+                int roomId = Convert.ToInt32(card.Controls.OfType<Button>().First().Tag);
+                card.BorderStyle = roomId == selectedRoomId ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
             }
         }
 
@@ -66,7 +179,8 @@ namespace WindowsFormsApp1
         {
             roomImages.Clear();
             currentImageIndex = 0;
-            pictureBoxRoom.Image = null;
+            pictureBoxMainImage.Image = null;
+            flowLayoutPanelThumbnails.Controls.Clear();
 
             try
             {
@@ -89,14 +203,8 @@ namespace WindowsFormsApp1
 
                 if (roomImages.Count > 0)
                 {
-                    UpdateImage(); // Исправлено: вызов UpdateImage вместо UpdateImageDisplay
-                    buttonNextImage.Enabled = roomImages.Count > 1;
-                    buttonPrevImage.Enabled = roomImages.Count > 1;
-                }
-                else
-                {
-                    buttonNextImage.Enabled = false;
-                    buttonPrevImage.Enabled = false;
+                    UpdateImage();
+                    PopulateThumbnails();
                 }
             }
             catch (Exception ex)
@@ -109,40 +217,49 @@ namespace WindowsFormsApp1
         {
             if (roomImages.Count > 0 && currentImageIndex >= 0 && currentImageIndex < roomImages.Count)
             {
-                pictureBoxRoom.ImageLocation = roomImages[currentImageIndex];
-                // Для загрузки изображений через URL можно использовать WebClient:
-                // using (var client = new System.Net.WebClient())
-                // {
-                //     byte[] imageData = client.DownloadData(roomImages[currentImageIndex]);
-                //     using (var stream = new System.IO.MemoryStream(imageData))
-                //     {
-                //         pictureBoxRoom.Image = System.Drawing.Image.FromStream(stream);
-                //     }
-                // }
+                pictureBoxMainImage.ImageLocation = roomImages[currentImageIndex];
             }
         }
 
-        private void buttonPrevImage_Click(object sender, EventArgs e)
+        private void PopulateThumbnails()
         {
-            if (currentImageIndex > 0)
+            flowLayoutPanelThumbnails.Controls.Clear();
+            for (int i = 0; i < roomImages.Count; i++)
             {
-                currentImageIndex--;
-                UpdateImage(); // Исправлено: вызов UpdateImage вместо UpdateImageDisplay
+                PictureBox thumb = new PictureBox
+                {
+                    Size = new Size(60, 60),
+                    Margin = new Padding(5),
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    ImageLocation = roomImages[i],
+                    BorderStyle = i == currentImageIndex ? BorderStyle.Fixed3D : BorderStyle.FixedSingle,
+                    Tag = i
+                };
+                thumb.Click += Thumbnail_Click;
+                flowLayoutPanelThumbnails.Controls.Add(thumb);
             }
         }
 
-        private void buttonNextImage_Click(object sender, EventArgs e)
+        private void Thumbnail_Click(object sender, EventArgs e)
         {
-            if (currentImageIndex < roomImages.Count - 1)
+            PictureBox thumb = (PictureBox)sender;
+            currentImageIndex = Convert.ToInt32(thumb.Tag);
+            UpdateImage();
+            UpdateThumbnailBorders();
+        }
+
+        private void UpdateThumbnailBorders()
+        {
+            foreach (PictureBox thumb in flowLayoutPanelThumbnails.Controls)
             {
-                currentImageIndex++;
-                UpdateImage(); // Исправлено: вызов UpdateImage вместо UpdateImageDisplay
+                int index = Convert.ToInt32(thumb.Tag);
+                thumb.BorderStyle = index == currentImageIndex ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
             }
         }
 
         private void buttonBook_Click(object sender, EventArgs e)
         {
-            if (dataGridViewRooms.SelectedRows.Count == 0)
+            if (selectedRoomId == -1)
             {
                 MessageBox.Show("Выберите номер для бронирования.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -170,8 +287,6 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            int roomId = Convert.ToInt32(dataGridViewRooms.SelectedRows[0].Cells["room_id"].Value);
-
             try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
@@ -181,7 +296,6 @@ namespace WindowsFormsApp1
                     {
                         try
                         {
-                            // Получение guest_id для текущего user_id
                             int guestId;
                             string getGuestIdQuery = "SELECT guest_id FROM GUESTS WHERE user_id = @userId";
                             using (SqlCommand cmd = new SqlCommand(getGuestIdQuery, conn, transaction))
@@ -197,12 +311,11 @@ namespace WindowsFormsApp1
                                 guestId = Convert.ToInt32(result);
                             }
 
-                            // Проверка доступности номера на выбранные даты
                             string checkAvailabilityQuery = "SELECT COUNT(*) FROM GUESTS WHERE room_id = @roomId " +
                                                            "AND (@checkInDate < check_out_date AND @checkOutDate > check_in_date)";
                             using (SqlCommand cmd = new SqlCommand(checkAvailabilityQuery, conn, transaction))
                             {
-                                cmd.Parameters.AddWithValue("@roomId", roomId);
+                                cmd.Parameters.AddWithValue("@roomId", selectedRoomId);
                                 cmd.Parameters.AddWithValue("@checkInDate", checkInDate);
                                 cmd.Parameters.AddWithValue("@checkOutDate", checkOutDate);
                                 int count = (int)cmd.ExecuteScalar();
@@ -214,13 +327,12 @@ namespace WindowsFormsApp1
                                 }
                             }
 
-                            // Обновление ROOMS
                             string updateRoomsQuery = "UPDATE ROOMS SET quantity = quantity - 1, booked_quantity = booked_quantity + 1, " +
                                                      "status = CASE WHEN booked_quantity + 1 = quantity THEN 'Not Available' ELSE 'Available' END " +
                                                      "WHERE room_id = @roomId AND quantity > booked_quantity";
                             using (SqlCommand cmd = new SqlCommand(updateRoomsQuery, conn, transaction))
                             {
-                                cmd.Parameters.AddWithValue("@roomId", roomId);
+                                cmd.Parameters.AddWithValue("@roomId", selectedRoomId);
                                 int rowsAffected = cmd.ExecuteNonQuery();
                                 if (rowsAffected == 0)
                                 {
@@ -230,13 +342,12 @@ namespace WindowsFormsApp1
                                 }
                             }
 
-                            // Обновление GUESTS
                             string updateGuestsQuery = "UPDATE GUESTS SET room_id = @roomId, check_in_date = @checkInDate, " +
                                                       "check_out_date = @checkOutDate, comment = @comment, booking_date = @bookingDate " +
                                                       "WHERE guest_id = @guestId";
                             using (SqlCommand cmd = new SqlCommand(updateGuestsQuery, conn, transaction))
                             {
-                                cmd.Parameters.AddWithValue("@roomId", roomId);
+                                cmd.Parameters.AddWithValue("@roomId", selectedRoomId);
                                 cmd.Parameters.AddWithValue("@checkInDate", checkInDate);
                                 cmd.Parameters.AddWithValue("@checkOutDate", checkOutDate);
                                 cmd.Parameters.AddWithValue("@comment", string.IsNullOrWhiteSpace(comment) ? (object)DBNull.Value : comment);
@@ -248,6 +359,8 @@ namespace WindowsFormsApp1
                             transaction.Commit();
                             MessageBox.Show("Номер успешно забронирован!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             LoadRooms();
+                            selectedRoomId = -1;
+                            UpdateBookingButtonState();
                         }
                         catch (Exception ex)
                         {
@@ -266,6 +379,22 @@ namespace WindowsFormsApp1
         private void buttonClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dateTimePickerCheckIn_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateBookingButtonState();
+        }
+
+        private void dateTimePickerCheckOut_ValueChanged(object sender, EventArgs e)
+        {
+            UpdateBookingButtonState();
+        }
+
+        private void UpdateBookingButtonState()
+        {
+            buttonBook.Enabled = selectedRoomId != -1 && dateTimePickerCheckIn.Value >= DateTime.Today &&
+                                dateTimePickerCheckOut.Value > dateTimePickerCheckIn.Value;
         }
     }
 }
