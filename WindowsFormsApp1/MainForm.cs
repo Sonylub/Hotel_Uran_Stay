@@ -8,7 +8,7 @@ namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
-        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
 
         public MainForm(int userId)
@@ -178,9 +178,8 @@ namespace WindowsFormsApp1
 
         private void buttonReviews_Click(object sender, EventArgs e)
         {
-            MessageBox.Show($"Открывается форма для отзывов (user_id: {userId}).", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            // Пример: ReviewsForm form = new ReviewsForm(userId);
-            // form.ShowDialog();
+            ReviewsForm form = new ReviewsForm(userId);
+            form.ShowDialog();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
