@@ -1,130 +1,90 @@
 ﻿using System;
 using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ReviewsForm : Form
+    public partial class ReviewsControl : UserControl
     {
-        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
-        private DataTable reviewsTable;
 
-        public ReviewsForm(int userId)
+        public ReviewsControl()
+        {
+            InitializeComponent();
+        }
+
+        public ReviewsControl(int userId)
         {
             InitializeComponent();
             this.userId = userId;
-            LoadReviews();
+            InitializeControl();
+        }
+
+        private void InitializeControl()
+        {
+            if (this.IsInDesignMode()) return; // Avoid initialization in designer
+            DisableFields();
+            DisplayReviews();
             UpdateSubmitButtonState();
         }
 
-        private void LoadReviews()
+        public void RefreshData()
         {
-            try
+            if (InvokeRequired)
             {
-                using (SqlConnection conn = new SqlConnection(connectionString))
-                {
-                    conn.Open();
-                    string query = @"
-                        SELECT R.review_id, R.guest_id, R.rating, R.comment, R.created_at, G.name
-                        FROM REVIEWS R
-                        INNER JOIN GUESTS G ON R.guest_id = G.guest_id";
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(query, conn))
-                    {
-                        reviewsTable = new DataTable();
-                        adapter.Fill(reviewsTable);
-                        PopulateReviewCards();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Ошибка загрузки отзывов: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void PopulateReviewCards()
-        {
-            flowLayoutPanelReviews.Controls.Clear();
-            if (reviewsTable.Rows.Count == 0)
-            {
-                Label lblNoReviews = new Label
-                {
-                    Text = "Отзывы пока отсутствуют",
-                    Font = new Font("Segoe UI", 12, FontStyle.Italic),
-                    ForeColor = Color.FromArgb(107, 114, 128),
-                    AutoSize = true,
-                    Location = new Point(10, 10)
-                };
-                flowLayoutPanelReviews.Controls.Add(lblNoReviews);
+                Invoke((MethodInvoker)RefreshData);
                 return;
             }
 
-            foreach (DataRow row in reviewsTable.Rows)
+            DisplayReviews();
+            DisableFields();
+        }
+
+        private bool IsInDesignMode()
+        {
+            return (this.Site != null) && this.Site.DesignMode;
+        }
+
+        private void DisableFields()
+        {
+            review_guestName.Enabled = false;
+        }
+
+        private void DisplayReviews()
+        {
+            ReviewData rd = new ReviewData();
+            var listData = rd.ReviewListData();
+            dataGridViewReviews.DataSource = listData;
+
+            dataGridViewReviews.Columns["ReviewID"].HeaderText = "ID отзыва";
+            dataGridViewReviews.Columns["GuestID"].HeaderText = "ID гостя";
+            dataGridViewReviews.Columns["GuestName"].HeaderText = "Имя гостя";
+            dataGridViewReviews.Columns["Rating"].HeaderText = "Рейтинг";
+            dataGridViewReviews.Columns["Comment"].HeaderText = "Комментарий";
+            dataGridViewReviews.Columns["CreatedAt"].HeaderText = "Дата";
+
+            dataGridViewReviews.Columns["Comment"].Width = 200;
+            dataGridViewReviews.Columns["GuestName"].Width = 120;
+            dataGridViewReviews.Columns["CreatedAt"].Width = 100;
+        }
+
+        private void dataGridViewReviews_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex != -1)
             {
-                string name = row["name"].ToString();
-                int rating = Convert.ToInt32(row["rating"]);
-                string comment = row["comment"].ToString();
-                DateTime createdAt = Convert.ToDateTime(row["created_at"]);
-
-                Panel card = new Panel
-                {
-                    Size = new Size(560, 180),
-                    Margin = new Padding(10),
-                    BorderStyle = BorderStyle.FixedSingle,
-                    BackColor = Color.White
-                };
-
-                Label lblName = new Label
-                {
-                    Text = name,
-                    Font = new Font("Segoe UI", 12, FontStyle.Bold),
-                    Location = new Point(10, 10),
-                    Size = new Size(540, 30),
-                    ForeColor = Color.FromArgb(31, 41, 55)
-                };
-
-                Label lblRating = new Label
-                {
-                    Text = $"Рейтинг: {new string('★', rating)}{new string('☆', 5 - rating)}",
-                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
-                    Location = new Point(10, 40),
-                    Size = new Size(540, 20),
-                    ForeColor = Color.FromArgb(245, 158, 11)
-                };
-
-                Label lblComment = new Label
-                {
-                    Text = comment.Length > 200 ? comment.Substring(0, 200) + "..." : comment,
-                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
-                    Location = new Point(10, 60),
-                    Size = new Size(540, 80),
-                    ForeColor = Color.FromArgb(107, 114, 128)
-                };
-
-                Label lblDate = new Label
-                {
-                    Text = $"Дата: {createdAt:d}",
-                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
-                    Location = new Point(10, 140),
-                    Size = new Size(540, 20),
-                    ForeColor = Color.FromArgb(107, 114, 128)
-                };
-
-                card.Controls.AddRange(new Control[] { lblName, lblRating, lblComment, lblDate });
-                card.MouseEnter += (s, e) => card.BackColor = Color.FromArgb(243, 244, 246);
-                card.MouseLeave += (s, e) => card.BackColor = Color.White;
-
-                flowLayoutPanelReviews.Controls.Add(card);
+                DataGridViewRow row = dataGridViewReviews.Rows[e.RowIndex];
+                review_guestName.Text = row.Cells["GuestName"].Value?.ToString();
+                review_rating.Value = Convert.ToDecimal(row.Cells["Rating"].Value ?? 1);
+                review_comment.Text = row.Cells["Comment"].Value?.ToString();
             }
         }
 
         private void buttonSubmitReview_Click(object sender, EventArgs e)
         {
-            int rating = (int)numericUpDownRating.Value;
-            string comment = textBoxComment.Text.Trim();
+            int rating = (int)review_rating.Value;
+            string comment = review_comment.Text.Trim();
 
             if (rating < 1 || rating > 5)
             {
@@ -144,82 +104,96 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            try
+            DialogResult check = MessageBox.Show("Вы уверены, что хотите добавить отзыв?", "Подтверждение",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (check == DialogResult.Yes)
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    conn.Open();
-                    using (SqlTransaction transaction = conn.BeginTransaction())
+                    try
                     {
-                        try
+                        conn.Open();
+                        using (SqlTransaction transaction = conn.BeginTransaction())
                         {
-                            // Получение guest_id для текущего user_id
-                            int guestId;
-                            string getGuestIdQuery = "SELECT guest_id FROM GUESTS WHERE user_id = @userId";
-                            using (SqlCommand cmd = new SqlCommand(getGuestIdQuery, conn, transaction))
+                            try
                             {
-                                cmd.Parameters.AddWithValue("@userId", userId);
-                                object result = cmd.ExecuteScalar();
-                                if (result == null)
+                                int guestId;
+                                string getGuestIdQuery = "SELECT guest_id FROM GUESTS WHERE user_id = @userId";
+                                using (SqlCommand cmd = new SqlCommand(getGuestIdQuery, conn, transaction))
                                 {
-                                    MessageBox.Show("Гость не найден. Пожалуйста, зарегистрируйтесь.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                    transaction.Rollback();
-                                    return;
+                                    cmd.Parameters.AddWithValue("@userId", userId);
+                                    object result = cmd.ExecuteScalar();
+                                    if (result == null)
+                                    {
+                                        MessageBox.Show("Гость не найден. Пожалуйста, зарегистрируйтесь.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                        transaction.Rollback();
+                                        return;
+                                    }
+                                    guestId = Convert.ToInt32(result);
                                 }
-                                guestId = Convert.ToInt32(result);
-                            }
 
-                            // Вставка нового отзыва
-                            string insertReviewQuery = @"
-                                INSERT INTO REVIEWS (guest_id, rating, comment, created_at)
-                                VALUES (@guestId, @rating, @comment, @createdAt)";
-                            using (SqlCommand cmd = new SqlCommand(insertReviewQuery, conn, transaction))
+                                string insertReviewQuery = @"
+                                    INSERT INTO REVIEWS (guest_id, rating, comment, created_at)
+                                    VALUES (@guestId, @rating, @comment, @createdAt)";
+                                using (SqlCommand cmd = new SqlCommand(insertReviewQuery, conn, transaction))
+                                {
+                                    cmd.Parameters.AddWithValue("@guestId", guestId);
+                                    cmd.Parameters.AddWithValue("@rating", rating);
+                                    cmd.Parameters.AddWithValue("@comment", comment);
+                                    cmd.Parameters.AddWithValue("@createdAt", DateTime.Now);
+                                    cmd.ExecuteNonQuery();
+                                }
+
+                                transaction.Commit();
+                                MessageBox.Show("Отзыв успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                RefreshData();
+                                ClearFields();
+                            }
+                            catch (Exception ex)
                             {
-                                cmd.Parameters.AddWithValue("@guestId", guestId);
-                                cmd.Parameters.AddWithValue("@rating", rating);
-                                cmd.Parameters.AddWithValue("@comment", comment);
-                                cmd.Parameters.AddWithValue("@createdAt", DateTime.Now);
-                                cmd.ExecuteNonQuery();
+                                transaction.Rollback();
+                                MessageBox.Show($"Ошибка добавления отзыва: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
-
-                            transaction.Commit();
-                            MessageBox.Show("Отзыв успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            LoadReviews();
-                            textBoxComment.Clear();
-                            numericUpDownRating.Value = 1;
                         }
-                        catch (Exception ex)
-                        {
-                            transaction.Rollback();
-                            MessageBox.Show($"Ошибка добавления отзыва: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Ошибка подключения: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show($"Ошибка подключения: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Отмена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 
-        private void buttonClose_Click(object sender, EventArgs e)
+        private void buttonClear_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ClearFields();
         }
 
-        private void textBoxComment_TextChanged(object sender, EventArgs e)
+        private void ClearFields()
+        {
+            review_guestName.Text = "";
+            review_rating.Value = 1;
+            review_comment.Text = "";
+        }
+
+        private void review_comment_TextChanged(object sender, EventArgs e)
         {
             UpdateSubmitButtonState();
         }
 
-        private void numericUpDownRating_ValueChanged(object sender, EventArgs e)
+        private void review_rating_ValueChanged(object sender, EventArgs e)
         {
             UpdateSubmitButtonState();
         }
 
         private void UpdateSubmitButtonState()
         {
-            buttonSubmitReview.Enabled = !string.IsNullOrWhiteSpace(textBoxComment.Text) && textBoxComment.Text.Length <= 500;
+            buttonSubmitReview.Enabled = !string.IsNullOrWhiteSpace(review_comment.Text) && review_comment.Text.Length <= 500;
         }
     }
 }

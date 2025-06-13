@@ -10,7 +10,7 @@ namespace WindowsFormsApp1
 {
     public partial class AvailableRoomsForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
         private DataTable roomsTable;
         private List<string> roomImages;
@@ -26,6 +26,7 @@ namespace WindowsFormsApp1
             LoadRooms();
             UpdateBookingButtonState();
         }
+
 
         private void LoadRooms()
         {
@@ -66,7 +67,7 @@ namespace WindowsFormsApp1
                     Size = new Size(280, 320),
                     Margin = new Padding(10),
                     BorderStyle = BorderStyle.FixedSingle,
-                    BackColor = Color.White
+                    BackColor = Color.FromArgb(255, 255, 255)
                 };
 
                 PictureBox image = new PictureBox
@@ -74,7 +75,7 @@ namespace WindowsFormsApp1
                     Size = new Size(280, 160),
                     Location = new Point(0, 0),
                     SizeMode = PictureBoxSizeMode.Zoom,
-                    ImageLocation = GetRoomImage(roomId) // Загружаем первое изображение
+                    ImageLocation = GetRoomImage(roomId)
                 };
 
                 Label lblCategory = new Label
@@ -129,7 +130,7 @@ namespace WindowsFormsApp1
 
                 card.Controls.AddRange(new Control[] { image, lblCategory, lblPrice, lblDescription, lblAvailable, btnSelect });
                 card.MouseEnter += (s, e) => card.BackColor = Color.FromArgb(243, 244, 246);
-                card.MouseLeave += (s, e) => card.BackColor = Color.White;
+                card.MouseLeave += (s, e) => card.BackColor = Color.FromArgb(255, 255, 255);
 
                 flowLayoutPanelRooms.Controls.Add(card);
             }
@@ -395,6 +396,11 @@ namespace WindowsFormsApp1
         {
             buttonBook.Enabled = selectedRoomId != -1 && dateTimePickerCheckIn.Value >= DateTime.Today &&
                                 dateTimePickerCheckOut.Value > dateTimePickerCheckIn.Value;
+        }
+
+        private void textBoxComment_TextChanged(object sender, EventArgs e)
+        {
+            UpdateBookingButtonState();
         }
     }
 }

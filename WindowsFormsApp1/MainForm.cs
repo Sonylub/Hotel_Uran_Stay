@@ -6,7 +6,7 @@ namespace WindowsFormsApp1
 {
     public partial class MainForm : Form
     {
-        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
 
         public MainForm(int userId)
@@ -28,14 +28,7 @@ namespace WindowsFormsApp1
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         object result = cmd.ExecuteScalar();
-                        if (result != null)
-                        {
-                            labelWelcome.Text = $"Добро пожаловать, {result.ToString()}!";
-                        }
-                        else
-                        {
-                            labelWelcome.Text = "Добро пожаловать, Гость!";
-                        }
+                        //labelWelcome.Text = result != null ? $"Добро пожаловать, {result}!" : "Добро пожаловать, Гость!";
                     }
                 }
             }
@@ -45,34 +38,54 @@ namespace WindowsFormsApp1
             }
         }
 
+
+
         private void buttonAvailableRooms_Click(object sender, EventArgs e)
         {
-            AvailableRoomsForm form = new AvailableRoomsForm(userId);
-            form.ShowDialog();
+            //panelContent.Controls.Clear();
+            //var control = new AvailableRoomsControl(userId);
+            //control.Dock = DockStyle.Fill;
+            //panelContent.Controls.Add(control);
         }
 
         private void buttonPersonalAccount_Click(object sender, EventArgs e)
         {
-            FormLK form = new FormLK(userId);
-            form.ShowDialog();
+            //panelContent.Controls.Clear();
+            //var control = new PersonalAccountControl(userId);
+            //control.Dock = DockStyle.Fill;
+            //panelContent.Controls.Add(control);
         }
 
         private void buttonOrderServices_Click(object sender, EventArgs e)
         {
-            OrderServicesForm form = new OrderServicesForm(userId);
-            form.ShowDialog();
+            //panelContent.Controls.Clear();
+            ////var control = new OrderServicesControl(userId);
+            //control.Dock = DockStyle.Fill;
+            //panelContent.Controls.Add(control);
         }
+
 
         private void buttonReviews_Click(object sender, EventArgs e)
         {
-            ReviewsForm form = new ReviewsForm(userId);
-            form.ShowDialog();
+            reviewsControl1.Controls.Clear();
+            var control = new ReviewsControl(userId)
+            {
+                Dock = DockStyle.Fill,
+                Visible = true
+            };
+            reviewsControl1.Controls.Add(control);
+            reviewsControl1.Visible = true;
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
         {
             Form1 loginForm = new Form1();
             loginForm.Show();
+            this.Close();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
