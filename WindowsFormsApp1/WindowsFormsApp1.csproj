@@ -53,7 +53,7 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AvailableRoomsForm.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="AvailableRoomsForm.Designer.cs">
       <DependentUpon>AvailableRoomsForm.cs</DependentUpon>
@@ -101,6 +101,9 @@
     </Compile>
     <Compile Include="ReviewsForm.Designer.cs">
       <DependentUpon>ReviewsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RoomCard.cs">
+      <SubType>UserControl</SubType>
     </Compile>
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>

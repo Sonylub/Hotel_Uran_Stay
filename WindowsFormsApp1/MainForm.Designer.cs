@@ -27,8 +27,9 @@
             this.buttonAvailableRooms = new System.Windows.Forms.Button();
             this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
             this.panelContent = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
             this.reviewsControl1 = new WindowsFormsApp1.ReviewsControl();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.availableRooms1 = new WindowsFormsApp1.AvailableRooms();
             this.panelMain.SuspendLayout();
             this.panelSidebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogo)).BeginInit();
@@ -155,6 +156,7 @@
             // 
             this.panelContent.AutoSize = true;
             this.panelContent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.panelContent.Controls.Add(this.availableRooms1);
             this.panelContent.Controls.Add(this.reviewsControl1);
             this.panelContent.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelContent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -162,6 +164,14 @@
             this.panelContent.Name = "panelContent";
             this.panelContent.Size = new System.Drawing.Size(800, 600);
             this.panelContent.TabIndex = 2;
+            // 
+            // reviewsControl1
+            // 
+            this.reviewsControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.reviewsControl1.Location = new System.Drawing.Point(255, 3);
+            this.reviewsControl1.Name = "reviewsControl1";
+            this.reviewsControl1.Size = new System.Drawing.Size(535, 600);
+            this.reviewsControl1.TabIndex = 1;
             // 
             // btnClose
             // 
@@ -177,13 +187,13 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
-            // reviewsControl1
+            // availableRooms1
             // 
-            this.reviewsControl1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
-            this.reviewsControl1.Location = new System.Drawing.Point(262, 3);
-            this.reviewsControl1.Name = "reviewsControl1";
-            this.reviewsControl1.Size = new System.Drawing.Size(550, 600);
-            this.reviewsControl1.TabIndex = 1;
+            this.availableRooms1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.availableRooms1.Location = new System.Drawing.Point(255, 0);
+            this.availableRooms1.Name = "availableRooms1";
+            this.availableRooms1.Size = new System.Drawing.Size(535, 600);
+            this.availableRooms1.TabIndex = 2;
             // 
             // MainForm
             // 
@@ -217,5 +227,6 @@
         private System.Windows.Forms.Button buttonLogout;
         private System.Windows.Forms.Button btnClose;
         private ReviewsControl reviewsControl1;
+        private AvailableRooms availableRooms1;
     }
 }

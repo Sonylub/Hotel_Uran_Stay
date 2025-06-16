@@ -14,6 +14,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.userId = userId;
             LoadUserName();
+
         }
 
         private void LoadUserName()
@@ -28,7 +29,6 @@ namespace WindowsFormsApp1
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         object result = cmd.ExecuteScalar();
-                        //labelWelcome.Text = result != null ? $"Добро пожаловать, {result}!" : "Добро пожаловать, Гость!";
                     }
                 }
             }
@@ -42,39 +42,33 @@ namespace WindowsFormsApp1
 
         private void buttonAvailableRooms_Click(object sender, EventArgs e)
         {
-            //panelContent.Controls.Clear();
-            //var control = new AvailableRoomsControl(userId);
-            //control.Dock = DockStyle.Fill;
-            //panelContent.Controls.Add(control);
+            reviewsControl1.Visible = false;
+            availableRooms1.Visible = true;
         }
 
         private void buttonPersonalAccount_Click(object sender, EventArgs e)
         {
-            //panelContent.Controls.Clear();
-            //var control = new PersonalAccountControl(userId);
-            //control.Dock = DockStyle.Fill;
-            //panelContent.Controls.Add(control);
+
         }
 
         private void buttonOrderServices_Click(object sender, EventArgs e)
         {
-            //panelContent.Controls.Clear();
-            ////var control = new OrderServicesControl(userId);
-            //control.Dock = DockStyle.Fill;
-            //panelContent.Controls.Add(control);
+
         }
 
 
         private void buttonReviews_Click(object sender, EventArgs e)
         {
-            reviewsControl1.Controls.Clear();
-            var control = new ReviewsControl(userId)
-            {
-                Dock = DockStyle.Fill,
-                Visible = true
-            };
-            reviewsControl1.Controls.Add(control);
+
             reviewsControl1.Visible = true;
+            availableRooms1.Visible = false;
+
+
+
+            if (reviewsControl1 != null)
+            {
+                reviewsControl1.RefreshData();
+            }
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)
