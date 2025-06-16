@@ -105,6 +105,7 @@
     <Compile Include="RoomCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Include="RoomData.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>

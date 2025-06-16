@@ -1,0 +1,26 @@
+16.06.2025 12:50:45: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 12:50:48: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 12:50:50: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 12:50:53: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 12:50:57: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 13:02:49: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 13:02:52: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 13:03:24: Booking error: Недопустимое имя объекта "BOOKINGS".
+16.06.2025 13:05:31: Booking error: Недопустимое имя столбца "check_in_date".
+Недопустимое имя столбца "check_out_date".
+16.06.2025 13:07:48: Booking error: Недопустимое имя столбца "guest_id".
+16.06.2025 13:12:41: Booking error: Параметризированный запрос "(@userId int,@name nvarchar(4000),@email nvarchar(4000),@phone n" ожидает параметр "@name", который не был указан.
+16.06.2025 13:14:14: Booking error: Не удалось вставить значение NULL в столбец "guest_id", таблицы "Hotel_Urban_Stay.dbo.GUESTS"; в столбце запрещены значения NULL. Ошибка в INSERT.
+Выполнение данной инструкции было прервано.
+16.06.2025 13:15:34: Booking error: Не удалось вставить значение NULL в столбец "guest_id", таблицы "Hotel_Urban_Stay.dbo.GUESTS"; в столбце запрещены значения NULL. Ошибка в INSERT.
+Выполнение данной инструкции было прервано.
+16.06.2025 13:15:39: Booking error: Не удалось вставить значение NULL в столбец "guest_id", таблицы "Hotel_Urban_Stay.dbo.GUESTS"; в столбце запрещены значения NULL. Ошибка в INSERT.
+Выполнение данной инструкции было прервано.
+16.06.2025 13:17:00: Booking error: Не удалось вставить значение NULL в столбец "guest_id", таблицы "Hotel_Urban_Stay.dbo.GUESTS"; в столбце запрещены значения NULL. Ошибка в INSERT.
+Выполнение данной инструкции было прервано.
+16.06.2025 13:20:59: Booking error: Конфликт инструкции INSERT с ограничением FOREIGN KEY "FK__GUESTS__user_id__440B1D61". Конфликт произошел в базе данных "Hotel_Urban_Stay", таблица "dbo.USERS", column 'user_id'.
+Выполнение данной инструкции было прервано.
+16.06.2025 13:21:55: Booking error: Конфликт инструкции INSERT с ограничением FOREIGN KEY "FK__GUESTS__user_id__440B1D61". Конфликт произошел в базе данных "Hotel_Urban_Stay", таблица "dbo.USERS", column 'user_id'.
+Выполнение данной инструкции было прервано.
+16.06.2025 13:21:59: Booking error: Конфликт инструкции INSERT с ограничением FOREIGN KEY "FK__GUESTS__user_id__440B1D61". Конфликт произошел в базе данных "Hotel_Urban_Stay", таблица "dbo.USERS", column 'user_id'.
+Выполнение данной инструкции было прервано.

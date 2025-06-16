@@ -43,7 +43,7 @@ namespace WindowsFormsApp1
         private void buttonAvailableRooms_Click(object sender, EventArgs e)
         {
             reviewsControl1.Visible = false;
-            availableRooms1.Visible = true;
+            availableRoomsForm1.Visible = true;
         }
 
         private void buttonPersonalAccount_Click(object sender, EventArgs e)
@@ -61,7 +61,8 @@ namespace WindowsFormsApp1
         {
 
             reviewsControl1.Visible = true;
-            availableRooms1.Visible = false;
+            availableRoomsForm1.Visible = false;
+            availableRoomsForm1.RefreshData();
 
 
 

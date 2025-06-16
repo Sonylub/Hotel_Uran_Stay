@@ -1,41 +1,43 @@
-﻿namespace WindowsFormsApp1
+﻿using System.Windows.Forms;
+
+namespace WindowsFormsApp1
 {
-    partial class AvailableRooms
+    partial class AvailableRoomsForm
     {
         private System.ComponentModel.IContainer components = null;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelRooms;
+        private FlowLayoutPanel flowLayoutPanel;
 
         protected override void Dispose(bool disposing)
         {
-            if (disposing && components != null)
+            if (disposing && (components != null))
+            {
                 components.Dispose();
+            }
             base.Dispose(disposing);
         }
 
         private void InitializeComponent()
         {
-            this.flowLayoutPanelRooms = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel = new FlowLayoutPanel();
             this.SuspendLayout();
             // 
-            // flowLayoutPanelRooms
+            // flowLayoutPanel
             // 
-            this.flowLayoutPanelRooms.AutoScroll = true;
-            this.flowLayoutPanelRooms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.flowLayoutPanelRooms.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanelRooms.WrapContents = false;
-            this.flowLayoutPanelRooms.BackColor = System.Drawing.Color.FromArgb(46, 46, 50);
-            this.flowLayoutPanelRooms.Location = new System.Drawing.Point(0, 0);
-            this.flowLayoutPanelRooms.Name = "flowLayoutPanelRooms";
-            this.flowLayoutPanelRooms.Padding = new System.Windows.Forms.Padding(10);
-            this.flowLayoutPanelRooms.Size = new System.Drawing.Size(535, 600);
-            this.flowLayoutPanelRooms.TabIndex = 0;
+            this.flowLayoutPanel.AutoScroll = true;
+            this.flowLayoutPanel.BackColor = System.Drawing.Color.FromArgb(46, 46, 50); // #2E2E32
+            this.flowLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel.Location = new System.Drawing.Point(0, 0);
+            this.flowLayoutPanel.Name = "flowLayoutPanel";
+            this.flowLayoutPanel.Size = new System.Drawing.Size(535, 600);
+            this.flowLayoutPanel.Visible = true; // Убедимся, что панель видима
             // 
-            // AvailableRooms
+            // AvailableRoomsForm
             // 
-            this.BackColor = System.Drawing.Color.FromArgb(46, 46, 50);
-            this.Controls.Add(this.flowLayoutPanelRooms);
-            this.Name = "AvailableRooms";
+            this.BackColor = System.Drawing.Color.FromArgb(46, 46, 50); // #2E2E32
+            this.Controls.Add(this.flowLayoutPanel);
+            this.Name = "AvailableRoomsForm";
             this.Size = new System.Drawing.Size(535, 600);
+            this.Visible = true; // Убедимся, что форма видима
             this.ResumeLayout(false);
         }
     }
