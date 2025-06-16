@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
         public string Comment { get; set; }
         public DateTime CreatedAt { get; set; }
 
-        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
 
         public List<ReviewData> ReviewListData()
         {

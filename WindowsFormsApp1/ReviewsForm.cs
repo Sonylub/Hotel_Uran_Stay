@@ -7,7 +7,7 @@ namespace WindowsFormsApp1
 {
     public partial class ReviewsControl : UserControl
     {
-        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
 
         public ReviewsControl()

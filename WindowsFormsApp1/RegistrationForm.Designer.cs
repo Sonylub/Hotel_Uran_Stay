@@ -69,7 +69,7 @@
             this.panelMain.Location = new System.Drawing.Point(0, 0);
             this.panelMain.Name = "panelMain";
             this.panelMain.Padding = new System.Windows.Forms.Padding(1);
-            this.panelMain.Size = new System.Drawing.Size(350, 550);
+            this.panelMain.Size = new System.Drawing.Size(430, 550);
             this.panelMain.TabIndex = 0;
             // 
             // btnClose
@@ -78,7 +78,7 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold);
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(308, 12);
+            this.btnClose.Location = new System.Drawing.Point(390, 10);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 18;
@@ -91,7 +91,7 @@
             this.labelTitle.AutoSize = true;
             this.labelTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold);
             this.labelTitle.ForeColor = System.Drawing.Color.White;
-            this.labelTitle.Location = new System.Drawing.Point(111, 111);
+            this.labelTitle.Location = new System.Drawing.Point(149, 118);
             this.labelTitle.Name = "labelTitle";
             this.labelTitle.Size = new System.Drawing.Size(122, 25);
             this.labelTitle.TabIndex = 17;
@@ -101,7 +101,7 @@
             // 
             this.pictureBoxLogo.BackgroundImage = global::WindowsFormsApp1.Properties.Resources._78_1024;
             this.pictureBoxLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBoxLogo.Location = new System.Drawing.Point(130, 20);
+            this.pictureBoxLogo.Location = new System.Drawing.Point(168, 27);
             this.pictureBoxLogo.Name = "pictureBoxLogo";
             this.pictureBoxLogo.Size = new System.Drawing.Size(80, 80);
             this.pictureBoxLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -114,7 +114,7 @@
             this.textBoxUsername.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxUsername.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxUsername.ForeColor = System.Drawing.Color.White;
-            this.textBoxUsername.Location = new System.Drawing.Point(50, 155);
+            this.textBoxUsername.Location = new System.Drawing.Point(88, 162);
             this.textBoxUsername.Name = "textBoxUsername";
             this.textBoxUsername.Size = new System.Drawing.Size(250, 22);
             this.textBoxUsername.TabIndex = 0;
@@ -127,7 +127,7 @@
             this.textBoxPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPassword.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxPassword.ForeColor = System.Drawing.Color.White;
-            this.textBoxPassword.Location = new System.Drawing.Point(50, 215);
+            this.textBoxPassword.Location = new System.Drawing.Point(88, 222);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.PasswordChar = '*';
             this.textBoxPassword.Size = new System.Drawing.Size(250, 22);
@@ -141,7 +141,7 @@
             this.textBoxFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxFirstName.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxFirstName.ForeColor = System.Drawing.Color.White;
-            this.textBoxFirstName.Location = new System.Drawing.Point(50, 275);
+            this.textBoxFirstName.Location = new System.Drawing.Point(88, 282);
             this.textBoxFirstName.Name = "textBoxFirstName";
             this.textBoxFirstName.Size = new System.Drawing.Size(250, 22);
             this.textBoxFirstName.TabIndex = 2;
@@ -154,7 +154,7 @@
             this.textBoxEmail.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxEmail.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxEmail.ForeColor = System.Drawing.Color.White;
-            this.textBoxEmail.Location = new System.Drawing.Point(50, 335);
+            this.textBoxEmail.Location = new System.Drawing.Point(88, 342);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(250, 22);
             this.textBoxEmail.TabIndex = 3;
@@ -167,7 +167,7 @@
             this.textBoxPhone.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxPhone.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.textBoxPhone.ForeColor = System.Drawing.Color.White;
-            this.textBoxPhone.Location = new System.Drawing.Point(50, 395);
+            this.textBoxPhone.Location = new System.Drawing.Point(88, 402);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(250, 22);
             this.textBoxPhone.TabIndex = 4;
@@ -181,7 +181,7 @@
             this.buttonRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonRegister.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.buttonRegister.ForeColor = System.Drawing.Color.White;
-            this.buttonRegister.Location = new System.Drawing.Point(50, 490);
+            this.buttonRegister.Location = new System.Drawing.Point(88, 497);
             this.buttonRegister.Name = "buttonRegister";
             this.buttonRegister.Size = new System.Drawing.Size(120, 40);
             this.buttonRegister.TabIndex = 5;
@@ -196,7 +196,7 @@
             this.buttonCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonCancel.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.buttonCancel.ForeColor = System.Drawing.Color.White;
-            this.buttonCancel.Location = new System.Drawing.Point(180, 490);
+            this.buttonCancel.Location = new System.Drawing.Point(218, 497);
             this.buttonCancel.Name = "buttonCancel";
             this.buttonCancel.Size = new System.Drawing.Size(120, 40);
             this.buttonCancel.TabIndex = 6;
@@ -209,7 +209,7 @@
             this.labelUsername.AutoSize = true;
             this.labelUsername.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelUsername.ForeColor = System.Drawing.Color.Silver;
-            this.labelUsername.Location = new System.Drawing.Point(48, 134);
+            this.labelUsername.Location = new System.Drawing.Point(86, 141);
             this.labelUsername.Name = "labelUsername";
             this.labelUsername.Size = new System.Drawing.Size(50, 19);
             this.labelUsername.TabIndex = 7;
@@ -220,7 +220,7 @@
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelPassword.ForeColor = System.Drawing.Color.Silver;
-            this.labelPassword.Location = new System.Drawing.Point(48, 194);
+            this.labelPassword.Location = new System.Drawing.Point(86, 201);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(59, 19);
             this.labelPassword.TabIndex = 8;
@@ -231,7 +231,7 @@
             this.labelFirstName.AutoSize = true;
             this.labelFirstName.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelFirstName.ForeColor = System.Drawing.Color.Silver;
-            this.labelFirstName.Location = new System.Drawing.Point(48, 254);
+            this.labelFirstName.Location = new System.Drawing.Point(86, 261);
             this.labelFirstName.Name = "labelFirstName";
             this.labelFirstName.Size = new System.Drawing.Size(39, 19);
             this.labelFirstName.TabIndex = 9;
@@ -242,7 +242,7 @@
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelEmail.ForeColor = System.Drawing.Color.Silver;
-            this.labelEmail.Location = new System.Drawing.Point(48, 314);
+            this.labelEmail.Location = new System.Drawing.Point(86, 321);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(51, 19);
             this.labelEmail.TabIndex = 10;
@@ -253,7 +253,7 @@
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.labelPhone.ForeColor = System.Drawing.Color.Silver;
-            this.labelPhone.Location = new System.Drawing.Point(48, 374);
+            this.labelPhone.Location = new System.Drawing.Point(86, 381);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(66, 19);
             this.labelPhone.TabIndex = 11;
@@ -262,7 +262,7 @@
             // panelLineUsername
             // 
             this.panelLineUsername.BackColor = System.Drawing.Color.Silver;
-            this.panelLineUsername.Location = new System.Drawing.Point(50, 180);
+            this.panelLineUsername.Location = new System.Drawing.Point(88, 187);
             this.panelLineUsername.Name = "panelLineUsername";
             this.panelLineUsername.Size = new System.Drawing.Size(250, 1);
             this.panelLineUsername.TabIndex = 12;
@@ -270,7 +270,7 @@
             // panelLinePassword
             // 
             this.panelLinePassword.BackColor = System.Drawing.Color.Silver;
-            this.panelLinePassword.Location = new System.Drawing.Point(50, 240);
+            this.panelLinePassword.Location = new System.Drawing.Point(88, 247);
             this.panelLinePassword.Name = "panelLinePassword";
             this.panelLinePassword.Size = new System.Drawing.Size(250, 1);
             this.panelLinePassword.TabIndex = 13;
@@ -278,7 +278,7 @@
             // panelLineName
             // 
             this.panelLineName.BackColor = System.Drawing.Color.Silver;
-            this.panelLineName.Location = new System.Drawing.Point(50, 300);
+            this.panelLineName.Location = new System.Drawing.Point(88, 307);
             this.panelLineName.Name = "panelLineName";
             this.panelLineName.Size = new System.Drawing.Size(250, 1);
             this.panelLineName.TabIndex = 14;
@@ -286,7 +286,7 @@
             // panelLineEmail
             // 
             this.panelLineEmail.BackColor = System.Drawing.Color.Silver;
-            this.panelLineEmail.Location = new System.Drawing.Point(50, 360);
+            this.panelLineEmail.Location = new System.Drawing.Point(88, 367);
             this.panelLineEmail.Name = "panelLineEmail";
             this.panelLineEmail.Size = new System.Drawing.Size(250, 1);
             this.panelLineEmail.TabIndex = 15;
@@ -294,7 +294,7 @@
             // panelLinePhone
             // 
             this.panelLinePhone.BackColor = System.Drawing.Color.Silver;
-            this.panelLinePhone.Location = new System.Drawing.Point(50, 420);
+            this.panelLinePhone.Location = new System.Drawing.Point(88, 427);
             this.panelLinePhone.Name = "panelLinePhone";
             this.panelLinePhone.Size = new System.Drawing.Size(250, 1);
             this.panelLinePhone.TabIndex = 16;
@@ -303,7 +303,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(350, 550);
+            this.ClientSize = new System.Drawing.Size(430, 550);
             this.Controls.Add(this.panelMain);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;

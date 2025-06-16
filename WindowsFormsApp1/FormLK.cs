@@ -9,7 +9,7 @@ namespace WindowsFormsApp1
 {
     public partial class FormLK : Form
     {
-        private string connectionString = "Data Source=ADCLG1;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
+        private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
 
         public FormLK(int userId)
