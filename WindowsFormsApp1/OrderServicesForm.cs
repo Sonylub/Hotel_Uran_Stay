@@ -13,6 +13,7 @@ namespace WindowsFormsApp1
         private int userId;
         private DataTable servicesTable;
         private int selectedServiceId = -1;
+        private decimal selectedServicePrice = 0;
 
         public OrderServicesForm(int userId)
         {
@@ -56,56 +57,70 @@ namespace WindowsFormsApp1
 
                 Panel card = new Panel
                 {
-                    Size = new Size(280, 220),
-                    Margin = new Padding(10),
-                    BorderStyle = BorderStyle.FixedSingle,
-                    BackColor = Color.White
+                    Size = new Size(358, 220), // Начальная высота, будет пересчитана
+                    Margin = new Padding(8), // 8+8=16px между карточками
+                    BackColor = Color.FromArgb(60, 60, 64),
+                    BorderStyle = BorderStyle.None
                 };
 
                 Label lblName = new Label
                 {
                     Text = name,
-                    Font = new Font("Segoe UI", 12, FontStyle.Bold),
+                    Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold),
+                    ForeColor = Color.White,
                     Location = new Point(10, 10),
-                    Size = new Size(260, 30),
-                    ForeColor = Color.FromArgb(31, 41, 55)
+                    Size = new Size(338, 30),
+                    AutoSize = false
                 };
 
                 Label lblPrice = new Label
                 {
-                    Text = $"{price:C2}",
-                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
+                    Text = $"{price:F2} $",
+                    Font = new Font("Segoe UI", 10F),
+                    ForeColor = Color.White,
                     Location = new Point(10, 40),
-                    Size = new Size(260, 20),
-                    ForeColor = Color.FromArgb(107, 114, 128)
+                    AutoSize = true
+                };
+
+                Label lblTotalPrice = new Label
+                {
+                    Text = "Итого: 0.00 $",
+                    Font = new Font("Segoe UI", 10F),
+                    ForeColor = Color.White,
+                    Location = new Point(10, 60),
+                    AutoSize = true,
+                    Visible = false // Скрыт до выбора услуги
                 };
 
                 Label lblDescription = new Label
                 {
-                    Text = shortDescription.Length > 100 ? shortDescription.Substring(0, 100) + "..." : shortDescription,
-                    Font = new Font("Segoe UI", 9, FontStyle.Regular),
-                    Location = new Point(10, 60),
-                    Size = new Size(260, 80),
-                    ForeColor = Color.FromArgb(107, 114, 128)
+                    Text = shortDescription,
+                    Font = new Font("Segoe UI", 9F),
+                    ForeColor = Color.LightGray,
+                    Location = new Point(10, 80),
+                    MaximumSize = new Size(338, 0), // Ограничение по ширине, высота автоматическая
+                    AutoSize = true
                 };
 
                 Button btnSelect = new Button
                 {
                     Text = "Выбрать",
-                    Font = new Font("Segoe UI", 10, FontStyle.Regular),
-                    Location = new Point(180, 180),
-                    Size = new Size(90, 30),
-                    BackColor = Color.FromArgb(30, 64, 175),
+                    Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold),
+                    BackColor = Color.FromArgb(47, 180, 90),
                     ForeColor = Color.White,
                     FlatStyle = FlatStyle.Flat,
-                    Tag = serviceId
+                    Location = new Point(248, 180),
+                    Size = new Size(100, 30),
+                    Tag = new { ServiceId = serviceId, Price = price }
                 };
                 btnSelect.FlatAppearance.BorderSize = 0;
                 btnSelect.Click += BtnSelectService_Click;
 
-                card.Controls.AddRange(new Control[] { lblName, lblPrice, lblDescription, btnSelect });
-                card.MouseEnter += (s, e) => card.BackColor = Color.FromArgb(243, 244, 246);
-                card.MouseLeave += (s, e) => card.BackColor = Color.White;
+                card.Controls.AddRange(new Control[] { lblName, lblPrice, lblTotalPrice, lblDescription, btnSelect });
+
+                // Пересчёт высоты карточки
+                int maxHeight = Math.Max(lblDescription.Bottom, btnSelect.Bottom) + 10; // Отступ снизу
+                card.Size = new Size(358, maxHeight);
 
                 flowLayoutPanelServices.Controls.Add(card);
             }
@@ -114,11 +129,15 @@ namespace WindowsFormsApp1
         private void BtnSelectService_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
-            selectedServiceId = Convert.ToInt32(btn.Tag);
+            var tag = (dynamic)btn.Tag;
+            selectedServiceId = tag.ServiceId;
+            selectedServicePrice = tag.Price;
             UpdateDescription();
             HighlightSelectedCard();
+            UpdateTotalPrice();
             UpdateOrderButtonState();
         }
+
 
         private void UpdateDescription()
         {
@@ -137,8 +156,27 @@ namespace WindowsFormsApp1
         {
             foreach (Panel card in flowLayoutPanelServices.Controls)
             {
-                int serviceId = Convert.ToInt32(card.Controls.OfType<Button>().First().Tag);
-                card.BorderStyle = serviceId == selectedServiceId ? BorderStyle.Fixed3D : BorderStyle.FixedSingle;
+                var btn = card.Controls.OfType<Button>().First();
+                var tag = (dynamic)btn.Tag;
+                int serviceId = tag.ServiceId;
+                card.BackColor = serviceId == selectedServiceId ? Color.FromArgb(70, 70, 74) : Color.FromArgb(60, 60, 64);
+                card.Controls.OfType<Label>().First(l => l.Name == "" && l.Location.Y == 60).Visible = serviceId == selectedServiceId;
+            }
+        }
+
+        private void UpdateTotalPrice()
+        {
+            foreach (Panel card in flowLayoutPanelServices.Controls)
+            {
+                var btn = card.Controls.OfType<Button>().First();
+                var tag = (dynamic)btn.Tag;
+                int serviceId = tag.ServiceId;
+                if (serviceId == selectedServiceId)
+                {
+                    var lblTotalPrice = card.Controls.OfType<Label>().First(l => l.Name == "" && l.Location.Y == 60);
+                    decimal total = selectedServicePrice * numericUpDownQuantity.Value;
+                    lblTotalPrice.Text = $"Итого: {total:F2} $";
+                }
             }
         }
 
@@ -167,7 +205,7 @@ namespace WindowsFormsApp1
                     {
                         try
                         {
-                            // Получение guest_id для текущего user_id
+                            // Получение guest_id
                             int guestId;
                             string getGuestIdQuery = "SELECT guest_id FROM GUESTS WHERE user_id = @userId";
                             using (SqlCommand cmd = new SqlCommand(getGuestIdQuery, conn, transaction))
@@ -183,7 +221,7 @@ namespace WindowsFormsApp1
                                 guestId = Convert.ToInt32(result);
                             }
 
-                            // Проверка, не заказана ли услуга ранее
+                            // Проверка существующего заказа
                             string checkOrderQuery = "SELECT COUNT(*) FROM GUESTSERVICES WHERE guest_id = @guestId AND service_id = @serviceId";
                             using (SqlCommand cmd = new SqlCommand(checkOrderQuery, conn, transaction))
                             {
@@ -198,7 +236,7 @@ namespace WindowsFormsApp1
                                 }
                             }
 
-                            // Вставка в GUESTSERVICES
+                            // Вставка заказа
                             string insertOrderQuery = "INSERT INTO GUESTSERVICES (guest_id, service_id, order_date, quantity, status) " +
                                                      "VALUES (@guestId, @serviceId, @orderDate, @quantity, @status)";
                             using (SqlCommand cmd = new SqlCommand(insertOrderQuery, conn, transaction))
@@ -214,6 +252,7 @@ namespace WindowsFormsApp1
                             transaction.Commit();
                             MessageBox.Show("Услуга успешно заказана!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             selectedServiceId = -1;
+                            selectedServicePrice = 0;
                             textBoxDescription.Text = "";
                             numericUpDownQuantity.Value = 1;
                             UpdateOrderButtonState();

@@ -30,6 +30,7 @@
             this.labelServicesTitle = new System.Windows.Forms.Label();
             this.flowLayoutPanelServices = new System.Windows.Forms.FlowLayoutPanel();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
             this.panelProfile.SuspendLayout();
             this.SuspendLayout();
@@ -37,6 +38,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.panelProfile);
             this.panelMain.Controls.Add(this.labelBookingsTitle);
             this.panelMain.Controls.Add(this.flowLayoutPanelBookings);
@@ -58,9 +60,9 @@
             this.panelProfile.Controls.Add(this.lblEmail);
             this.panelProfile.Controls.Add(this.lblName);
             this.panelProfile.Controls.Add(this.lblUsername);
-            this.panelProfile.Location = new System.Drawing.Point(12, 12);
+            this.panelProfile.Location = new System.Drawing.Point(12, 39);
             this.panelProfile.Name = "panelProfile";
-            this.panelProfile.Size = new System.Drawing.Size(776, 150);
+            this.panelProfile.Size = new System.Drawing.Size(776, 140);
             this.panelProfile.TabIndex = 0;
             // 
             // btnCloseLK
@@ -70,7 +72,7 @@
             this.btnCloseLK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCloseLK.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btnCloseLK.ForeColor = System.Drawing.Color.White;
-            this.btnCloseLK.Location = new System.Drawing.Point(552, 110);
+            this.btnCloseLK.Location = new System.Drawing.Point(537, 93);
             this.btnCloseLK.Name = "btnCloseLK";
             this.btnCloseLK.Size = new System.Drawing.Size(100, 30);
             this.btnCloseLK.TabIndex = 5;
@@ -85,7 +87,7 @@
             this.btnEditProfile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditProfile.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.btnEditProfile.ForeColor = System.Drawing.Color.White;
-            this.btnEditProfile.Location = new System.Drawing.Point(664, 110);
+            this.btnEditProfile.Location = new System.Drawing.Point(655, 93);
             this.btnEditProfile.Name = "btnEditProfile";
             this.btnEditProfile.Size = new System.Drawing.Size(100, 30);
             this.btnEditProfile.TabIndex = 4;
@@ -100,7 +102,7 @@
             this.lblPhone.ForeColor = System.Drawing.Color.White;
             this.lblPhone.Location = new System.Drawing.Point(12, 90);
             this.lblPhone.Name = "lblPhone";
-            this.lblPhone.Size = new System.Drawing.Size(100, 19);
+            this.lblPhone.Size = new System.Drawing.Size(133, 19);
             this.lblPhone.TabIndex = 3;
             this.lblPhone.Text = "Телефон: Не указан";
             // 
@@ -111,7 +113,7 @@
             this.lblEmail.ForeColor = System.Drawing.Color.White;
             this.lblEmail.Location = new System.Drawing.Point(12, 60);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(100, 19);
+            this.lblEmail.Size = new System.Drawing.Size(111, 19);
             this.lblEmail.TabIndex = 2;
             this.lblEmail.Text = "Email: Не указан";
             // 
@@ -122,7 +124,7 @@
             this.lblName.ForeColor = System.Drawing.Color.White;
             this.lblName.Location = new System.Drawing.Point(12, 30);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(100, 19);
+            this.lblName.Size = new System.Drawing.Size(114, 19);
             this.lblName.TabIndex = 1;
             this.lblName.Text = "Имя: Не указано";
             // 
@@ -133,7 +135,7 @@
             this.lblUsername.ForeColor = System.Drawing.Color.White;
             this.lblUsername.Location = new System.Drawing.Point(12, 12);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(150, 21);
+            this.lblUsername.Size = new System.Drawing.Size(198, 21);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "Имя пользователя: Гость";
             // 
@@ -142,9 +144,9 @@
             this.labelBookingsTitle.AutoSize = true;
             this.labelBookingsTitle.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
             this.labelBookingsTitle.ForeColor = System.Drawing.Color.White;
-            this.labelBookingsTitle.Location = new System.Drawing.Point(12, 170);
+            this.labelBookingsTitle.Location = new System.Drawing.Point(12, 182);
             this.labelBookingsTitle.Name = "labelBookingsTitle";
-            this.labelBookingsTitle.Size = new System.Drawing.Size(150, 25);
+            this.labelBookingsTitle.Size = new System.Drawing.Size(195, 25);
             this.labelBookingsTitle.TabIndex = 1;
             this.labelBookingsTitle.Text = "Ваши бронирования";
             // 
@@ -152,9 +154,9 @@
             // 
             this.flowLayoutPanelBookings.AutoScroll = true;
             this.flowLayoutPanelBookings.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
-            this.flowLayoutPanelBookings.Location = new System.Drawing.Point(12, 200);
+            this.flowLayoutPanelBookings.Location = new System.Drawing.Point(12, 210);
             this.flowLayoutPanelBookings.Name = "flowLayoutPanelBookings";
-            this.flowLayoutPanelBookings.Size = new System.Drawing.Size(776, 190);
+            this.flowLayoutPanelBookings.Size = new System.Drawing.Size(776, 180);
             this.flowLayoutPanelBookings.TabIndex = 2;
             // 
             // labelServicesTitle
@@ -164,7 +166,7 @@
             this.labelServicesTitle.ForeColor = System.Drawing.Color.White;
             this.labelServicesTitle.Location = new System.Drawing.Point(12, 400);
             this.labelServicesTitle.Name = "labelServicesTitle";
-            this.labelServicesTitle.Size = new System.Drawing.Size(150, 25);
+            this.labelServicesTitle.Size = new System.Drawing.Size(124, 25);
             this.labelServicesTitle.TabIndex = 3;
             this.labelServicesTitle.Text = "Ваши услуги";
             // 
@@ -191,6 +193,17 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(23, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(159, 25);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Личный кабинет";
+            // 
             // FormLK
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -206,6 +219,7 @@
             this.panelProfile.ResumeLayout(false);
             this.panelProfile.PerformLayout();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -223,5 +237,6 @@
         private System.Windows.Forms.Label labelServicesTitle;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelServices;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label1;
     }
 }

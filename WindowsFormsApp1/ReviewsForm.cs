@@ -118,7 +118,7 @@ namespace WindowsFormsApp1
 
             Panel card = new Panel
             {
-                Size = new Size(460, 100),
+                Size = new Size(737, 100), // Начальная высота, будет пересчитана
                 BackColor = Color.FromArgb(60, 60, 64),
                 Margin = new Padding(10)
             };
@@ -134,12 +134,12 @@ namespace WindowsFormsApp1
 
             Label lblComment = new Label
             {
-                Text = comment.Length > 50 ? comment.Substring(0, 50) + "..." : comment,
+                Text = comment,
                 Font = new Font("Segoe UI", 10F),
                 ForeColor = Color.LightGray,
                 Location = new Point(10, 35),
-                Size = new Size(300, 40),
-                AutoSize = false
+                MaximumSize = new Size(600, 0), // Ограничение по ширине, высота автоматическая
+                AutoSize = true
             };
 
             Label lblDate = new Label
@@ -147,13 +147,13 @@ namespace WindowsFormsApp1
                 Text = $"Дата: {createdAt:d}",
                 Font = new Font("Segoe UI", 10F),
                 ForeColor = Color.White,
-                Location = new Point(320, 10),
+                Location = new Point(620, 10),
                 AutoSize = true
             };
 
             Panel ratingPanel = new Panel
             {
-                Location = new Point(320, 35),
+                Location = new Point(620, 35),
                 Size = new Size(100, 20)
             };
 
@@ -170,6 +170,11 @@ namespace WindowsFormsApp1
             }
 
             card.Controls.AddRange(new Control[] { lblUsername, lblComment, lblDate, ratingPanel });
+
+            // Пересчёт высоты карточки
+            int maxHeight = Math.Max(lblComment.Bottom, ratingPanel.Bottom) + 10; // Отступ снизу
+            card.Size = new Size(737, maxHeight);
+
             flowLayoutPanelReviews.Controls.Add(card);
         }
 

@@ -51,3 +51,6 @@ C:\Users\3291922-1\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFor
 C:\Users\3291922-1\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ReviewsControl.resources
 C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
 C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvailableRoomsForm.resources
+C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ReviewsForm.resources
+C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.OrderServicesForm.resources
+C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.FormLK.resources

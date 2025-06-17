@@ -31,8 +31,8 @@
             this.star4 = new System.Windows.Forms.PictureBox();
             this.star5 = new System.Windows.Forms.PictureBox();
             this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelMain.SuspendLayout();
-            this.flowLayoutPanelReviews.SuspendLayout();
             this.panelAddReview.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.star2)).BeginInit();
@@ -44,6 +44,7 @@
             // panelMain
             // 
             this.panelMain.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
+            this.panelMain.Controls.Add(this.label1);
             this.panelMain.Controls.Add(this.flowLayoutPanelReviews);
             this.panelMain.Controls.Add(this.panelAddReview);
             this.panelMain.Controls.Add(this.btnClose);
@@ -57,10 +58,10 @@
             // 
             this.flowLayoutPanelReviews.AutoScroll = true;
             this.flowLayoutPanelReviews.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(46)))), ((int)(((byte)(50)))));
-            this.flowLayoutPanelReviews.Location = new System.Drawing.Point(12, 12);
+            this.flowLayoutPanelReviews.Location = new System.Drawing.Point(12, 48);
             this.flowLayoutPanelReviews.Name = "flowLayoutPanelReviews";
             this.flowLayoutPanelReviews.Padding = new System.Windows.Forms.Padding(5);
-            this.flowLayoutPanelReviews.Size = new System.Drawing.Size(776, 300);
+            this.flowLayoutPanelReviews.Size = new System.Drawing.Size(776, 330);
             this.flowLayoutPanelReviews.TabIndex = 0;
             // 
             // panelAddReview
@@ -76,9 +77,9 @@
             this.panelAddReview.Controls.Add(this.star3);
             this.panelAddReview.Controls.Add(this.star4);
             this.panelAddReview.Controls.Add(this.star5);
-            this.panelAddReview.Location = new System.Drawing.Point(12, 320);
+            this.panelAddReview.Location = new System.Drawing.Point(12, 384);
             this.panelAddReview.Name = "panelAddReview";
-            this.panelAddReview.Size = new System.Drawing.Size(776, 268);
+            this.panelAddReview.Size = new System.Drawing.Size(776, 204);
             this.panelAddReview.TabIndex = 1;
             // 
             // buttonSubmitReview
@@ -88,7 +89,7 @@
             this.buttonSubmitReview.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonSubmitReview.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.buttonSubmitReview.ForeColor = System.Drawing.Color.White;
-            this.buttonSubmitReview.Location = new System.Drawing.Point(664, 228);
+            this.buttonSubmitReview.Location = new System.Drawing.Point(663, 161);
             this.buttonSubmitReview.Name = "buttonSubmitReview";
             this.buttonSubmitReview.Size = new System.Drawing.Size(100, 30);
             this.buttonSubmitReview.TabIndex = 7;
@@ -103,7 +104,7 @@
             this.buttonClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonClose.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.buttonClose.ForeColor = System.Drawing.Color.White;
-            this.buttonClose.Location = new System.Drawing.Point(552, 228);
+            this.buttonClose.Location = new System.Drawing.Point(551, 161);
             this.buttonClose.Name = "buttonClose";
             this.buttonClose.Size = new System.Drawing.Size(100, 30);
             this.buttonClose.TabIndex = 6;
@@ -117,11 +118,11 @@
             this.textBoxComment.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxComment.Font = new System.Drawing.Font("Segoe UI", 10F);
             this.textBoxComment.ForeColor = System.Drawing.Color.White;
-            this.textBoxComment.Location = new System.Drawing.Point(12, 50);
+            this.textBoxComment.Location = new System.Drawing.Point(11, 46);
             this.textBoxComment.Multiline = true;
             this.textBoxComment.Name = "textBoxComment";
             this.textBoxComment.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxComment.Size = new System.Drawing.Size(752, 150);
+            this.textBoxComment.Size = new System.Drawing.Size(752, 87);
             this.textBoxComment.TabIndex = 5;
             this.textBoxComment.Text = "Введите ваш отзыв...";
             this.textBoxComment.Enter += new System.EventHandler(this.textBoxComment_Enter);
@@ -131,9 +132,9 @@
             this.labelRating.AutoSize = true;
             this.labelRating.Font = new System.Drawing.Font("Segoe UI Semibold", 10F, System.Drawing.FontStyle.Bold);
             this.labelRating.ForeColor = System.Drawing.Color.White;
-            this.labelRating.Location = new System.Drawing.Point(12, 210);
+            this.labelRating.Location = new System.Drawing.Point(11, 143);
             this.labelRating.Name = "labelRating";
-            this.labelRating.Size = new System.Drawing.Size(60, 19);
+            this.labelRating.Size = new System.Drawing.Size(61, 19);
             this.labelRating.TabIndex = 4;
             this.labelRating.Text = "Оценка:";
             // 
@@ -142,15 +143,15 @@
             this.labelAddReview.AutoSize = true;
             this.labelAddReview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
             this.labelAddReview.ForeColor = System.Drawing.Color.White;
-            this.labelAddReview.Location = new System.Drawing.Point(12, 12);
+            this.labelAddReview.Location = new System.Drawing.Point(11, 13);
             this.labelAddReview.Name = "labelAddReview";
-            this.labelAddReview.Size = new System.Drawing.Size(150, 21);
+            this.labelAddReview.Size = new System.Drawing.Size(128, 21);
             this.labelAddReview.TabIndex = 0;
             this.labelAddReview.Text = "Оставить отзыв";
             // 
             // star1
             // 
-            this.star1.Location = new System.Drawing.Point(80, 210);
+            this.star1.Location = new System.Drawing.Point(79, 143);
             this.star1.Name = "star1";
             this.star1.Size = new System.Drawing.Size(20, 20);
             this.star1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -161,7 +162,7 @@
             // 
             // star2
             // 
-            this.star2.Location = new System.Drawing.Point(105, 210);
+            this.star2.Location = new System.Drawing.Point(104, 143);
             this.star2.Name = "star2";
             this.star2.Size = new System.Drawing.Size(20, 20);
             this.star2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -172,7 +173,7 @@
             // 
             // star3
             // 
-            this.star3.Location = new System.Drawing.Point(130, 210);
+            this.star3.Location = new System.Drawing.Point(129, 143);
             this.star3.Name = "star3";
             this.star3.Size = new System.Drawing.Size(20, 20);
             this.star3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -183,7 +184,7 @@
             // 
             // star4
             // 
-            this.star4.Location = new System.Drawing.Point(155, 210);
+            this.star4.Location = new System.Drawing.Point(154, 143);
             this.star4.Name = "star4";
             this.star4.Size = new System.Drawing.Size(20, 20);
             this.star4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -194,7 +195,7 @@
             // 
             // star5
             // 
-            this.star5.Location = new System.Drawing.Point(180, 210);
+            this.star5.Location = new System.Drawing.Point(179, 143);
             this.star5.Name = "star5";
             this.star5.Size = new System.Drawing.Size(20, 20);
             this.star5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -217,6 +218,17 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.buttonClose_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 21);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Просмотр отзывов";
+            // 
             // ReviewsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -228,7 +240,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Urban Stay - Отзывы";
             this.panelMain.ResumeLayout(false);
-            this.flowLayoutPanelReviews.ResumeLayout(false);
+            this.panelMain.PerformLayout();
             this.panelAddReview.ResumeLayout(false);
             this.panelAddReview.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.star1)).EndInit();
@@ -237,6 +249,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.star4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.star5)).EndInit();
             this.ResumeLayout(false);
+
         }
 
         #endregion
@@ -255,5 +268,6 @@
         private System.Windows.Forms.PictureBox star4;
         private System.Windows.Forms.PictureBox star5;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label label1;
     }
 }
