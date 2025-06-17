@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Hotel_Urban_StayConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Hotel_Urban_StayConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.Hotel_Urban_StayConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="Hotel_Urban_StayConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="Hotel_Urban_StayConnectionString1 (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsFormsApp1.Properties.Settings.GlobalReference.Default.Hotel_Urban_StayConnectionString1" Provider="System.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GUESTSTableAdapter" GeneratorDataComponentClassName="GUESTSTableAdapter" Name="GUESTS" UserDataComponentName="GUESTSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.GUESTS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.GUESTS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[GUESTS] WHERE (([guest_id] = @Original_guest_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_user_id = 1 AND [user_id] IS NULL) OR ([user_id] = @Original_user_id)) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_email = 1 AND [email] IS NULL) OR ([email] = @Original_email)) AND ((@IsNull_phone = 1 AND [phone] IS NULL) OR ([phone] = @Original_phone)) AND ((@IsNull_check_in_date = 1 AND [check_in_date] IS NULL) OR ([check_in_date] = @Original_check_in_date)) AND ((@IsNull_check_out_date = 1 AND [check_out_date] IS NULL) OR ([check_out_date] = @Original_check_out_date)) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ((@IsNull_booking_date = 1 AND [booking_date] IS NULL) OR ([booking_date] = @Original_booking_date)))</CommandText>
@@ -115,7 +115,7 @@ SELECT guest_id, room_id, user_id, name, email, phone, check_in_date, check_out_
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="GUESTSERVICESTableAdapter" GeneratorDataComponentClassName="GUESTSERVICESTableAdapter" Name="GUESTSERVICES" UserDataComponentName="GUESTSERVICESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.GUESTSERVICES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.GUESTSERVICES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[GUESTSERVICES] WHERE (([guest_id] = @Original_guest_id) AND ([service_id] = @Original_service_id) AND ((@IsNull_order_date = 1 AND [order_date] IS NULL) OR ([order_date] = @Original_order_date)) AND ((@IsNull_quantity = 1 AND [quantity] IS NULL) OR ([quantity] = @Original_quantity)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)))</CommandText>
@@ -184,10 +184,10 @@ SELECT guest_id, service_id, order_date, quantity, status FROM GUESTSERVICES WHE
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="IMAGESTableAdapter" GeneratorDataComponentClassName="IMAGESTableAdapter" Name="IMAGES" UserDataComponentName="IMAGESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.IMAGES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.IMAGES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [IMAGES] WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[IMAGES] WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_image_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="image_id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_room_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="room_id" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -199,7 +199,7 @@ SELECT guest_id, service_id, order_date, quantity, status FROM GUESTSERVICES WHE
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [IMAGES] ([image_id], [room_id], [image_url]) VALUES (@image_id, @room_id, @image_url);
+                    <CommandText>INSERT INTO [dbo].[IMAGES] ([image_id], [room_id], [image_url]) VALUES (@image_id, @room_id, @image_url);
 SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@image_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="image_id" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -210,13 +210,13 @@ SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)</Co
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT image_id, room_id, image_url FROM IMAGES</CommandText>
+                    <CommandText>SELECT image_id, room_id, image_url FROM dbo.IMAGES</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [IMAGES] SET [image_id] = @image_id, [room_id] = @room_id, [image_url] = @image_url WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)));
+                    <CommandText>UPDATE [dbo].[IMAGES] SET [image_id] = @image_id, [room_id] = @room_id, [image_url] = @image_url WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)));
 SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@image_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="image_id" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -241,33 +241,30 @@ SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)</Co
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="REVIEWSTableAdapter" GeneratorDataComponentClassName="REVIEWSTableAdapter" Name="REVIEWS" UserDataComponentName="REVIEWSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.REVIEWS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.REVIEWS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[REVIEWS] WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ((@IsNull_rating = 1 AND [rating] IS NULL) OR ([rating] = @Original_rating)) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ((@IsNull_created_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)))</CommandText>
+                    <CommandText>DELETE FROM [dbo].[REVIEWS] WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ([rating] = @Original_rating) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ([created_at] = @Original_created_at))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_review_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="review_id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_guest_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="guest_id" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_guest_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="guest_id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_comment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="comment" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="comment" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_at" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[REVIEWS] ([review_id], [guest_id], [rating], [comment], [created_at]) VALUES (@review_id, @guest_id, @rating, @comment, @created_at);
-SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (review_id = @review_id)</CommandText>
+                    <CommandText>INSERT INTO [dbo].[REVIEWS] ([guest_id], [rating], [comment], [created_at]) VALUES (@guest_id, @rating, @comment, @created_at);
+SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (review_id = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@review_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="review_id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@guest_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="guest_id" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="comment" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
@@ -279,23 +276,21 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[REVIEWS] SET [review_id] = @review_id, [guest_id] = @guest_id, [rating] = @rating, [comment] = @comment, [created_at] = @created_at WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ((@IsNull_rating = 1 AND [rating] IS NULL) OR ([rating] = @Original_rating)) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ((@IsNull_created_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)));
+                    <CommandText>UPDATE [dbo].[REVIEWS] SET [guest_id] = @guest_id, [rating] = @rating, [comment] = @comment, [created_at] = @created_at WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ([rating] = @Original_rating) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ([created_at] = @Original_created_at));
 SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (review_id = @review_id)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@review_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="review_id" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@guest_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="guest_id" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="comment" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_review_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="review_id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_guest_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="guest_id" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_guest_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="guest_id" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_rating" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="rating" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_comment" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="comment" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@Original_comment" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="comment" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_created_at" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_created_at" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="created_at" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="review_id" ColumnName="review_id" DataSourceName="Hotel_Urban_Stay.dbo.REVIEWS" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@review_id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="review_id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </UpdateCommand>
@@ -312,7 +307,7 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ROOMSTableAdapter" GeneratorDataComponentClassName="ROOMSTableAdapter" Name="ROOMS" UserDataComponentName="ROOMSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.ROOMS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.ROOMS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[ROOMS] WHERE (([room_id] = @Original_room_id) AND ((@IsNull_category = 1 AND [category] IS NULL) OR ([category] = @Original_category)) AND ((@IsNull_description = 1 AND [description] IS NULL) OR ([description] = @Original_description)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_status = 1 AND [status] IS NULL) OR ([status] = @Original_status)) AND ((@IsNull_quantity = 1 AND [quantity] IS NULL) OR ([quantity] = @Original_quantity)) AND ((@IsNull_booked_quantity = 1 AND [booked_quantity] IS NULL) OR ([booked_quantity] = @Original_booked_quantity)))</CommandText>
@@ -397,7 +392,7 @@ SELECT room_id, category, description, price, status, quantity, booked_quantity 
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SERVICESTableAdapter" GeneratorDataComponentClassName="SERVICESTableAdapter" Name="SERVICES" UserDataComponentName="SERVICESTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.SERVICES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.SERVICES" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[SERVICES] WHERE (([service_id] = @Original_service_id) AND ((@IsNull_name = 1 AND [name] IS NULL) OR ([name] = @Original_name)) AND ((@IsNull_price = 1 AND [price] IS NULL) OR ([price] = @Original_price)) AND ((@IsNull_short_description = 1 AND [short_description] IS NULL) OR ([short_description] = @Original_short_description)) AND ((@IsNull_detailed_description = 1 AND [detailed_description] IS NULL) OR ([detailed_description] = @Original_detailed_description)))</CommandText>
@@ -468,7 +463,7 @@ SELECT service_id, name, price, short_description, detailed_description FROM SER
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="USERSTableAdapter" GeneratorDataComponentClassName="USERSTableAdapter" Name="USERS" UserDataComponentName="USERSTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.USERS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="Hotel_Urban_StayConnectionString1 (Settings)" DbObjectName="Hotel_Urban_Stay.dbo.USERS" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[USERS] WHERE (([user_id] = @Original_user_id) AND ((@IsNull_username = 1 AND [username] IS NULL) OR ([username] = @Original_username)) AND ((@IsNull_password = 1 AND [password] IS NULL) OR ([password] = @Original_password)) AND ((@IsNull_admin = 1 AND [admin] IS NULL) OR ([admin] = @Original_admin)))</CommandText>
@@ -535,57 +530,57 @@ SELECT user_id, username, password, admin FROM USERS WHERE (user_id = @user_id)<
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="Hotel_Urban_StayDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="Hotel_Urban_StayDataSet" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="Hotel_Urban_StayDataSet">
+  <xs:element name="Hotel_Urban_StayDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_UserDSName="Hotel_Urban_StayDataSet" msprop:Generator_DataSetName="Hotel_Urban_StayDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="GUESTS" msprop:Generator_RowClassName="GUESTSRow" msprop:Generator_RowEvHandlerName="GUESTSRowChangeEventHandler" msprop:Generator_RowDeletedName="GUESTSRowDeleted" msprop:Generator_RowDeletingName="GUESTSRowDeleting" msprop:Generator_RowEvArgName="GUESTSRowChangeEvent" msprop:Generator_TablePropName="GUESTS" msprop:Generator_RowChangedName="GUESTSRowChanged" msprop:Generator_UserTableName="GUESTS" msprop:Generator_RowChangingName="GUESTSRowChanging" msprop:Generator_TableClassName="GUESTSDataTable" msprop:Generator_TableVarName="tableGUESTS">
+        <xs:element name="GUESTS" msprop:Generator_RowEvHandlerName="GUESTSRowChangeEventHandler" msprop:Generator_RowDeletedName="GUESTSRowDeleted" msprop:Generator_RowDeletingName="GUESTSRowDeleting" msprop:Generator_RowEvArgName="GUESTSRowChangeEvent" msprop:Generator_TablePropName="GUESTS" msprop:Generator_RowChangedName="GUESTSRowChanged" msprop:Generator_RowChangingName="GUESTSRowChanging" msprop:Generator_TableClassName="GUESTSDataTable" msprop:Generator_RowClassName="GUESTSRow" msprop:Generator_TableVarName="tableGUESTS" msprop:Generator_UserTableName="GUESTS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="guest_id" msprop:Generator_UserColumnName="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnVarNameInTable="columnguest_id" type="xs:int" />
-              <xs:element name="room_id" msprop:Generator_UserColumnName="room_id" msprop:Generator_ColumnPropNameInTable="room_idColumn" msprop:Generator_ColumnPropNameInRow="room_id" msprop:Generator_ColumnVarNameInTable="columnroom_id" type="xs:int" minOccurs="0" />
-              <xs:element name="user_id" msprop:Generator_UserColumnName="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" type="xs:int" minOccurs="0" />
-              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
+              <xs:element name="guest_id" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_ColumnVarNameInTable="columnguest_id" msprop:Generator_UserColumnName="guest_id" type="xs:int" />
+              <xs:element name="room_id" msprop:Generator_ColumnPropNameInRow="room_id" msprop:Generator_ColumnPropNameInTable="room_idColumn" msprop:Generator_ColumnVarNameInTable="columnroom_id" msprop:Generator_UserColumnName="room_id" type="xs:int" minOccurs="0" />
+              <xs:element name="user_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_UserColumnName="user_id" type="xs:int" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="email" msprop:Generator_UserColumnName="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnVarNameInTable="columnemail" minOccurs="0">
+              <xs:element name="email" msprop:Generator_ColumnPropNameInRow="email" msprop:Generator_ColumnPropNameInTable="emailColumn" msprop:Generator_ColumnVarNameInTable="columnemail" msprop:Generator_UserColumnName="email" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="phone" msprop:Generator_UserColumnName="phone" msprop:Generator_ColumnPropNameInTable="phoneColumn" msprop:Generator_ColumnPropNameInRow="phone" msprop:Generator_ColumnVarNameInTable="columnphone" minOccurs="0">
+              <xs:element name="phone" msprop:Generator_ColumnPropNameInRow="phone" msprop:Generator_ColumnPropNameInTable="phoneColumn" msprop:Generator_ColumnVarNameInTable="columnphone" msprop:Generator_UserColumnName="phone" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="20" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="check_in_date" msprop:Generator_UserColumnName="check_in_date" msprop:Generator_ColumnPropNameInTable="check_in_dateColumn" msprop:Generator_ColumnPropNameInRow="check_in_date" msprop:Generator_ColumnVarNameInTable="columncheck_in_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="check_out_date" msprop:Generator_UserColumnName="check_out_date" msprop:Generator_ColumnPropNameInTable="check_out_dateColumn" msprop:Generator_ColumnPropNameInRow="check_out_date" msprop:Generator_ColumnVarNameInTable="columncheck_out_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="comment" msprop:Generator_UserColumnName="comment" msprop:Generator_ColumnPropNameInTable="commentColumn" msprop:Generator_ColumnPropNameInRow="comment" msprop:Generator_ColumnVarNameInTable="columncomment" minOccurs="0">
+              <xs:element name="check_in_date" msprop:Generator_ColumnPropNameInRow="check_in_date" msprop:Generator_ColumnPropNameInTable="check_in_dateColumn" msprop:Generator_ColumnVarNameInTable="columncheck_in_date" msprop:Generator_UserColumnName="check_in_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="check_out_date" msprop:Generator_ColumnPropNameInRow="check_out_date" msprop:Generator_ColumnPropNameInTable="check_out_dateColumn" msprop:Generator_ColumnVarNameInTable="columncheck_out_date" msprop:Generator_UserColumnName="check_out_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="comment" msprop:Generator_ColumnPropNameInRow="comment" msprop:Generator_ColumnPropNameInTable="commentColumn" msprop:Generator_ColumnVarNameInTable="columncomment" msprop:Generator_UserColumnName="comment" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="booking_date" msprop:Generator_UserColumnName="booking_date" msprop:Generator_ColumnPropNameInTable="booking_dateColumn" msprop:Generator_ColumnPropNameInRow="booking_date" msprop:Generator_ColumnVarNameInTable="columnbooking_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="booking_date" msprop:Generator_ColumnPropNameInRow="booking_date" msprop:Generator_ColumnPropNameInTable="booking_dateColumn" msprop:Generator_ColumnVarNameInTable="columnbooking_date" msprop:Generator_UserColumnName="booking_date" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="GUESTSERVICES" msprop:Generator_RowClassName="GUESTSERVICESRow" msprop:Generator_RowEvHandlerName="GUESTSERVICESRowChangeEventHandler" msprop:Generator_RowDeletedName="GUESTSERVICESRowDeleted" msprop:Generator_RowDeletingName="GUESTSERVICESRowDeleting" msprop:Generator_RowEvArgName="GUESTSERVICESRowChangeEvent" msprop:Generator_TablePropName="GUESTSERVICES" msprop:Generator_RowChangedName="GUESTSERVICESRowChanged" msprop:Generator_UserTableName="GUESTSERVICES" msprop:Generator_RowChangingName="GUESTSERVICESRowChanging" msprop:Generator_TableClassName="GUESTSERVICESDataTable" msprop:Generator_TableVarName="tableGUESTSERVICES">
+        <xs:element name="GUESTSERVICES" msprop:Generator_RowEvHandlerName="GUESTSERVICESRowChangeEventHandler" msprop:Generator_RowDeletedName="GUESTSERVICESRowDeleted" msprop:Generator_RowDeletingName="GUESTSERVICESRowDeleting" msprop:Generator_RowEvArgName="GUESTSERVICESRowChangeEvent" msprop:Generator_TablePropName="GUESTSERVICES" msprop:Generator_RowChangedName="GUESTSERVICESRowChanged" msprop:Generator_RowChangingName="GUESTSERVICESRowChanging" msprop:Generator_TableClassName="GUESTSERVICESDataTable" msprop:Generator_RowClassName="GUESTSERVICESRow" msprop:Generator_TableVarName="tableGUESTSERVICES" msprop:Generator_UserTableName="GUESTSERVICES">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="guest_id" msprop:Generator_UserColumnName="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnVarNameInTable="columnguest_id" type="xs:int" />
-              <xs:element name="service_id" msprop:Generator_UserColumnName="service_id" msprop:Generator_ColumnPropNameInTable="service_idColumn" msprop:Generator_ColumnPropNameInRow="service_id" msprop:Generator_ColumnVarNameInTable="columnservice_id" type="xs:int" />
-              <xs:element name="order_date" msprop:Generator_UserColumnName="order_date" msprop:Generator_ColumnPropNameInTable="order_dateColumn" msprop:Generator_ColumnPropNameInRow="order_date" msprop:Generator_ColumnVarNameInTable="columnorder_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="quantity" msprop:Generator_UserColumnName="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" type="xs:int" minOccurs="0" />
-              <xs:element name="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnVarNameInTable="columnstatus" minOccurs="0">
+              <xs:element name="guest_id" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_ColumnVarNameInTable="columnguest_id" msprop:Generator_UserColumnName="guest_id" type="xs:int" />
+              <xs:element name="service_id" msprop:Generator_ColumnPropNameInRow="service_id" msprop:Generator_ColumnPropNameInTable="service_idColumn" msprop:Generator_ColumnVarNameInTable="columnservice_id" msprop:Generator_UserColumnName="service_id" type="xs:int" />
+              <xs:element name="order_date" msprop:Generator_ColumnPropNameInRow="order_date" msprop:Generator_ColumnPropNameInTable="order_dateColumn" msprop:Generator_ColumnVarNameInTable="columnorder_date" msprop:Generator_UserColumnName="order_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="quantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_UserColumnName="quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
@@ -595,12 +590,12 @@ SELECT user_id, username, password, admin FROM USERS WHERE (user_id = @user_id)<
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="IMAGES" msprop:Generator_RowClassName="IMAGESRow" msprop:Generator_RowEvHandlerName="IMAGESRowChangeEventHandler" msprop:Generator_RowDeletedName="IMAGESRowDeleted" msprop:Generator_RowDeletingName="IMAGESRowDeleting" msprop:Generator_RowEvArgName="IMAGESRowChangeEvent" msprop:Generator_TablePropName="IMAGES" msprop:Generator_RowChangedName="IMAGESRowChanged" msprop:Generator_UserTableName="IMAGES" msprop:Generator_RowChangingName="IMAGESRowChanging" msprop:Generator_TableClassName="IMAGESDataTable" msprop:Generator_TableVarName="tableIMAGES">
+        <xs:element name="IMAGES" msprop:Generator_RowEvHandlerName="IMAGESRowChangeEventHandler" msprop:Generator_RowDeletedName="IMAGESRowDeleted" msprop:Generator_RowDeletingName="IMAGESRowDeleting" msprop:Generator_RowEvArgName="IMAGESRowChangeEvent" msprop:Generator_TablePropName="IMAGES" msprop:Generator_RowChangedName="IMAGESRowChanged" msprop:Generator_RowChangingName="IMAGESRowChanging" msprop:Generator_TableClassName="IMAGESDataTable" msprop:Generator_RowClassName="IMAGESRow" msprop:Generator_TableVarName="tableIMAGES" msprop:Generator_UserTableName="IMAGES">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="image_id" msprop:Generator_UserColumnName="image_id" msprop:Generator_ColumnPropNameInTable="image_idColumn" msprop:Generator_ColumnPropNameInRow="image_id" msprop:Generator_ColumnVarNameInTable="columnimage_id" type="xs:int" />
-              <xs:element name="room_id" msprop:Generator_UserColumnName="room_id" msprop:Generator_ColumnPropNameInTable="room_idColumn" msprop:Generator_ColumnPropNameInRow="room_id" msprop:Generator_ColumnVarNameInTable="columnroom_id" type="xs:int" minOccurs="0" />
-              <xs:element name="image_url" msprop:Generator_UserColumnName="image_url" msprop:Generator_ColumnPropNameInTable="image_urlColumn" msprop:Generator_ColumnPropNameInRow="image_url" msprop:Generator_ColumnVarNameInTable="columnimage_url" minOccurs="0">
+              <xs:element name="image_id" msprop:Generator_ColumnPropNameInRow="image_id" msprop:Generator_ColumnPropNameInTable="image_idColumn" msprop:Generator_ColumnVarNameInTable="columnimage_id" msprop:Generator_UserColumnName="image_id" type="xs:int" />
+              <xs:element name="room_id" msprop:Generator_ColumnPropNameInRow="room_id" msprop:Generator_ColumnPropNameInTable="room_idColumn" msprop:Generator_ColumnVarNameInTable="columnroom_id" msprop:Generator_UserColumnName="room_id" type="xs:int" minOccurs="0" />
+              <xs:element name="image_url" msprop:Generator_ColumnPropNameInRow="image_url" msprop:Generator_ColumnPropNameInTable="image_urlColumn" msprop:Generator_ColumnVarNameInTable="columnimage_url" msprop:Generator_UserColumnName="image_url" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
@@ -610,74 +605,74 @@ SELECT user_id, username, password, admin FROM USERS WHERE (user_id = @user_id)<
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="REVIEWS" msprop:Generator_RowClassName="REVIEWSRow" msprop:Generator_RowEvHandlerName="REVIEWSRowChangeEventHandler" msprop:Generator_RowDeletedName="REVIEWSRowDeleted" msprop:Generator_RowDeletingName="REVIEWSRowDeleting" msprop:Generator_RowEvArgName="REVIEWSRowChangeEvent" msprop:Generator_TablePropName="REVIEWS" msprop:Generator_RowChangedName="REVIEWSRowChanged" msprop:Generator_UserTableName="REVIEWS" msprop:Generator_RowChangingName="REVIEWSRowChanging" msprop:Generator_TableClassName="REVIEWSDataTable" msprop:Generator_TableVarName="tableREVIEWS">
+        <xs:element name="REVIEWS" msprop:Generator_RowEvHandlerName="REVIEWSRowChangeEventHandler" msprop:Generator_RowDeletedName="REVIEWSRowDeleted" msprop:Generator_RowDeletingName="REVIEWSRowDeleting" msprop:Generator_RowEvArgName="REVIEWSRowChangeEvent" msprop:Generator_TablePropName="REVIEWS" msprop:Generator_RowChangedName="REVIEWSRowChanged" msprop:Generator_RowChangingName="REVIEWSRowChanging" msprop:Generator_TableClassName="REVIEWSDataTable" msprop:Generator_RowClassName="REVIEWSRow" msprop:Generator_TableVarName="tableREVIEWS" msprop:Generator_UserTableName="REVIEWS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="review_id" msprop:Generator_UserColumnName="review_id" msprop:Generator_ColumnPropNameInTable="review_idColumn" msprop:Generator_ColumnPropNameInRow="review_id" msprop:Generator_ColumnVarNameInTable="columnreview_id" type="xs:int" />
-              <xs:element name="guest_id" msprop:Generator_UserColumnName="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnVarNameInTable="columnguest_id" type="xs:int" minOccurs="0" />
-              <xs:element name="rating" msprop:Generator_UserColumnName="rating" msprop:Generator_ColumnPropNameInTable="ratingColumn" msprop:Generator_ColumnPropNameInRow="rating" msprop:Generator_ColumnVarNameInTable="columnrating" type="xs:int" minOccurs="0" />
-              <xs:element name="comment" msprop:Generator_UserColumnName="comment" msprop:Generator_ColumnPropNameInTable="commentColumn" msprop:Generator_ColumnPropNameInRow="comment" msprop:Generator_ColumnVarNameInTable="columncomment" minOccurs="0">
+              <xs:element name="review_id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnPropNameInRow="review_id" msprop:Generator_ColumnPropNameInTable="review_idColumn" msprop:Generator_ColumnVarNameInTable="columnreview_id" msprop:Generator_UserColumnName="review_id" type="xs:int" />
+              <xs:element name="guest_id" msprop:Generator_ColumnPropNameInRow="guest_id" msprop:Generator_ColumnPropNameInTable="guest_idColumn" msprop:Generator_ColumnVarNameInTable="columnguest_id" msprop:Generator_UserColumnName="guest_id" type="xs:int" minOccurs="0" />
+              <xs:element name="rating" msprop:Generator_ColumnPropNameInRow="rating" msprop:Generator_ColumnPropNameInTable="ratingColumn" msprop:Generator_ColumnVarNameInTable="columnrating" msprop:Generator_UserColumnName="rating" type="xs:int" />
+              <xs:element name="comment" msprop:Generator_ColumnPropNameInRow="comment" msprop:Generator_ColumnPropNameInTable="commentColumn" msprop:Generator_ColumnVarNameInTable="columncomment" msprop:Generator_UserColumnName="comment" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="created_at" msprop:Generator_UserColumnName="created_at" msprop:Generator_ColumnPropNameInTable="created_atColumn" msprop:Generator_ColumnPropNameInRow="created_at" msprop:Generator_ColumnVarNameInTable="columncreated_at" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="created_at" msprop:Generator_ColumnPropNameInRow="created_at" msprop:Generator_ColumnPropNameInTable="created_atColumn" msprop:Generator_ColumnVarNameInTable="columncreated_at" msprop:Generator_UserColumnName="created_at" type="xs:dateTime" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="ROOMS" msprop:Generator_RowClassName="ROOMSRow" msprop:Generator_RowEvHandlerName="ROOMSRowChangeEventHandler" msprop:Generator_RowDeletedName="ROOMSRowDeleted" msprop:Generator_RowDeletingName="ROOMSRowDeleting" msprop:Generator_RowEvArgName="ROOMSRowChangeEvent" msprop:Generator_TablePropName="ROOMS" msprop:Generator_RowChangedName="ROOMSRowChanged" msprop:Generator_UserTableName="ROOMS" msprop:Generator_RowChangingName="ROOMSRowChanging" msprop:Generator_TableClassName="ROOMSDataTable" msprop:Generator_TableVarName="tableROOMS">
+        <xs:element name="ROOMS" msprop:Generator_RowEvHandlerName="ROOMSRowChangeEventHandler" msprop:Generator_RowDeletedName="ROOMSRowDeleted" msprop:Generator_RowDeletingName="ROOMSRowDeleting" msprop:Generator_RowEvArgName="ROOMSRowChangeEvent" msprop:Generator_TablePropName="ROOMS" msprop:Generator_RowChangedName="ROOMSRowChanged" msprop:Generator_RowChangingName="ROOMSRowChanging" msprop:Generator_TableClassName="ROOMSDataTable" msprop:Generator_RowClassName="ROOMSRow" msprop:Generator_TableVarName="tableROOMS" msprop:Generator_UserTableName="ROOMS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="room_id" msprop:Generator_UserColumnName="room_id" msprop:Generator_ColumnPropNameInTable="room_idColumn" msprop:Generator_ColumnPropNameInRow="room_id" msprop:Generator_ColumnVarNameInTable="columnroom_id" type="xs:int" />
-              <xs:element name="category" msprop:Generator_UserColumnName="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_ColumnVarNameInTable="columncategory" minOccurs="0">
+              <xs:element name="room_id" msprop:Generator_ColumnPropNameInRow="room_id" msprop:Generator_ColumnPropNameInTable="room_idColumn" msprop:Generator_ColumnVarNameInTable="columnroom_id" msprop:Generator_UserColumnName="room_id" type="xs:int" />
+              <xs:element name="category" msprop:Generator_ColumnPropNameInRow="category" msprop:Generator_ColumnPropNameInTable="categoryColumn" msprop:Generator_ColumnVarNameInTable="columncategory" msprop:Generator_UserColumnName="category" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="description" msprop:Generator_UserColumnName="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnVarNameInTable="columndescription" minOccurs="0">
+              <xs:element name="description" msprop:Generator_ColumnPropNameInRow="description" msprop:Generator_ColumnPropNameInTable="descriptionColumn" msprop:Generator_ColumnVarNameInTable="columndescription" msprop:Generator_UserColumnName="description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="price" msprop:Generator_UserColumnName="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnVarNameInTable="columnprice" type="xs:decimal" minOccurs="0" />
-              <xs:element name="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnVarNameInTable="columnstatus" minOccurs="0">
+              <xs:element name="price" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnVarNameInTable="columnprice" msprop:Generator_UserColumnName="price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_UserColumnName="status" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="quantity" msprop:Generator_UserColumnName="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnVarNameInTable="columnquantity" type="xs:int" minOccurs="0" />
-              <xs:element name="booked_quantity" msprop:Generator_UserColumnName="booked_quantity" msprop:Generator_ColumnPropNameInTable="booked_quantityColumn" msprop:Generator_ColumnPropNameInRow="booked_quantity" msprop:Generator_ColumnVarNameInTable="columnbooked_quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="quantity" msprop:Generator_ColumnPropNameInRow="quantity" msprop:Generator_ColumnPropNameInTable="quantityColumn" msprop:Generator_ColumnVarNameInTable="columnquantity" msprop:Generator_UserColumnName="quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="booked_quantity" msprop:Generator_ColumnPropNameInRow="booked_quantity" msprop:Generator_ColumnPropNameInTable="booked_quantityColumn" msprop:Generator_ColumnVarNameInTable="columnbooked_quantity" msprop:Generator_UserColumnName="booked_quantity" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SERVICES" msprop:Generator_RowClassName="SERVICESRow" msprop:Generator_RowEvHandlerName="SERVICESRowChangeEventHandler" msprop:Generator_RowDeletedName="SERVICESRowDeleted" msprop:Generator_RowDeletingName="SERVICESRowDeleting" msprop:Generator_RowEvArgName="SERVICESRowChangeEvent" msprop:Generator_TablePropName="SERVICES" msprop:Generator_RowChangedName="SERVICESRowChanged" msprop:Generator_UserTableName="SERVICES" msprop:Generator_RowChangingName="SERVICESRowChanging" msprop:Generator_TableClassName="SERVICESDataTable" msprop:Generator_TableVarName="tableSERVICES">
+        <xs:element name="SERVICES" msprop:Generator_RowEvHandlerName="SERVICESRowChangeEventHandler" msprop:Generator_RowDeletedName="SERVICESRowDeleted" msprop:Generator_RowDeletingName="SERVICESRowDeleting" msprop:Generator_RowEvArgName="SERVICESRowChangeEvent" msprop:Generator_TablePropName="SERVICES" msprop:Generator_RowChangedName="SERVICESRowChanged" msprop:Generator_RowChangingName="SERVICESRowChanging" msprop:Generator_TableClassName="SERVICESDataTable" msprop:Generator_RowClassName="SERVICESRow" msprop:Generator_TableVarName="tableSERVICES" msprop:Generator_UserTableName="SERVICES">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="service_id" msprop:Generator_UserColumnName="service_id" msprop:Generator_ColumnPropNameInTable="service_idColumn" msprop:Generator_ColumnPropNameInRow="service_id" msprop:Generator_ColumnVarNameInTable="columnservice_id" type="xs:int" />
-              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" minOccurs="0">
+              <xs:element name="service_id" msprop:Generator_ColumnPropNameInRow="service_id" msprop:Generator_ColumnPropNameInTable="service_idColumn" msprop:Generator_ColumnVarNameInTable="columnservice_id" msprop:Generator_UserColumnName="service_id" type="xs:int" />
+              <xs:element name="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="price" msprop:Generator_UserColumnName="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnVarNameInTable="columnprice" type="xs:decimal" minOccurs="0" />
-              <xs:element name="short_description" msprop:Generator_UserColumnName="short_description" msprop:Generator_ColumnPropNameInTable="short_descriptionColumn" msprop:Generator_ColumnPropNameInRow="short_description" msprop:Generator_ColumnVarNameInTable="columnshort_description" minOccurs="0">
+              <xs:element name="price" msprop:Generator_ColumnPropNameInRow="price" msprop:Generator_ColumnPropNameInTable="priceColumn" msprop:Generator_ColumnVarNameInTable="columnprice" msprop:Generator_UserColumnName="price" type="xs:decimal" minOccurs="0" />
+              <xs:element name="short_description" msprop:Generator_ColumnPropNameInRow="short_description" msprop:Generator_ColumnPropNameInTable="short_descriptionColumn" msprop:Generator_ColumnVarNameInTable="columnshort_description" msprop:Generator_UserColumnName="short_description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="detailed_description" msprop:Generator_UserColumnName="detailed_description" msprop:Generator_ColumnPropNameInTable="detailed_descriptionColumn" msprop:Generator_ColumnPropNameInRow="detailed_description" msprop:Generator_ColumnVarNameInTable="columndetailed_description" minOccurs="0">
+              <xs:element name="detailed_description" msprop:Generator_ColumnPropNameInRow="detailed_description" msprop:Generator_ColumnPropNameInTable="detailed_descriptionColumn" msprop:Generator_ColumnVarNameInTable="columndetailed_description" msprop:Generator_UserColumnName="detailed_description" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1000" />
@@ -687,25 +682,25 @@ SELECT user_id, username, password, admin FROM USERS WHERE (user_id = @user_id)<
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="USERS" msprop:Generator_RowClassName="USERSRow" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_TablePropName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_UserTableName="USERS" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_TableVarName="tableUSERS">
+        <xs:element name="USERS" msprop:Generator_RowEvHandlerName="USERSRowChangeEventHandler" msprop:Generator_RowDeletedName="USERSRowDeleted" msprop:Generator_RowDeletingName="USERSRowDeleting" msprop:Generator_RowEvArgName="USERSRowChangeEvent" msprop:Generator_TablePropName="USERS" msprop:Generator_RowChangedName="USERSRowChanged" msprop:Generator_RowChangingName="USERSRowChanging" msprop:Generator_TableClassName="USERSDataTable" msprop:Generator_RowClassName="USERSRow" msprop:Generator_TableVarName="tableUSERS" msprop:Generator_UserTableName="USERS">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="user_id" msprop:Generator_UserColumnName="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnVarNameInTable="columnuser_id" type="xs:int" />
-              <xs:element name="username" msprop:Generator_UserColumnName="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnVarNameInTable="columnusername" minOccurs="0">
+              <xs:element name="user_id" msprop:Generator_ColumnPropNameInRow="user_id" msprop:Generator_ColumnPropNameInTable="user_idColumn" msprop:Generator_ColumnVarNameInTable="columnuser_id" msprop:Generator_UserColumnName="user_id" type="xs:int" />
+              <xs:element name="username" msprop:Generator_ColumnPropNameInRow="username" msprop:Generator_ColumnPropNameInTable="usernameColumn" msprop:Generator_ColumnVarNameInTable="columnusername" msprop:Generator_UserColumnName="username" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="password" msprop:Generator_UserColumnName="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnVarNameInTable="columnpassword" minOccurs="0">
+              <xs:element name="password" msprop:Generator_ColumnPropNameInRow="password" msprop:Generator_ColumnPropNameInTable="passwordColumn" msprop:Generator_ColumnVarNameInTable="columnpassword" msprop:Generator_UserColumnName="password" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="admin" msprop:Generator_UserColumnName="admin" msprop:Generator_ColumnPropNameInTable="adminColumn" msprop:Generator_ColumnPropNameInRow="admin" msprop:Generator_ColumnVarNameInTable="columnadmin" type="xs:boolean" minOccurs="0" />
+              <xs:element name="admin" msprop:Generator_ColumnPropNameInRow="admin" msprop:Generator_ColumnPropNameInTable="adminColumn" msprop:Generator_ColumnVarNameInTable="columnadmin" msprop:Generator_UserColumnName="admin" type="xs:boolean" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -743,12 +738,12 @@ SELECT user_id, username, password, admin FROM USERS WHERE (user_id = @user_id)<
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__GUESTS__room_id__5165187F" msdata:parent="ROOMS" msdata:child="GUESTS" msdata:parentkey="room_id" msdata:childkey="room_id" msprop:Generator_UserParentTable="ROOMS" msprop:Generator_UserChildTable="GUESTS" msprop:Generator_RelationVarName="relationFK__GUESTS__room_id__5165187F" msprop:Generator_ChildPropName="GetGUESTSRows" msprop:Generator_ParentPropName="ROOMSRow" msprop:Generator_UserRelationName="FK__GUESTS__room_id__5165187F" />
-      <msdata:Relationship name="FK__GUESTS__user_id__52593CB8" msdata:parent="USERS" msdata:child="GUESTS" msdata:parentkey="user_id" msdata:childkey="user_id" msprop:Generator_UserParentTable="USERS" msprop:Generator_UserChildTable="GUESTS" msprop:Generator_RelationVarName="relationFK__GUESTS__user_id__52593CB8" msprop:Generator_ChildPropName="GetGUESTSRows" msprop:Generator_ParentPropName="USERSRow" msprop:Generator_UserRelationName="FK__GUESTS__user_id__52593CB8" />
-      <msdata:Relationship name="FK__GUESTSERV__guest__571DF1D5" msdata:parent="GUESTS" msdata:child="GUESTSERVICES" msdata:parentkey="guest_id" msdata:childkey="guest_id" msprop:Generator_UserParentTable="GUESTS" msprop:Generator_UserChildTable="GUESTSERVICES" msprop:Generator_RelationVarName="relationFK__GUESTSERV__guest__571DF1D5" msprop:Generator_ChildPropName="GetGUESTSERVICESRows" msprop:Generator_UserRelationName="FK__GUESTSERV__guest__571DF1D5" msprop:Generator_ParentPropName="GUESTSRow" />
-      <msdata:Relationship name="FK__GUESTSERV__servi__5812160E" msdata:parent="SERVICES" msdata:child="GUESTSERVICES" msdata:parentkey="service_id" msdata:childkey="service_id" msprop:Generator_UserParentTable="SERVICES" msprop:Generator_UserChildTable="GUESTSERVICES" msprop:Generator_RelationVarName="relationFK__GUESTSERV__servi__5812160E" msprop:Generator_ChildPropName="GetGUESTSERVICESRows" msprop:Generator_ParentPropName="SERVICESRow" msprop:Generator_UserRelationName="FK__GUESTSERV__servi__5812160E" />
-      <msdata:Relationship name="FK__IMAGES__room_id__4E88ABD4" msdata:parent="ROOMS" msdata:child="IMAGES" msdata:parentkey="room_id" msdata:childkey="room_id" msprop:Generator_UserParentTable="ROOMS" msprop:Generator_UserChildTable="IMAGES" msprop:Generator_RelationVarName="relationFK__IMAGES__room_id__4E88ABD4" msprop:Generator_ChildPropName="GetIMAGESRows" msprop:Generator_ParentPropName="ROOMSRow" msprop:Generator_UserRelationName="FK__IMAGES__room_id__4E88ABD4" />
-      <msdata:Relationship name="FK__REVIEWS__guest_i__5AEE82B9" msdata:parent="GUESTS" msdata:child="REVIEWS" msdata:parentkey="guest_id" msdata:childkey="guest_id" msprop:Generator_UserParentTable="GUESTS" msprop:Generator_UserChildTable="REVIEWS" msprop:Generator_RelationVarName="relationFK__REVIEWS__guest_i__5AEE82B9" msprop:Generator_ChildPropName="GetREVIEWSRows" msprop:Generator_UserRelationName="FK__REVIEWS__guest_i__5AEE82B9" msprop:Generator_ParentPropName="GUESTSRow" />
+      <msdata:Relationship name="FK__GUESTS__room_id__4316F928" msdata:parent="ROOMS" msdata:child="GUESTS" msdata:parentkey="room_id" msdata:childkey="room_id" msprop:Generator_UserParentTable="ROOMS" msprop:Generator_UserChildTable="GUESTS" msprop:Generator_RelationVarName="relationFK__GUESTS__room_id__4316F928" msprop:Generator_UserRelationName="FK__GUESTS__room_id__4316F928" msprop:Generator_ChildPropName="GetGUESTSRows" msprop:Generator_ParentPropName="ROOMSRow" />
+      <msdata:Relationship name="FK__GUESTS__user_id__440B1D61" msdata:parent="USERS" msdata:child="GUESTS" msdata:parentkey="user_id" msdata:childkey="user_id" msprop:Generator_UserParentTable="USERS" msprop:Generator_UserChildTable="GUESTS" msprop:Generator_RelationVarName="relationFK__GUESTS__user_id__440B1D61" msprop:Generator_UserRelationName="FK__GUESTS__user_id__440B1D61" msprop:Generator_ChildPropName="GetGUESTSRows" msprop:Generator_ParentPropName="USERSRow" />
+      <msdata:Relationship name="FK__GUESTSERV__guest__44FF419A" msdata:parent="GUESTS" msdata:child="GUESTSERVICES" msdata:parentkey="guest_id" msdata:childkey="guest_id" msprop:Generator_UserParentTable="GUESTS" msprop:Generator_UserChildTable="GUESTSERVICES" msprop:Generator_RelationVarName="relationFK__GUESTSERV__guest__44FF419A" msprop:Generator_ChildPropName="GetGUESTSERVICESRows" msprop:Generator_ParentPropName="GUESTSRow" msprop:Generator_UserRelationName="FK__GUESTSERV__guest__44FF419A" />
+      <msdata:Relationship name="FK__GUESTSERV__servi__45F365D3" msdata:parent="SERVICES" msdata:child="GUESTSERVICES" msdata:parentkey="service_id" msdata:childkey="service_id" msprop:Generator_UserParentTable="SERVICES" msprop:Generator_UserChildTable="GUESTSERVICES" msprop:Generator_RelationVarName="relationFK__GUESTSERV__servi__45F365D3" msprop:Generator_UserRelationName="FK__GUESTSERV__servi__45F365D3" msprop:Generator_ChildPropName="GetGUESTSERVICESRows" msprop:Generator_ParentPropName="SERVICESRow" />
+      <msdata:Relationship name="FK__IMAGES__room_id__46E78A0C" msdata:parent="ROOMS" msdata:child="IMAGES" msdata:parentkey="room_id" msdata:childkey="room_id" msprop:Generator_UserParentTable="ROOMS" msprop:Generator_UserChildTable="IMAGES" msprop:Generator_RelationVarName="relationFK__IMAGES__room_id__46E78A0C" msprop:Generator_UserRelationName="FK__IMAGES__room_id__46E78A0C" msprop:Generator_ChildPropName="GetIMAGESRows" msprop:Generator_ParentPropName="ROOMSRow" />
+      <msdata:Relationship name="FK__REVIEWS__guest_i__52593CB8" msdata:parent="GUESTS" msdata:child="REVIEWS" msdata:parentkey="guest_id" msdata:childkey="guest_id" msprop:Generator_UserParentTable="GUESTS" msprop:Generator_UserChildTable="REVIEWS" msprop:Generator_RelationVarName="relationFK__REVIEWS__guest_i__52593CB8" msprop:Generator_ChildPropName="GetREVIEWSRows" msprop:Generator_ParentPropName="GUESTSRow" msprop:Generator_UserRelationName="FK__REVIEWS__guest_i__52593CB8" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

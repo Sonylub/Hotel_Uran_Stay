@@ -38,17 +38,17 @@ namespace WindowsFormsApp1 {
         
         private USERSDataTable tableUSERS;
         
-        private global::System.Data.DataRelation relationFK__GUESTS__room_id__5165187F;
+        private global::System.Data.DataRelation relationFK__GUESTS__room_id__4316F928;
         
-        private global::System.Data.DataRelation relationFK__GUESTS__user_id__52593CB8;
+        private global::System.Data.DataRelation relationFK__GUESTS__user_id__440B1D61;
         
-        private global::System.Data.DataRelation relationFK__GUESTSERV__guest__571DF1D5;
+        private global::System.Data.DataRelation relationFK__GUESTSERV__guest__44FF419A;
         
-        private global::System.Data.DataRelation relationFK__GUESTSERV__servi__5812160E;
+        private global::System.Data.DataRelation relationFK__GUESTSERV__servi__45F365D3;
         
-        private global::System.Data.DataRelation relationFK__IMAGES__room_id__4E88ABD4;
+        private global::System.Data.DataRelation relationFK__IMAGES__room_id__46E78A0C;
         
-        private global::System.Data.DataRelation relationFK__REVIEWS__guest_i__5AEE82B9;
+        private global::System.Data.DataRelation relationFK__REVIEWS__guest_i__52593CB8;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -350,12 +350,12 @@ namespace WindowsFormsApp1 {
                     this.tableUSERS.InitVars();
                 }
             }
-            this.relationFK__GUESTS__room_id__5165187F = this.Relations["FK__GUESTS__room_id__5165187F"];
-            this.relationFK__GUESTS__user_id__52593CB8 = this.Relations["FK__GUESTS__user_id__52593CB8"];
-            this.relationFK__GUESTSERV__guest__571DF1D5 = this.Relations["FK__GUESTSERV__guest__571DF1D5"];
-            this.relationFK__GUESTSERV__servi__5812160E = this.Relations["FK__GUESTSERV__servi__5812160E"];
-            this.relationFK__IMAGES__room_id__4E88ABD4 = this.Relations["FK__IMAGES__room_id__4E88ABD4"];
-            this.relationFK__REVIEWS__guest_i__5AEE82B9 = this.Relations["FK__REVIEWS__guest_i__5AEE82B9"];
+            this.relationFK__GUESTS__room_id__4316F928 = this.Relations["FK__GUESTS__room_id__4316F928"];
+            this.relationFK__GUESTS__user_id__440B1D61 = this.Relations["FK__GUESTS__user_id__440B1D61"];
+            this.relationFK__GUESTSERV__guest__44FF419A = this.Relations["FK__GUESTSERV__guest__44FF419A"];
+            this.relationFK__GUESTSERV__servi__45F365D3 = this.Relations["FK__GUESTSERV__servi__45F365D3"];
+            this.relationFK__IMAGES__room_id__46E78A0C = this.Relations["FK__IMAGES__room_id__46E78A0C"];
+            this.relationFK__REVIEWS__guest_i__52593CB8 = this.Relations["FK__REVIEWS__guest_i__52593CB8"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -380,30 +380,30 @@ namespace WindowsFormsApp1 {
             base.Tables.Add(this.tableSERVICES);
             this.tableUSERS = new USERSDataTable();
             base.Tables.Add(this.tableUSERS);
-            this.relationFK__GUESTS__room_id__5165187F = new global::System.Data.DataRelation("FK__GUESTS__room_id__5165187F", new global::System.Data.DataColumn[] {
+            this.relationFK__GUESTS__room_id__4316F928 = new global::System.Data.DataRelation("FK__GUESTS__room_id__4316F928", new global::System.Data.DataColumn[] {
                         this.tableROOMS.room_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableGUESTS.room_idColumn}, false);
-            this.Relations.Add(this.relationFK__GUESTS__room_id__5165187F);
-            this.relationFK__GUESTS__user_id__52593CB8 = new global::System.Data.DataRelation("FK__GUESTS__user_id__52593CB8", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__GUESTS__room_id__4316F928);
+            this.relationFK__GUESTS__user_id__440B1D61 = new global::System.Data.DataRelation("FK__GUESTS__user_id__440B1D61", new global::System.Data.DataColumn[] {
                         this.tableUSERS.user_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableGUESTS.user_idColumn}, false);
-            this.Relations.Add(this.relationFK__GUESTS__user_id__52593CB8);
-            this.relationFK__GUESTSERV__guest__571DF1D5 = new global::System.Data.DataRelation("FK__GUESTSERV__guest__571DF1D5", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__GUESTS__user_id__440B1D61);
+            this.relationFK__GUESTSERV__guest__44FF419A = new global::System.Data.DataRelation("FK__GUESTSERV__guest__44FF419A", new global::System.Data.DataColumn[] {
                         this.tableGUESTS.guest_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableGUESTSERVICES.guest_idColumn}, false);
-            this.Relations.Add(this.relationFK__GUESTSERV__guest__571DF1D5);
-            this.relationFK__GUESTSERV__servi__5812160E = new global::System.Data.DataRelation("FK__GUESTSERV__servi__5812160E", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__GUESTSERV__guest__44FF419A);
+            this.relationFK__GUESTSERV__servi__45F365D3 = new global::System.Data.DataRelation("FK__GUESTSERV__servi__45F365D3", new global::System.Data.DataColumn[] {
                         this.tableSERVICES.service_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableGUESTSERVICES.service_idColumn}, false);
-            this.Relations.Add(this.relationFK__GUESTSERV__servi__5812160E);
-            this.relationFK__IMAGES__room_id__4E88ABD4 = new global::System.Data.DataRelation("FK__IMAGES__room_id__4E88ABD4", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__GUESTSERV__servi__45F365D3);
+            this.relationFK__IMAGES__room_id__46E78A0C = new global::System.Data.DataRelation("FK__IMAGES__room_id__46E78A0C", new global::System.Data.DataColumn[] {
                         this.tableROOMS.room_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableIMAGES.room_idColumn}, false);
-            this.Relations.Add(this.relationFK__IMAGES__room_id__4E88ABD4);
-            this.relationFK__REVIEWS__guest_i__5AEE82B9 = new global::System.Data.DataRelation("FK__REVIEWS__guest_i__5AEE82B9", new global::System.Data.DataColumn[] {
+            this.Relations.Add(this.relationFK__IMAGES__room_id__46E78A0C);
+            this.relationFK__REVIEWS__guest_i__52593CB8 = new global::System.Data.DataRelation("FK__REVIEWS__guest_i__52593CB8", new global::System.Data.DataColumn[] {
                         this.tableGUESTS.guest_idColumn}, new global::System.Data.DataColumn[] {
                         this.tableREVIEWS.guest_idColumn}, false);
-            this.Relations.Add(this.relationFK__REVIEWS__guest_i__5AEE82B9);
+            this.Relations.Add(this.relationFK__REVIEWS__guest_i__52593CB8);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -701,7 +701,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GUESTSRow AddGUESTSRow(int guest_id, ROOMSRow parentROOMSRowByFK__GUESTS__room_id__5165187F, USERSRow parentUSERSRowByFK__GUESTS__user_id__52593CB8, string name, string email, string phone, System.DateTime check_in_date, System.DateTime check_out_date, string comment, System.DateTime booking_date) {
+            public GUESTSRow AddGUESTSRow(int guest_id, ROOMSRow parentROOMSRowByFK__GUESTS__room_id__4316F928, USERSRow parentUSERSRowByFK__GUESTS__user_id__440B1D61, string name, string email, string phone, System.DateTime check_in_date, System.DateTime check_out_date, string comment, System.DateTime booking_date) {
                 GUESTSRow rowGUESTSRow = ((GUESTSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         guest_id,
@@ -714,11 +714,11 @@ namespace WindowsFormsApp1 {
                         check_out_date,
                         comment,
                         booking_date};
-                if ((parentROOMSRowByFK__GUESTS__room_id__5165187F != null)) {
-                    columnValuesArray[1] = parentROOMSRowByFK__GUESTS__room_id__5165187F[0];
+                if ((parentROOMSRowByFK__GUESTS__room_id__4316F928 != null)) {
+                    columnValuesArray[1] = parentROOMSRowByFK__GUESTS__room_id__4316F928[0];
                 }
-                if ((parentUSERSRowByFK__GUESTS__user_id__52593CB8 != null)) {
-                    columnValuesArray[2] = parentUSERSRowByFK__GUESTS__user_id__52593CB8[0];
+                if ((parentUSERSRowByFK__GUESTS__user_id__440B1D61 != null)) {
+                    columnValuesArray[2] = parentUSERSRowByFK__GUESTS__user_id__440B1D61[0];
                 }
                 rowGUESTSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGUESTSRow);
@@ -1045,7 +1045,7 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public GUESTSERVICESRow AddGUESTSERVICESRow(GUESTSRow parentGUESTSRowByFK__GUESTSERV__guest__571DF1D5, SERVICESRow parentSERVICESRowByFK__GUESTSERV__servi__5812160E, System.DateTime order_date, int quantity, string status) {
+            public GUESTSERVICESRow AddGUESTSERVICESRow(GUESTSRow parentGUESTSRowByFK__GUESTSERV__guest__44FF419A, SERVICESRow parentSERVICESRowByFK__GUESTSERV__servi__45F365D3, System.DateTime order_date, int quantity, string status) {
                 GUESTSERVICESRow rowGUESTSERVICESRow = ((GUESTSERVICESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1053,11 +1053,11 @@ namespace WindowsFormsApp1 {
                         order_date,
                         quantity,
                         status};
-                if ((parentGUESTSRowByFK__GUESTSERV__guest__571DF1D5 != null)) {
-                    columnValuesArray[0] = parentGUESTSRowByFK__GUESTSERV__guest__571DF1D5[0];
+                if ((parentGUESTSRowByFK__GUESTSERV__guest__44FF419A != null)) {
+                    columnValuesArray[0] = parentGUESTSRowByFK__GUESTSERV__guest__44FF419A[0];
                 }
-                if ((parentSERVICESRowByFK__GUESTSERV__servi__5812160E != null)) {
-                    columnValuesArray[1] = parentSERVICESRowByFK__GUESTSERV__servi__5812160E[0];
+                if ((parentSERVICESRowByFK__GUESTSERV__servi__45F365D3 != null)) {
+                    columnValuesArray[1] = parentSERVICESRowByFK__GUESTSERV__servi__45F365D3[0];
                 }
                 rowGUESTSERVICESRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGUESTSERVICESRow);
@@ -1348,14 +1348,14 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public IMAGESRow AddIMAGESRow(int image_id, ROOMSRow parentROOMSRowByFK__IMAGES__room_id__4E88ABD4, string image_url) {
+            public IMAGESRow AddIMAGESRow(int image_id, ROOMSRow parentROOMSRowByFK__IMAGES__room_id__46E78A0C, string image_url) {
                 IMAGESRow rowIMAGESRow = ((IMAGESRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         image_id,
                         null,
                         image_url};
-                if ((parentROOMSRowByFK__IMAGES__room_id__4E88ABD4 != null)) {
-                    columnValuesArray[1] = parentROOMSRowByFK__IMAGES__room_id__4E88ABD4[0];
+                if ((parentROOMSRowByFK__IMAGES__room_id__46E78A0C != null)) {
+                    columnValuesArray[1] = parentROOMSRowByFK__IMAGES__room_id__46E78A0C[0];
                 }
                 rowIMAGESRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowIMAGESRow);
@@ -1658,16 +1658,16 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public REVIEWSRow AddREVIEWSRow(int review_id, GUESTSRow parentGUESTSRowByFK__REVIEWS__guest_i__5AEE82B9, int rating, string comment, System.DateTime created_at) {
+            public REVIEWSRow AddREVIEWSRow(GUESTSRow parentGUESTSRowByFK__REVIEWS__guest_i__52593CB8, int rating, string comment, System.DateTime created_at) {
                 REVIEWSRow rowREVIEWSRow = ((REVIEWSRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        review_id,
+                        null,
                         null,
                         rating,
                         comment,
                         created_at};
-                if ((parentGUESTSRowByFK__REVIEWS__guest_i__5AEE82B9 != null)) {
-                    columnValuesArray[1] = parentGUESTSRowByFK__REVIEWS__guest_i__5AEE82B9[0];
+                if ((parentGUESTSRowByFK__REVIEWS__guest_i__52593CB8 != null)) {
+                    columnValuesArray[1] = parentGUESTSRowByFK__REVIEWS__guest_i__52593CB8[0];
                 }
                 rowREVIEWSRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowREVIEWSRow);
@@ -1720,9 +1720,15 @@ namespace WindowsFormsApp1 {
                 base.Columns.Add(this.columncreated_at);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnreview_id}, true));
+                this.columnreview_id.AutoIncrement = true;
+                this.columnreview_id.AutoIncrementSeed = -1;
+                this.columnreview_id.AutoIncrementStep = -1;
                 this.columnreview_id.AllowDBNull = false;
+                this.columnreview_id.ReadOnly = true;
                 this.columnreview_id.Unique = true;
+                this.columnrating.AllowDBNull = false;
                 this.columncomment.MaxLength = 500;
+                this.columncreated_at.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2986,10 +2992,10 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ROOMSRow ROOMSRow {
                 get {
-                    return ((ROOMSRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTS__room_id__5165187F"])));
+                    return ((ROOMSRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTS__room_id__4316F928"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTS__room_id__5165187F"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTS__room_id__4316F928"]);
                 }
             }
             
@@ -2997,10 +3003,10 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public USERSRow USERSRow {
                 get {
-                    return ((USERSRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTS__user_id__52593CB8"])));
+                    return ((USERSRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTS__user_id__440B1D61"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTS__user_id__52593CB8"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTS__user_id__440B1D61"]);
                 }
             }
             
@@ -3115,22 +3121,22 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GUESTSERVICESRow[] GetGUESTSERVICESRows() {
-                if ((this.Table.ChildRelations["FK__GUESTSERV__guest__571DF1D5"] == null)) {
+                if ((this.Table.ChildRelations["FK__GUESTSERV__guest__44FF419A"] == null)) {
                     return new GUESTSERVICESRow[0];
                 }
                 else {
-                    return ((GUESTSERVICESRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTSERV__guest__571DF1D5"])));
+                    return ((GUESTSERVICESRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTSERV__guest__44FF419A"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public REVIEWSRow[] GetREVIEWSRows() {
-                if ((this.Table.ChildRelations["FK__REVIEWS__guest_i__5AEE82B9"] == null)) {
+                if ((this.Table.ChildRelations["FK__REVIEWS__guest_i__52593CB8"] == null)) {
                     return new REVIEWSRow[0];
                 }
                 else {
-                    return ((REVIEWSRow[])(base.GetChildRows(this.Table.ChildRelations["FK__REVIEWS__guest_i__5AEE82B9"])));
+                    return ((REVIEWSRow[])(base.GetChildRows(this.Table.ChildRelations["FK__REVIEWS__guest_i__52593CB8"])));
                 }
             }
         }
@@ -3223,10 +3229,10 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GUESTSRow GUESTSRow {
                 get {
-                    return ((GUESTSRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTSERV__guest__571DF1D5"])));
+                    return ((GUESTSRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTSERV__guest__44FF419A"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTSERV__guest__571DF1D5"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTSERV__guest__44FF419A"]);
                 }
             }
             
@@ -3234,10 +3240,10 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public SERVICESRow SERVICESRow {
                 get {
-                    return ((SERVICESRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTSERV__servi__5812160E"])));
+                    return ((SERVICESRow)(this.GetParentRow(this.Table.ParentRelations["FK__GUESTSERV__servi__45F365D3"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTSERV__servi__5812160E"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__GUESTSERV__servi__45F365D3"]);
                 }
             }
             
@@ -3339,10 +3345,10 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public ROOMSRow ROOMSRow {
                 get {
-                    return ((ROOMSRow)(this.GetParentRow(this.Table.ParentRelations["FK__IMAGES__room_id__4E88ABD4"])));
+                    return ((ROOMSRow)(this.GetParentRow(this.Table.ParentRelations["FK__IMAGES__room_id__46E78A0C"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__IMAGES__room_id__4E88ABD4"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__IMAGES__room_id__46E78A0C"]);
                 }
             }
             
@@ -3416,12 +3422,7 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int rating {
                 get {
-                    try {
-                        return ((int)(this[this.tableREVIEWS.ratingColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'rating\' в таблице \'REVIEWS\' равно DBNull.", e);
-                    }
+                    return ((int)(this[this.tableREVIEWS.ratingColumn]));
                 }
                 set {
                     this[this.tableREVIEWS.ratingColumn] = value;
@@ -3448,12 +3449,7 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public System.DateTime created_at {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableREVIEWS.created_atColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("Значение для столбца \'created_at\' в таблице \'REVIEWS\' равно DBNull.", e);
-                    }
+                    return ((global::System.DateTime)(this[this.tableREVIEWS.created_atColumn]));
                 }
                 set {
                     this[this.tableREVIEWS.created_atColumn] = value;
@@ -3464,10 +3460,10 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GUESTSRow GUESTSRow {
                 get {
-                    return ((GUESTSRow)(this.GetParentRow(this.Table.ParentRelations["FK__REVIEWS__guest_i__5AEE82B9"])));
+                    return ((GUESTSRow)(this.GetParentRow(this.Table.ParentRelations["FK__REVIEWS__guest_i__52593CB8"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__REVIEWS__guest_i__5AEE82B9"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__REVIEWS__guest_i__52593CB8"]);
                 }
             }
             
@@ -3485,18 +3481,6 @@ namespace WindowsFormsApp1 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsratingNull() {
-                return this.IsNull(this.tableREVIEWS.ratingColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetratingNull() {
-                this[this.tableREVIEWS.ratingColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public bool IscommentNull() {
                 return this.IsNull(this.tableREVIEWS.commentColumn);
             }
@@ -3505,18 +3489,6 @@ namespace WindowsFormsApp1 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public void SetcommentNull() {
                 this[this.tableREVIEWS.commentColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool Iscreated_atNull() {
-                return this.IsNull(this.tableREVIEWS.created_atColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void Setcreated_atNull() {
-                this[this.tableREVIEWS.created_atColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -3716,22 +3688,22 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GUESTSRow[] GetGUESTSRows() {
-                if ((this.Table.ChildRelations["FK__GUESTS__room_id__5165187F"] == null)) {
+                if ((this.Table.ChildRelations["FK__GUESTS__room_id__4316F928"] == null)) {
                     return new GUESTSRow[0];
                 }
                 else {
-                    return ((GUESTSRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTS__room_id__5165187F"])));
+                    return ((GUESTSRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTS__room_id__4316F928"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public IMAGESRow[] GetIMAGESRows() {
-                if ((this.Table.ChildRelations["FK__IMAGES__room_id__4E88ABD4"] == null)) {
+                if ((this.Table.ChildRelations["FK__IMAGES__room_id__46E78A0C"] == null)) {
                     return new IMAGESRow[0];
                 }
                 else {
-                    return ((IMAGESRow[])(base.GetChildRows(this.Table.ChildRelations["FK__IMAGES__room_id__4E88ABD4"])));
+                    return ((IMAGESRow[])(base.GetChildRows(this.Table.ChildRelations["FK__IMAGES__room_id__46E78A0C"])));
                 }
             }
         }
@@ -3876,11 +3848,11 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GUESTSERVICESRow[] GetGUESTSERVICESRows() {
-                if ((this.Table.ChildRelations["FK__GUESTSERV__servi__5812160E"] == null)) {
+                if ((this.Table.ChildRelations["FK__GUESTSERV__servi__45F365D3"] == null)) {
                     return new GUESTSERVICESRow[0];
                 }
                 else {
-                    return ((GUESTSERVICESRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTSERV__servi__5812160E"])));
+                    return ((GUESTSERVICESRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTSERV__servi__45F365D3"])));
                 }
             }
         }
@@ -3997,11 +3969,11 @@ namespace WindowsFormsApp1 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public GUESTSRow[] GetGUESTSRows() {
-                if ((this.Table.ChildRelations["FK__GUESTS__user_id__52593CB8"] == null)) {
+                if ((this.Table.ChildRelations["FK__GUESTS__user_id__440B1D61"] == null)) {
                     return new GUESTSRow[0];
                 }
                 else {
-                    return ((GUESTSRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTS__user_id__52593CB8"])));
+                    return ((GUESTSRow[])(base.GetChildRows(this.Table.ChildRelations["FK__GUESTS__user_id__440B1D61"])));
                 }
             }
         }
@@ -4458,7 +4430,7 @@ SELECT guest_id, room_id, user_id, name, email, phone, check_in_date, check_out_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5065,7 +5037,7 @@ SELECT guest_id, service_id, order_date, quantity, status FROM GUESTSERVICES WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5422,9 +5394,10 @@ SELECT guest_id, service_id, order_date, quantity, status FROM GUESTSERVICES WHE
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [IMAGES] WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_" +
-                "id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_" +
-                "image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[IMAGES] WHERE (([image_id] = @Original_image_id) AND ((@IsNull" +
+                "_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@I" +
+                "sNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_u" +
+                "rl)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -5433,16 +5406,16 @@ SELECT guest_id, service_id, order_date, quantity, status FROM GUESTSERVICES WHE
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_image_url", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [IMAGES] ([image_id], [room_id], [image_url]) VALUES (@image_id, @roo" +
-                "m_id, @image_url);\r\nSELECT image_id, room_id, image_url FROM IMAGES WHERE (image" +
-                "_id = @image_id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[IMAGES] ([image_id], [room_id], [image_url]) VALUES (@image_id" +
+                ", @room_id, @image_url);\r\nSELECT image_id, room_id, image_url FROM IMAGES WHERE " +
+                "(image_id = @image_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@room_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "room_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_url", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_url", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [IMAGES] SET [image_id] = @image_id, [room_id] = @room_id, [image_url] = @image_url WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[IMAGES] SET [image_id] = @image_id, [room_id] = @room_id, [image_url] = @image_url WHERE (([image_id] = @Original_image_id) AND ((@IsNull_room_id = 1 AND [room_id] IS NULL) OR ([room_id] = @Original_room_id)) AND ((@IsNull_image_url = 1 AND [image_url] IS NULL) OR ([image_url] = @Original_image_url)));
 SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@image_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "image_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5459,7 +5432,7 @@ SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)";
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5468,7 +5441,7 @@ SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)";
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT image_id, room_id, image_url FROM IMAGES";
+            this._commandCollection[0].CommandText = "SELECT image_id, room_id, image_url FROM dbo.IMAGES";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -5786,35 +5759,30 @@ SELECT image_id, room_id, image_url FROM IMAGES WHERE (image_id = @image_id)";
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[REVIEWS] WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ((@IsNull_rating = 1 AND [rating] IS NULL) OR ([rating] = @Original_rating)) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ((@IsNull_created_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[REVIEWS] WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ([rating] = @Original_rating) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ([created_at] = @Original_created_at))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_review_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "review_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_guest_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "guest_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_guest_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "guest_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_at", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[REVIEWS] ([review_id], [guest_id], [rating], [comment], [creat" +
-                "ed_at]) VALUES (@review_id, @guest_id, @rating, @comment, @created_at);\r\nSELECT " +
-                "review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (review_id =" +
-                " @review_id)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[REVIEWS] ([guest_id], [rating], [comment], [created_at]) VALUE" +
+                "S (@guest_id, @rating, @comment, @created_at);\r\nSELECT review_id, guest_id, rati" +
+                "ng, comment, created_at FROM REVIEWS WHERE (review_id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@review_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "review_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@guest_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "guest_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[REVIEWS] SET [review_id] = @review_id, [guest_id] = @guest_id, [rating] = @rating, [comment] = @comment, [created_at] = @created_at WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ((@IsNull_rating = 1 AND [rating] IS NULL) OR ([rating] = @Original_rating)) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ((@IsNull_created_at = 1 AND [created_at] IS NULL) OR ([created_at] = @Original_created_at)));
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[REVIEWS] SET [guest_id] = @guest_id, [rating] = @rating, [comment] = @comment, [created_at] = @created_at WHERE (([review_id] = @Original_review_id) AND ((@IsNull_guest_id = 1 AND [guest_id] IS NULL) OR ([guest_id] = @Original_guest_id)) AND ([rating] = @Original_rating) AND ((@IsNull_comment = 1 AND [comment] IS NULL) OR ([comment] = @Original_comment)) AND ([created_at] = @Original_created_at));
 SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (review_id = @review_id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@review_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "review_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@guest_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "guest_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@comment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -5822,19 +5790,18 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_review_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "review_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_guest_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "guest_id", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_guest_id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "guest_id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_rating", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "rating", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_comment", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_comment", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "comment", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_created_at", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_created_at", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "created_at", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@review_id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "review_id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5904,7 +5871,7 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_review_id, global::System.Nullable<int> Original_guest_id, global::System.Nullable<int> Original_rating, string Original_comment, global::System.Nullable<global::System.DateTime> Original_created_at) {
+        public virtual int Delete(int Original_review_id, global::System.Nullable<int> Original_guest_id, int Original_rating, string Original_comment, System.DateTime Original_created_at) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_review_id));
             if ((Original_guest_id.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(0));
@@ -5914,30 +5881,16 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
                 this.Adapter.DeleteCommand.Parameters[1].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((Original_rating.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_rating.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_rating));
             if ((Original_comment == null)) {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[6].Value = global::System.DBNull.Value;
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(1));
+                this.Adapter.DeleteCommand.Parameters[5].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.DeleteCommand.Parameters[5].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[6].Value = ((string)(Original_comment));
+                this.Adapter.DeleteCommand.Parameters[4].Value = ((object)(0));
+                this.Adapter.DeleteCommand.Parameters[5].Value = ((string)(Original_comment));
             }
-            if ((Original_created_at.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[8].Value = ((System.DateTime)(Original_created_at.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[7].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[8].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.DeleteCommand.Parameters[6].Value = ((System.DateTime)(Original_created_at));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -5958,32 +5911,21 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int review_id, global::System.Nullable<int> guest_id, global::System.Nullable<int> rating, string comment, global::System.Nullable<global::System.DateTime> created_at) {
-            this.Adapter.InsertCommand.Parameters[0].Value = ((int)(review_id));
+        public virtual int Insert(global::System.Nullable<int> guest_id, int rating, string comment, System.DateTime created_at) {
             if ((guest_id.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((int)(guest_id.Value));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((int)(guest_id.Value));
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((rating.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((int)(rating.Value));
-            }
-            else {
+            this.Adapter.InsertCommand.Parameters[1].Value = ((int)(rating));
+            if ((comment == null)) {
                 this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((comment == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(comment));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(comment));
             }
-            if ((created_at.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[4].Value = ((System.DateTime)(created_at.Value));
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((System.DateTime)(created_at));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6004,65 +5946,41 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int review_id, global::System.Nullable<int> guest_id, global::System.Nullable<int> rating, string comment, global::System.Nullable<global::System.DateTime> created_at, int Original_review_id, global::System.Nullable<int> Original_guest_id, global::System.Nullable<int> Original_rating, string Original_comment, global::System.Nullable<global::System.DateTime> Original_created_at) {
-            this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(review_id));
+        public virtual int Update(global::System.Nullable<int> guest_id, int rating, string comment, System.DateTime created_at, int Original_review_id, global::System.Nullable<int> Original_guest_id, int Original_rating, string Original_comment, System.DateTime Original_created_at, int review_id) {
             if ((guest_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(guest_id.Value));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(guest_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
-            if ((rating.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((int)(rating.Value));
-            }
-            else {
+            this.Adapter.UpdateCommand.Parameters[1].Value = ((int)(rating));
+            if ((comment == null)) {
                 this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
             }
-            if ((comment == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(comment));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(comment));
             }
-            if ((created_at.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((System.DateTime)(created_at.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_review_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((System.DateTime)(created_at));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_review_id));
             if ((Original_guest_id.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_guest_id.Value));
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(Original_guest_id.Value));
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[7].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[5].Value = ((object)(1));
+                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
             }
-            if ((Original_rating.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_rating.Value));
-            }
-            else {
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_rating));
+            if ((Original_comment == null)) {
                 this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[9].Value = global::System.DBNull.Value;
             }
-            if ((Original_comment == null)) {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[11].Value = global::System.DBNull.Value;
-            }
             else {
-                this.Adapter.UpdateCommand.Parameters[10].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[11].Value = ((string)(Original_comment));
+                this.Adapter.UpdateCommand.Parameters[8].Value = ((object)(0));
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Original_comment));
             }
-            if ((Original_created_at.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_created_at.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[12].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[13].Value = global::System.DBNull.Value;
-            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((System.DateTime)(Original_created_at));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(review_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6083,8 +6001,8 @@ SELECT review_id, guest_id, rating, comment, created_at FROM REVIEWS WHERE (revi
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(global::System.Nullable<int> guest_id, global::System.Nullable<int> rating, string comment, global::System.Nullable<global::System.DateTime> created_at, int Original_review_id, global::System.Nullable<int> Original_guest_id, global::System.Nullable<int> Original_rating, string Original_comment, global::System.Nullable<global::System.DateTime> Original_created_at) {
-            return this.Update(Original_review_id, guest_id, rating, comment, created_at, Original_review_id, Original_guest_id, Original_rating, Original_comment, Original_created_at);
+        public virtual int Update(global::System.Nullable<int> guest_id, int rating, string comment, System.DateTime created_at, int Original_review_id, global::System.Nullable<int> Original_guest_id, int Original_rating, string Original_comment, System.DateTime Original_created_at) {
+            return this.Update(guest_id, rating, comment, created_at, Original_review_id, Original_guest_id, Original_rating, Original_comment, Original_created_at, Original_review_id);
         }
     }
     
@@ -6277,7 +6195,7 @@ SELECT room_id, category, description, price, status, quantity, booked_quantity 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6763,7 +6681,7 @@ SELECT service_id, name, price, short_description, detailed_description FROM SER
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7187,7 +7105,7 @@ SELECT user_id, username, password, admin FROM USERS WHERE (user_id = @user_id)"
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString;
+            this._connection.ConnectionString = global::WindowsFormsApp1.Properties.Settings.Default.Hotel_Urban_StayConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

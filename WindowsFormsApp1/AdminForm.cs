@@ -17,41 +17,111 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
+        private void AdminForm_Load(object sender, EventArgs e)
+        {
+            // Initialize ComboBox with table names
+            tableSelectorComboBox.Items.AddRange(new object[] {
+                "Пользователи",
+                "Номера",
+                "Картинки",
+                "Гости",
+                "Отзывы",
+                "Услуги",
+                "Гостевые услуги"
+            });
+            tableSelectorComboBox.SelectedIndex = 0; // Default to first table
+
+            // Load data into tables
+            this.uSERSTableAdapter.Fill(this.hotel_Urban_StayDataSet.USERS);
+            this.rOOMSTableAdapter.Fill(this.hotel_Urban_StayDataSet.ROOMS);
+            this.iMAGESTableAdapter.Fill(this.hotel_Urban_StayDataSet.IMAGES);
+            this.gUESTSTableAdapter.Fill(this.hotel_Urban_StayDataSet.GUESTS);
+            this.rEVIEWSTableAdapter.Fill(this.hotel_Urban_StayDataSet.REVIEWS);
+            this.sERVICESTableAdapter.Fill(this.hotel_Urban_StayDataSet.SERVICES);
+            this.gUESTSERVICESTableAdapter.Fill(this.hotel_Urban_StayDataSet.GUESTSERVICES);
+
+            // Show only the first DataGridView initially
+            UpdateDataGridViewVisibility();
+        }
+
+        private void tableSelectorComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateDataGridViewVisibility();
+        }
+
+        private void UpdateDataGridViewVisibility()
+        {
+            // Hide all DataGridViews
+            uSERSDataGridView.Visible = false;
+            rOOMSDataGridView.Visible = false;
+            iMAGESDataGridView.Visible = false;
+            gUESTSDataGridView.Visible = false;
+            rEVIEWSDataGridView.Visible = false;
+            sERVICESDataGridView.Visible = false;
+            gUESTSERVICESDataGridView.Visible = false;
+
+            // Show the selected DataGridView
+            switch (tableSelectorComboBox.SelectedIndex)
+            {
+                case 0:
+                    uSERSDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = uSERSBindingSource;
+                    break;
+                case 1:
+                    rOOMSDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = rOOMSBindingSource;
+                    break;
+                case 2:
+                    iMAGESDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = iMAGESBindingSource;
+                    break;
+                case 3:
+                    gUESTSDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = gUESTSBindingSource;
+                    break;
+                case 4:
+                    rEVIEWSDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = rEVIEWSBindingSource;
+                    break;
+                case 5:
+                    sERVICESDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = sERVICESBindingSource;
+                    break;
+                case 6:
+                    gUESTSERVICESDataGridView.Visible = true;
+                    uSERSBindingNavigator.BindingSource = gUESTSERVICESBindingSource;
+                    break;
+            }
+        }
+
+
+
+
         private void uSERSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
             this.uSERSBindingSource.EndEdit();
+            this.rOOMSBindingSource.EndEdit();
+            this.iMAGESBindingSource.EndEdit();
+            this.gUESTSBindingSource.EndEdit();
+            this.rEVIEWSBindingSource.EndEdit();
+            this.sERVICESBindingSource.EndEdit();
+            this.gUESTSERVICESBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.hotel_Urban_StayDataSet);
-
         }
 
-        private void AdminForm_Load(object sender, EventArgs e)
+        private void gUESTSBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.GUESTSERVICES". При необходимости она может быть перемещена или удалена.
-            this.gUESTSERVICESTableAdapter.Fill(this.hotel_Urban_StayDataSet.GUESTSERVICES);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.SERVICES". При необходимости она может быть перемещена или удалена.
-            this.sERVICESTableAdapter.Fill(this.hotel_Urban_StayDataSet.SERVICES);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.REVIEWS". При необходимости она может быть перемещена или удалена.
-            this.rEVIEWSTableAdapter.Fill(this.hotel_Urban_StayDataSet.REVIEWS);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.GUESTS". При необходимости она может быть перемещена или удалена.
-            this.gUESTSTableAdapter.Fill(this.hotel_Urban_StayDataSet.GUESTS);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.IMAGES". При необходимости она может быть перемещена или удалена.
-            this.iMAGESTableAdapter.Fill(this.hotel_Urban_StayDataSet.IMAGES);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.ROOMS". При необходимости она может быть перемещена или удалена.
-            this.rOOMSTableAdapter.Fill(this.hotel_Urban_StayDataSet.ROOMS);
-            // TODO: данная строка кода позволяет загрузить данные в таблицу "hotel_Urban_StayDataSet.USERS". При необходимости она может быть перемещена или удалена.
-            this.uSERSTableAdapter.Fill(this.hotel_Urban_StayDataSet.USERS);
-
+            this.Validate();
+            this.gUESTSBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.hotel_Urban_StayDataSet);
         }
 
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void gUESTSERVICESDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            Form1 loginForm = new Form1();
+            loginForm.Show();
+            this.Close();
         }
     }
 }

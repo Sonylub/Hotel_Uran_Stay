@@ -20,7 +20,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.userId = userId;
             LoadRooms();
-            lblSelectedRoom.Text = $"Доступные номера (User: {userId})"; ;
         }
 
         private void LoadRooms()
@@ -67,7 +66,7 @@ namespace WindowsFormsApp1
         {
             Panel card = new Panel
             {
-                Size = new Size(460, 100),
+                Size = new Size(756, 100), // Начальная высота, будет пересчитана
                 BackColor = Color.FromArgb(60, 60, 64),
                 Margin = new Padding(10)
             };
@@ -83,20 +82,20 @@ namespace WindowsFormsApp1
 
             Label lblDescription = new Label
             {
-                Text = room.Description.Length > 50 ? room.Description.Substring(0, 50) + "..." : room.Description,
+                Text = room.Description,
                 Font = new Font("Segoe UI", 10F),
                 ForeColor = Color.LightGray,
                 Location = new Point(10, 35),
-                Size = new Size(300, 40),
-                AutoSize = false
+                MaximumSize = new Size(600, 0), // Ограничение по ширине, высота автоматическая
+                AutoSize = true
             };
 
             Label lblPrice = new Label
             {
-                Text = $"Цена: {room.Price:C}/ночь",
+                Text = $"Цена: {room.Price:F2} $/ночь",
                 Font = new Font("Segoe UI", 10F),
                 ForeColor = Color.White,
-                Location = new Point(320, 10),
+                Location = new Point(620, 10),
                 AutoSize = true
             };
 
@@ -105,7 +104,7 @@ namespace WindowsFormsApp1
                 Text = $"Доступно: {room.AvailableQuantity}",
                 Font = new Font("Segoe UI", 10F),
                 ForeColor = Color.White,
-                Location = new Point(320, 35),
+                Location = new Point(620, 35),
                 AutoSize = true
             };
 
@@ -117,13 +116,18 @@ namespace WindowsFormsApp1
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
                 Size = new Size(100, 30),
-                Location = new Point(320, 60),
+                Location = new Point(620, 60),
                 Tag = room.RoomId
             };
             btnSelect.FlatAppearance.BorderSize = 0;
             btnSelect.Click += BtnSelect_Click;
 
             card.Controls.AddRange(new Control[] { lblCategory, lblDescription, lblPrice, lblQuantity, btnSelect });
+
+            // Пересчёт высоты карточки
+            int maxHeight = Math.Max(lblDescription.Bottom, btnSelect.Bottom) + 10; // Отступ снизу
+            card.Size = new Size(756, maxHeight);
+
             flowLayoutPanelRooms.Controls.Add(card);
         }
 
@@ -213,7 +217,6 @@ namespace WindowsFormsApp1
 
         private void buttonBookRoom_Click(object sender, EventArgs e)
         {
-            // Проверка выбран ли номер
             if (string.IsNullOrEmpty(lblSelectedRoom.Text) || lblSelectedRoom.Text == "Выберите номер")
             {
                 MessageBox.Show("Пожалуйста, сначала выберите номер для бронирования.",
@@ -221,7 +224,6 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Получение roomId из метки
             int roomId;
             try
             {
@@ -234,7 +236,6 @@ namespace WindowsFormsApp1
                 return;
             }
 
-            // Проверка дат
             DateTime checkIn = dateTimePickerCheckIn.Value.Date;
             DateTime checkOut = dateTimePickerCheckOut.Value.Date;
 
@@ -256,7 +257,6 @@ namespace WindowsFormsApp1
                     {
                         try
                         {
-                            // 1. Проверяем существующее бронирование пользователя
                             string checkBookingQuery = @"
                         SELECT guest_id, room_id 
                         FROM GUESTS 
@@ -282,7 +282,6 @@ namespace WindowsFormsApp1
                                 }
                             }
 
-                            // 2. Если бронирование уже существует
                             if (existingGuestId != -1)
                             {
                                 transaction.Commit();
@@ -297,7 +296,6 @@ namespace WindowsFormsApp1
                                 return;
                             }
 
-                            // 3. Проверка доступности номера
                             string checkAvailabilityQuery = @"
                         SELECT quantity - booked_quantity 
                         FROM ROOMS 
@@ -318,11 +316,9 @@ namespace WindowsFormsApp1
                                 return;
                             }
 
-                            // 4. Обновляем запись гостя (если существует) или создаем новую
                             string updateOrInsertQuery;
                             SqlCommand cmd;
 
-                            // Проверяем есть ли запись гостя с NULL значениями
                             string checkGuestQuery = "SELECT guest_id FROM GUESTS WHERE user_id = @userId AND room_id IS NULL";
                             int guestId = -1;
 
@@ -338,7 +334,6 @@ namespace WindowsFormsApp1
 
                             if (guestId != -1)
                             {
-                                // Обновляем существующую запись
                                 updateOrInsertQuery = @"
                             UPDATE GUESTS SET
                                 room_id = @roomId,
@@ -353,7 +348,6 @@ namespace WindowsFormsApp1
                             }
                             else
                             {
-                                // Создаем новую запись
                                 updateOrInsertQuery = @"
                             INSERT INTO GUESTS 
                                 (user_id, room_id, check_in_date, check_out_date, comment, booking_date) 
@@ -363,7 +357,6 @@ namespace WindowsFormsApp1
                                 cmd = new SqlCommand(updateOrInsertQuery, conn, transaction);
                             }
 
-                            // Общие параметры
                             cmd.Parameters.AddWithValue("@userId", this.userId);
                             cmd.Parameters.AddWithValue("@roomId", roomId);
                             cmd.Parameters.AddWithValue("@checkIn", checkIn);
@@ -379,7 +372,6 @@ namespace WindowsFormsApp1
                                 throw new Exception("Не удалось обновить данные бронирования.");
                             }
 
-                            // 5. Обновляем количество забронированных номеров
                             string updateRoomQuery = @"
                         UPDATE ROOMS 
                         SET booked_quantity = booked_quantity + 1 
@@ -396,7 +388,6 @@ namespace WindowsFormsApp1
                             MessageBox.Show("Номер успешно забронирован!", "Успех",
                                             MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                            // Обновление интерфейса
                             LoadRooms();
                             lblSelectedRoom.Text = "Выберите номер";
                             textBoxComment.Clear();

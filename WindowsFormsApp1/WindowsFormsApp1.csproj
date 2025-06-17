@@ -95,7 +95,6 @@
     <Compile Include="RegistrationForm.Designer.cs">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="ReviewData.cs" />
     <Compile Include="ReviewsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +155,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="30-1User-12-1024.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dba85993658133.5e98adbf74964.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\output-onlinegiftools.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
