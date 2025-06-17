@@ -380,5 +380,10 @@ namespace WindowsFormsApp1
         {
             MessageBox.Show("Функция редактирования профиля пока не реализована.", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

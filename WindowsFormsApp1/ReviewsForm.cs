@@ -1,199 +1,270 @@
 ﻿using System;
-using System.Data;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class ReviewsControl : UserControl
+    public partial class ReviewsForm : Form
     {
         private string connectionString = "Data Source=DESKTOP-JEM6MVF;Initial Catalog=Hotel_Urban_Stay;Integrated Security=True";
         private int userId;
+        private int selectedRating = 0;
+        private readonly Image starFilled = CreateStarImage(Color.Yellow);
+        private readonly Image starEmpty = CreateStarImage(Color.Gray);
 
-        public ReviewsControl()
-        {
-            InitializeComponent();
-        }
-
-        public ReviewsControl(int userId)
+        public ReviewsForm(int userId)
         {
             InitializeComponent();
             this.userId = userId;
-            InitializeControl();
+            InitializeStars();
+            LoadReviews();
         }
 
-        private void InitializeControl()
+        private static Image CreateStarImage(Color color)
         {
-            if (this.IsInDesignMode()) return; // Avoid initialization in designer
-            DisableFields();
-            DisplayReviews();
-            UpdateSubmitButtonState();
-        }
-
-        public void RefreshData()
-        {
-            if (InvokeRequired)
+            Bitmap bitmap = new Bitmap(20, 20);
+            using (Graphics g = Graphics.FromImage(bitmap))
             {
-                Invoke((MethodInvoker)RefreshData);
-                return;
+                g.Clear(Color.Transparent);
+                Point[] points = new Point[]
+                {
+                    new Point(10, 0), new Point(12, 6), new Point(18, 6),
+                    new Point(13, 10), new Point(15, 16), new Point(10, 12),
+                    new Point(5, 16), new Point(7, 10), new Point(2, 6),
+                    new Point(8, 6)
+                };
+                g.FillPolygon(new SolidBrush(color), points);
+            }
+            return bitmap;
+        }
+
+        private void InitializeStars()
+        {
+            star1.Image = starEmpty;
+            star2.Image = starEmpty;
+            star3.Image = starEmpty;
+            star4.Image = starEmpty;
+            star5.Image = starEmpty;
+        }
+
+        private void star_Click(object sender, EventArgs e)
+        {
+            PictureBox star = (PictureBox)sender;
+            selectedRating = Convert.ToInt32(star.Tag);
+            UpdateStarDisplay();
+        }
+
+        private void UpdateStarDisplay()
+        {
+            PictureBox[] stars = { star1, star2, star3, star4, star5 };
+            for (int i = 0; i < stars.Length; i++)
+            {
+                stars[i].Image = i < selectedRating ? starFilled : starEmpty;
+            }
+        }
+
+        private void LoadReviews()
+        {
+            try
+            {
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = @"
+                        SELECT R.review_id, R.guest_id, R.rating, R.comment, R.created_at, U.username
+                        FROM REVIEWS R
+                        INNER JOIN GUESTS G ON R.guest_id = G.guest_id
+                        INNER JOIN USERS U ON G.user_id = U.user_id
+                        ORDER BY R.created_at DESC";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            flowLayoutPanelReviews.Controls.Clear();
+                            while (reader.Read())
+                            {
+                                CreateReviewCard(reader);
+                            }
+                            if (flowLayoutPanelReviews.Controls.Count == 0)
+                            {
+                                Label lblNoReviews = new Label
+                                {
+                                    Text = "Нет отзывов",
+                                    Font = new Font("Segoe UI", 12F, FontStyle.Italic),
+                                    ForeColor = Color.White,
+                                    AutoSize = true,
+                                    Location = new Point(10, 10)
+                                };
+                                flowLayoutPanelReviews.Controls.Add(lblNoReviews);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка загрузки отзывов: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CreateReviewCard(SqlDataReader reader)
+        {
+            int rating = reader.GetInt32(2);
+            string comment = reader.IsDBNull(3) ? "Без комментария" : reader.GetString(3);
+            DateTime createdAt = reader.GetDateTime(4);
+            string username = reader.GetString(5);
+
+            Panel card = new Panel
+            {
+                Size = new Size(460, 100),
+                BackColor = Color.FromArgb(60, 60, 64),
+                Margin = new Padding(10)
+            };
+
+            Label lblUsername = new Label
+            {
+                Text = username,
+                Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold),
+                ForeColor = Color.White,
+                Location = new Point(10, 10),
+                AutoSize = true
+            };
+
+            Label lblComment = new Label
+            {
+                Text = comment.Length > 50 ? comment.Substring(0, 50) + "..." : comment,
+                Font = new Font("Segoe UI", 10F),
+                ForeColor = Color.LightGray,
+                Location = new Point(10, 35),
+                Size = new Size(300, 40),
+                AutoSize = false
+            };
+
+            Label lblDate = new Label
+            {
+                Text = $"Дата: {createdAt:d}",
+                Font = new Font("Segoe UI", 10F),
+                ForeColor = Color.White,
+                Location = new Point(320, 10),
+                AutoSize = true
+            };
+
+            Panel ratingPanel = new Panel
+            {
+                Location = new Point(320, 35),
+                Size = new Size(100, 20)
+            };
+
+            for (int i = 0; i < 5; i++)
+            {
+                PictureBox star = new PictureBox
+                {
+                    Size = new Size(15, 15),
+                    Location = new Point(i * 18, 0),
+                    SizeMode = PictureBoxSizeMode.Zoom,
+                    Image = i < rating ? starFilled : starEmpty
+                };
+                ratingPanel.Controls.Add(star);
             }
 
-            DisplayReviews();
-            DisableFields();
+            card.Controls.AddRange(new Control[] { lblUsername, lblComment, lblDate, ratingPanel });
+            flowLayoutPanelReviews.Controls.Add(card);
         }
 
-        private bool IsInDesignMode()
+        private int? GetGuestId()
         {
-            return (this.Site != null) && this.Site.DesignMode;
-        }
-
-        private void DisableFields()
-        {
-            review_guestName.Enabled = false;
-        }
-
-        private void DisplayReviews()
-        {
-            ReviewData rd = new ReviewData();
-            var listData = rd.ReviewListData();
-            dataGridViewReviews.DataSource = listData;
-
-            dataGridViewReviews.Columns["ReviewID"].HeaderText = "ID отзыва";
-            dataGridViewReviews.Columns["GuestID"].HeaderText = "ID гостя";
-            dataGridViewReviews.Columns["GuestName"].HeaderText = "Имя гостя";
-            dataGridViewReviews.Columns["Rating"].HeaderText = "Рейтинг";
-            dataGridViewReviews.Columns["Comment"].HeaderText = "Комментарий";
-            dataGridViewReviews.Columns["CreatedAt"].HeaderText = "Дата";
-
-            dataGridViewReviews.Columns["Comment"].Width = 200;
-            dataGridViewReviews.Columns["GuestName"].Width = 120;
-            dataGridViewReviews.Columns["CreatedAt"].Width = 100;
-        }
-
-        private void dataGridViewReviews_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex != -1)
+            try
             {
-                DataGridViewRow row = dataGridViewReviews.Rows[e.RowIndex];
-                review_guestName.Text = row.Cells["GuestName"].Value?.ToString();
-                review_rating.Value = Convert.ToDecimal(row.Cells["Rating"].Value ?? 1);
-                review_comment.Text = row.Cells["Comment"].Value?.ToString();
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    conn.Open();
+                    string query = "SELECT TOP 1 guest_id FROM GUESTS WHERE user_id = @userId";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@userId", userId);
+                        object result = cmd.ExecuteScalar();
+                        return result != null ? Convert.ToInt32(result) : (int?)null;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка получения guest_id: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
             }
         }
 
         private void buttonSubmitReview_Click(object sender, EventArgs e)
         {
-            int rating = (int)review_rating.Value;
-            string comment = review_comment.Text.Trim();
+            string comment = textBoxComment.Text.Trim();
+            int? guestId = GetGuestId();
 
-            if (rating < 1 || rating > 5)
+            if (guestId == null)
             {
-                MessageBox.Show("Рейтинг должен быть от 1 до 5.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось определить пользователя. Пожалуйста, проверьте ваш профиль.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(comment))
+            if (selectedRating == 0)
             {
-                MessageBox.Show("Комментарий не может быть пустым.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Пожалуйста, выберите оценку.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            if (string.IsNullOrEmpty(comment) || comment == "Введите ваш отзыв...")
+            {
+                MessageBox.Show("Пожалуйста, введите текст отзыва.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
             if (comment.Length > 500)
             {
-                MessageBox.Show("Комментарий не должен превышать 500 символов.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Отзыв не должен превышать 500 символов.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            DialogResult check = MessageBox.Show("Вы уверены, что хотите добавить отзыв?", "Подтверждение",
-                MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (check == DialogResult.Yes)
+            try
             {
                 using (SqlConnection conn = new SqlConnection(connectionString))
                 {
-                    try
+                    conn.Open();
+                    string query = @"
+                        INSERT INTO REVIEWS (guest_id, rating, comment, created_at)
+                        VALUES (@guestId, @rating, @comment, @createdAt)";
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        conn.Open();
-                        using (SqlTransaction transaction = conn.BeginTransaction())
-                        {
-                            try
-                            {
-                                int guestId;
-                                string getGuestIdQuery = "SELECT guest_id FROM GUESTS WHERE user_id = @userId";
-                                using (SqlCommand cmd = new SqlCommand(getGuestIdQuery, conn, transaction))
-                                {
-                                    cmd.Parameters.AddWithValue("@userId", userId);
-                                    object result = cmd.ExecuteScalar();
-                                    if (result == null)
-                                    {
-                                        MessageBox.Show("Гость не найден. Пожалуйста, зарегистрируйтесь.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                        transaction.Rollback();
-                                        return;
-                                    }
-                                    guestId = Convert.ToInt32(result);
-                                }
-
-                                string insertReviewQuery = @"
-                                    INSERT INTO REVIEWS (guest_id, rating, comment, created_at)
-                                    VALUES (@guestId, @rating, @comment, @createdAt)";
-                                using (SqlCommand cmd = new SqlCommand(insertReviewQuery, conn, transaction))
-                                {
-                                    cmd.Parameters.AddWithValue("@guestId", guestId);
-                                    cmd.Parameters.AddWithValue("@rating", rating);
-                                    cmd.Parameters.AddWithValue("@comment", comment);
-                                    cmd.Parameters.AddWithValue("@createdAt", DateTime.Now);
-                                    cmd.ExecuteNonQuery();
-                                }
-
-                                transaction.Commit();
-                                MessageBox.Show("Отзыв успешно добавлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                RefreshData();
-                                ClearFields();
-                            }
-                            catch (Exception ex)
-                            {
-                                transaction.Rollback();
-                                MessageBox.Show($"Ошибка добавления отзыва: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show($"Ошибка подключения: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cmd.Parameters.AddWithValue("@guestId", guestId);
+                        cmd.Parameters.AddWithValue("@rating", selectedRating);
+                        cmd.Parameters.AddWithValue("@comment", comment);
+                        cmd.Parameters.AddWithValue("@createdAt", DateTime.Now);
+                        cmd.ExecuteNonQuery();
                     }
                 }
+                MessageBox.Show("Отзыв успешно отправлен!", "Успех", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                textBoxComment.Text = "Введите ваш отзыв...";
+                selectedRating = 0;
+                UpdateStarDisplay();
+                LoadReviews();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Отмена", "Информация", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Ошибка отправки отзыва: {ex.Message}", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonClear_Click(object sender, EventArgs e)
+        private void textBoxComment_Enter(object sender, EventArgs e)
         {
-            ClearFields();
+            if (textBoxComment.Text == "Введите ваш отзыв...")
+            {
+                textBoxComment.Text = "";
+            }
         }
 
-        private void ClearFields()
+        private void buttonClose_Click(object sender, EventArgs e)
         {
-            review_guestName.Text = "";
-            review_rating.Value = 1;
-            review_comment.Text = "";
-        }
-
-        private void review_comment_TextChanged(object sender, EventArgs e)
-        {
-            UpdateSubmitButtonState();
-        }
-
-        private void review_rating_ValueChanged(object sender, EventArgs e)
-        {
-            UpdateSubmitButtonState();
-        }
-
-        private void UpdateSubmitButtonState()
-        {
-            buttonSubmitReview.Enabled = !string.IsNullOrWhiteSpace(review_comment.Text) && review_comment.Text.Length <= 500;
+            this.Close();
         }
     }
 }

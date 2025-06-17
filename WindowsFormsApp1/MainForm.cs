@@ -14,7 +14,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
             this.userId = userId;
             LoadUserName();
-
         }
 
         private void LoadUserName()
@@ -29,6 +28,14 @@ namespace WindowsFormsApp1
                     {
                         cmd.Parameters.AddWithValue("@userId", userId);
                         object result = cmd.ExecuteScalar();
+                        if (result != null)
+                        {
+                            MessageBox.Show($"Добро пожаловать, {result.ToString()}!", "Приветствие", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Добро пожаловать, Гость!", "Приветствие", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
@@ -38,38 +45,30 @@ namespace WindowsFormsApp1
             }
         }
 
-
-
         private void buttonAvailableRooms_Click(object sender, EventArgs e)
         {
-            reviewsControl1.Visible = false;
-            availableRoomsForm1.Visible = true;
+            AvailableRoomsForm availableRoomsForm = new AvailableRoomsForm(this.userId);
+            availableRoomsForm.Show();
         }
 
         private void buttonPersonalAccount_Click(object sender, EventArgs e)
         {
-
+            FormLK formLK = new FormLK(userId);
+            formLK.Location = this.Location;
+            formLK.ShowDialog();
         }
 
         private void buttonOrderServices_Click(object sender, EventArgs e)
         {
-
+            OrderServicesForm servicesForm = new OrderServicesForm(userId);
+            servicesForm.ShowDialog();
         }
-
 
         private void buttonReviews_Click(object sender, EventArgs e)
         {
-
-            reviewsControl1.Visible = true;
-            availableRoomsForm1.Visible = false;
-            availableRoomsForm1.RefreshData();
-
-
-
-            if (reviewsControl1 != null)
-            {
-                reviewsControl1.RefreshData();
-            }
+            ReviewsForm reviewsForm = new ReviewsForm(userId);
+            reviewsForm.Location = this.Location;
+            reviewsForm.ShowDialog();
         }
 
         private void buttonLogout_Click(object sender, EventArgs e)

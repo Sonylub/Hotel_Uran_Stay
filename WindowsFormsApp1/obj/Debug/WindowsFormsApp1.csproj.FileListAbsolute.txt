@@ -49,6 +49,5 @@ C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsAp
 C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.pdb
 C:\Users\3291922-1\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvailableRoomsForm.resources
 C:\Users\3291922-1\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ReviewsControl.resources
-C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.ReviewsControl.resources
-C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvailableRoomsForm.resources
 C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.exe.config
+C:\Users\Maxim\Desktop\Hotel_Uran_Stay\WindowsFormsApp1\obj\Debug\WindowsFormsApp1.AvailableRoomsForm.resources

@@ -53,7 +53,7 @@
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
     <Compile Include="AvailableRoomsForm.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="AvailableRoomsForm.Designer.cs">
       <DependentUpon>AvailableRoomsForm.cs</DependentUpon>
@@ -97,15 +97,11 @@
     </Compile>
     <Compile Include="ReviewData.cs" />
     <Compile Include="ReviewsForm.cs">
-      <SubType>UserControl</SubType>
+      <SubType>Form</SubType>
     </Compile>
     <Compile Include="ReviewsForm.Designer.cs">
       <DependentUpon>ReviewsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="RoomCard.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="RoomData.cs" />
     <EmbeddedResource Include="AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -130,9 +126,6 @@
     </Compile>
     <EmbeddedResource Include="RegistrationForm.resx">
       <DependentUpon>RegistrationForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ReviewsForm.resx">
-      <DependentUpon>ReviewsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Hotel_Urban_StayDataSet.xsc">
       <DependentUpon>Hotel_Urban_StayDataSet.xsd</DependentUpon>
